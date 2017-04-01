@@ -1,0 +1,4 @@
+services:
+#    pidev_gestion_trajets.example:
+#        class: Pidev\GestionTrajetsBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -1,0 +1,27 @@
+homeadmin:
+    path:    /homeadmin
+    defaults: { _controller: PidevGestionTrajetsBundle:User:Admin }
+
+
+homeuser:
+    path:     /home
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:index }
+
+
+trajets:
+    path:     /trajets
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:ListTrajets }
+
+trajetsSearch:
+    path:     /trajetsRecherche
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:RechercheListTrajets }
+
+rideoffer:
+    path:     /offerride
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:ShareRide }
+
+updateCities:
+    path:     /update
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:updateCities }
+    options:
+        expose: true
