@@ -7,22 +7,6 @@
         {% block topbody %}
             {{ parent() }}
         {% endblock %}
-        
-        <script type="text/javascript">
-            function updateCitiesFrom() {
-                alert ('fuck off');
-                jQuery.ajax({
-                    url: {{ path('updateCities') }},
-                    data:'from='+$("#from").val(),
-                    type: "POST",
-                    success:function(data){
-                        $("#fromC").html(data);
-                    },
-                    error:function (){}
-                });
-            }
-        </script>
-
 
 
         <!-- Content
@@ -75,7 +59,6 @@
                                     <h5>City (Departure)</h5>
                                     <select class="chosen-select-no-single" name="fromC" id="fromC" required>
                                         <option label="blank"></option>
-                                        <option value="aze">aze</option>
                                     </select>
                                 </div>
 
@@ -107,10 +90,74 @@
 
 
                         <!-- Section -->
-                        <h3>Gallery</h3>
-                        <div class="submit-section">
-                            <form action="/file-upload" class="dropzone"></form>
-                        </div>
+                        <h3>Map</h3>
+                            <div id="map-container" class="homepage-map margin-bottom-0">
+
+                                <div id="map">
+                                    <!-- map goes here -->
+                                </div>
+
+                                <script>
+                                    function initMap() {
+                                        var map = new google.maps.Map(document.getElementById('map'), {
+                                            zoom: 12,
+                                            center: {lat: 36.8188, lng: 10.166},
+                                            mapTypeControl: true,
+                                            mapTypeControlOptions: {
+                                                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                                                position: google.maps.ControlPosition.TOP_CENTER
+                                            },
+                                            zoomControl: true,
+                                            zoomControlOptions: {
+                                                position: google.maps.ControlPosition.LEFT_CENTER
+                                            },
+                                            scaleControl: true,
+                                            streetViewControl: true,
+                                            streetViewControlOptions: {
+                                                position: google.maps.ControlPosition.LEFT_TOP
+                                            },
+                                            fullscreenControl: true
+                                        });
+                                    }
+                                </script>
+                                <script async defer
+                                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXNneTVr8yaKCVD_sCEFj9CNCtcU85V8&callback=initMap">
+                                </script>
+{#
+                                <script>
+                                    function transformMap() {
+                                        var map = new google.maps.Map(document.getElementById('map'), {
+                                            zoom: 12,
+                                            center: {lat: 36.8188, lng: 10.166},
+                                            mapTypeControl: true,
+                                            mapTypeControlOptions: {
+                                                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                                                position: google.maps.ControlPosition.TOP_CENTER
+                                            },
+                                            zoomControl: true,
+                                            zoomControlOptions: {
+                                                position: google.maps.ControlPosition.LEFT_CENTER
+                                            },
+                                            scaleControl: true,
+                                            streetViewControl: true,
+                                            streetViewControlOptions: {
+                                                position: google.maps.ControlPosition.LEFT_TOP
+                                            },
+                                            fullscreenControl: true
+                                        });
+                                    }
+                                </script>
+                                <script async defer
+                                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXNneTVr8yaKCVD_sCEFj9CNCtcU85V8&callback=transformMap">
+                                </script>
+#}
+                                <!-- Map Navigation -->
+                                <a href="#" id="scrollEnabling" title="Enable or disable scrolling on map">Enable Scrolling</a>
+                                <ul id="mapnav-buttons">
+                                    <li><a href="#" id="prevpoint" title="Previous point on map">Prev</a></li>
+                                    <li><a href="#" id="nextpoint" title="Next point on mp">Next</a></li>
+                                </ul>
+                            </div>
                         <!-- Section / End -->
 
 
@@ -215,22 +262,73 @@
         </div>
 
 
-
-
-
-
-
-
-
-
-
 	{% block footer %}
 	{{ parent() }}
     <!-- Scripts
 ================================================== -->
 	<script src="{{ asset('bundles/views/scripts/jquery-2.2.0.min.js') }}"></script>
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
-    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
-	{% endblock %}
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    <script src="{{ asset('bundles/views/scripts/infobox.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/markerclusterer.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/maps.js') }}"></script>
+
+        <script>
+            function updateCitiesFrom() {
+                jQuery.ajax({
+                    url: Routing.generate('updateCities'),
+                    data:'state='+$("#from").val(),
+                    type: 'POST',
+                    success:function(data) {
+                        var select = document.getElementById('fromC');
+                        var length = select.options.length;
+                        var j;
+
+                        for (j = 0; j < length; j++) {
+                            select.remove(select.j);
+                        }
+
+                        var _len = data.length;
+                        var i,post;
+                        for (i = 0; i < _len; i++) {
+                            post = data[i];
+                            var option = document.createElement('option');
+                            option.text = option.value = post.city;
+                            select.appendChild(option);
+                        }
+                    },
+                    error:function (){}
+                });
+            }
+
+            function updateCitiesTo() {
+                jQuery.ajax({
+                    url: Routing.generate('updateCities'),
+                    data:'state='+$("#to").val(),
+                    type: 'POST',
+                    success:function(data) {
+                        var select = document.getElementById('toC');
+                        var length = select.options.length;
+                        var j;
+
+                        for (j = 0; j < length; j++) {
+                            select.remove(select.j);
+                        }
+
+                        var _len = data.length;
+                        var i,post;
+                        for (i = 0; i < _len; i++) {
+                            post = data[i];
+                            var option = document.createElement('option');
+                            option.text = option.value = post.city;
+                            select.appendChild(option);
+                        }
+                    },
+                    error:function (){}
+                });
+            }
+    </script>
+
+    {% endblock %}
 
 {% endblock %}

@@ -9,6 +9,7 @@ use Pidev\GestionTrajetsBundle\Entity\Membre;
 use Pidev\GestionTrajetsBundle\Entity\States;
 use Pidev\GestionTrajetsBundle\Entity\Cities;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Validator\Constraints\Date;
 
 class GestionTrajetController extends Controller
@@ -34,14 +35,20 @@ class GestionTrajetController extends Controller
         {
             $depart=$request->get('depart');
             $destination=$request->get('destination');
-            $nbrplacedispo=$request->get('nbrplace');
-            $gamme=$request->get('gamme');
-            $trajet=$em->getRepository("PidevGestionTrajetsBundle:Trajet")->filterTrajetByLocation($depart,$destination,$nbrplacedispo,$gamme);
-            return $this->render('@PidevGestionTrajets/GestionTrajets/trajetsRecherche.html.twig',array('trajets'=>$trajet));
+            if (empty($request->get('nbrplace')))
+            {
+                $trajet=$em->getRepository("PidevGestionTrajetsBundle:Trajet")->filterTrajetByLocation($depart,$destination);
+                return $this->render('@PidevGestionTrajets/GestionTrajets/trajetsRecherche.html.twig',array('trajets'=>$trajet));
+            }
+            else
+            {
+                $nbrplacedispo=$request->get('nbrplace');
+                $gamme=$request->get('gamme');
+                $trajet=$em->getRepository("PidevGestionTrajetsBundle:Trajet")->filterTrajetByLocationAndSeatsPlusGamme($depart,$destination,$nbrplacedispo,$gamme);
+                return $this->render('@PidevGestionTrajets/GestionTrajets/trajetsRecherche.html.twig',array('trajets'=>$trajet));
+            }
         }
     }
-
-
 
         public function ShareRideAction(Request $request)
         {
@@ -81,13 +88,14 @@ class GestionTrajetController extends Controller
             return $this->render('@PidevGestionTrajets/GestionTrajets/shareride.html.twig', array('states'=>$states));
         }
 
-        public function updateCitiesAction()
+        function updateCitiesAction(Request $request)
         {
-            $request = $this->container->get('request');
-            $id = $request->query->get('from');
-            $em=$this->getDoctrine()->getManager();
-            $cities=$em->getRepository("PidevGestionTrajetsBundle:Cities")->findBy(array('idState'=>$id));
-            return new Response(json_encode($cities));
+            if ($request->isXmlHttpRequest()) {
+                $id = $request->request->get('state');
+                $em = $this->getDoctrine()->getManager();
+                $cities=$em->getRepository("PidevGestionTrajetsBundle:Cities")->getCities($id);
+                return new JsonResponse($cities);
+            }
+            return new JsonResponse(array('status'=>'failed'));
         }
-
 }

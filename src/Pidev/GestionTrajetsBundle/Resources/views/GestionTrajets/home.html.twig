@@ -16,6 +16,35 @@
             <!-- map goes here -->
         </div>
 
+        <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 12,
+                    center: {lat: 36.8188, lng: 10.166},
+                    mapTypeControl: true,
+                    mapTypeControlOptions: {
+                        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                        position: google.maps.ControlPosition.TOP_CENTER
+                    },
+                    zoomControl: true,
+                    zoomControlOptions: {
+                        position: google.maps.ControlPosition.LEFT_CENTER
+                    },
+                    scaleControl: true,
+                    streetViewControl: true,
+                    streetViewControlOptions: {
+                        position: google.maps.ControlPosition.LEFT_TOP
+                    },
+                    fullscreenControl: true
+                });
+            }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXNneTVr8yaKCVD_sCEFj9CNCtcU85V8&callback=initMap">
+        </script>
+
+
+
         <!-- Map Navigation -->
         <a href="#" id="scrollEnabling" title="Enable or disable scrolling on map">Enable Scrolling</a>
         <ul id="mapnav-buttons">
@@ -35,7 +64,6 @@
                         <a href="#" class="adv-search-btn button">Advanced Search <i class="fa fa-caret-up"></i></a>
 
                         <!-- Main Search -->
-                        <form class="main-search-form">
 
                             <!-- Type -->
                             <div class="search-type" style="display: none;">
@@ -45,7 +73,7 @@
                                 <div class="search-type-arrow"></div>
                             </div>
 
-
+                            <form method="POST" action={{ path('trajetsSearch') }}>
                             <!-- Box -->
                             <div class="main-search-box">
 
@@ -54,7 +82,7 @@
 
                                     <!-- Status -->
                                     <div class="col-md-3 col-sm-6">
-                                        <select data-placeholder="Departure" class="chosen-select-no-single">
+                                        <select name="depart" data-placeholder="Departure" class="chosen-select-no-single">
                                             <option>Tunis
                                             <option>Arianna
                                             <option>Ben Arous
@@ -62,8 +90,8 @@
                                     </div>
 
                                     <!-- Property Type -->
-                                    <div class="col-md-3 col-sm-6">
-                                        <select data-placeholder="Destination" class="chosen-select-no-single">
+                                    <div class="col-md-3 col -sm-6">
+                                        <select name="destination" data-placeholder="Destination" class="chosen-select-no-single">
                                             <option>Tunis
                                             <option>Arianna
                                         </select>
@@ -88,8 +116,8 @@
                                     <div class="col-md-3 col-sm-6">
 
                                         <!-- Select Input -->
-                                        <div class="select-input disabled-first-option">
-                                            <input type="text" placeholder="Seats" data-unit="Person">
+                                        <div class="select-input">
+                                            <input type="text" name="nbrplace" placeholder="Seats" data-unit="Person">
 
                                             <select>
                                                 <option>1
@@ -106,8 +134,8 @@
                                     <div class="col-md-3 col-sm-6">
 
                                         <!-- Select Input -->
-                                        <div class="select-input disabled-first-option">
-                                            <input type="text" placeholder="Vehicule Type" data-unit="Sq Ft">
+                                        <div class="select-input">
+                                            <input type="text" name="gamme" placeholder="Vehicule Type" data-unit="Sq Ft">
 
                                             <select>
                                                 <option>Economical
@@ -363,7 +391,6 @@
     <script src="{{ asset('bundles/views/scripts/tooltips.min.js') }}"></script>
     <script src="{{ asset('bundles/views/scripts/custom.js') }}"></script>
     <!-- Maps -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBKXNneTVr8yaKCVD_sCEFj9CNCtcU85V8&libraries=places&language=en"></script>
     <script src="{{ asset('bundles/views/scripts/infobox.min.js') }}"></script>
     <script src="{{ asset('bundles/views/scripts/markerclusterer.js') }}"></script>
     <script src="{{ asset('bundles/views/scripts/maps.js') }}"></script>

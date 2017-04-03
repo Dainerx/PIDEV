@@ -21,7 +21,7 @@ rideoffer:
     defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:ShareRide }
 
 updateCities:
-    path:     /update
+    path:     /updateCity
     defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:updateCities }
     options:
         expose: true
