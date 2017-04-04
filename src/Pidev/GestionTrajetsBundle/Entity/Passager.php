@@ -41,6 +41,54 @@ class Passager
      */
     private $idMembre;
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return \Trajet
+     */
+    public function getIdTrajet()
+    {
+        return $this->idTrajet;
+    }
+
+    /**
+     * @param \Trajet $idTrajet
+     */
+    public function setIdTrajet($idTrajet)
+    {
+        $this->idTrajet = $idTrajet;
+    }
+
+    /**
+     * @return \Membre
+     */
+    public function getIdMembre()
+    {
+        return $this->idMembre;
+    }
+
+    /**
+     * @param \Membre $idMembre
+     */
+    public function setIdMembre($idMembre)
+    {
+        $this->idMembre = $idMembre;
+    }
+
 
 }
 

@@ -86,3 +86,9 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
+
+vresh_twilio:
+    #(Required) Your Account SID from www.twilio.com/user/account
+    sid: 'ACfef81828dc8c64a7517d0e7126acab3f'
+    #(Required) Your Auth Token from www.twilio.com/user/account
+    authToken: 'fd1b8f43a66a33b480d208dea4f1a362'

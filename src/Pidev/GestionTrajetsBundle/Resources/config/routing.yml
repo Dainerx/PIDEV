@@ -25,3 +25,13 @@ updateCities:
     defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:updateCities }
     options:
         expose: true
+
+bookSeat:
+    path:     /bookseat
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionReservation:book }
+    options:
+        expose: true
+
+SmsSend:
+    path:     /sms
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionReservation:Sms }

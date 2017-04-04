@@ -38,6 +38,7 @@
                     fullscreenControl: true
                 });
             }
+
         </script>
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXNneTVr8yaKCVD_sCEFj9CNCtcU85V8&callback=initMap">
@@ -338,31 +339,31 @@
                     <div class="logo-carousel dot-navigation">
 
                         <div class="item">
-                            <img src="bundles/views/images/logo-01.png" alt="">
+                            <img src="{{ asset('bundles/views/images/logo-01.png') }}" alt="">
                         </div>
 
                         <div class="item">
-                            <img src="bundles/views/images/logo-02.png" alt="">
+                            <img src="{{ asset('bundles/views/images/logo-02.png') }}" alt="">
                         </div>
 
                         <div class="item">
-                            <img src="bundles/views/images/logo-03.png" alt="">
+                            <img src="{{ asset('bundles/views/images/logo-03.png') }}" alt="">
                         </div>
 
                         <div class="item">
-                            <img src="bundles/views/images/logo-04.png" alt="">
+                            <img src="{{ asset('bundles/views/images/logo-04.png') }}" alt="">
                         </div>
 
                         <div class="item">
-                            <img src="bundles/views/images/logo-05.png" alt="">
+                            <img src="{{ asset('bundles/views/images/logo-05.png') }}" alt="">
                         </div>
 
                         <div class="item">
-                            <img src="bundles/views/images/logo-06.png" alt="">
+                            <img src="{{ asset('bundles/views/images/logo-06.png') }}" alt="">
                         </div>
 
                         <div class="item">
-                            <img src="bundles/views/images/logo-07.png" alt="">
+                            <img src="{{ asset('bundles/views/images/logo-07.png') }}" alt="">
                         </div>
 
 
@@ -390,15 +391,11 @@
     <script src="{{ asset('bundles/views/scripts/jquery.jpanelmenu.js') }}"></script>
     <script src="{{ asset('bundles/views/scripts/tooltips.min.js') }}"></script>
     <script src="{{ asset('bundles/views/scripts/custom.js') }}"></script>
-    <!-- Maps -->
-    <script src="{{ asset('bundles/views/scripts/infobox.min.js') }}"></script>
-    <script src="{{ asset('bundles/views/scripts/markerclusterer.js') }}"></script>
-    <script src="{{ asset('bundles/views/scripts/maps.js') }}"></script>
 
 
     <!-- Style Switcher
     ================================================== -->
-    <script src="bundles/views/scripts/switcher.js"></script>
+    <script src="{{ asset('bundles/views/scripts/switcher.js') }}"></script>
 
 {% endblock %}
 

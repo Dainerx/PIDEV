@@ -96,27 +96,38 @@
                                 <div id="map">
                                     <!-- map goes here -->
                                 </div>
-
                                 <script>
                                     function initMap() {
+                                        var directionsDisplay = new google.maps.DirectionsRenderer;
+                                        var directionsService = new google.maps.DirectionsService;
                                         var map = new google.maps.Map(document.getElementById('map'), {
-                                            zoom: 12,
-                                            center: {lat: 36.8188, lng: 10.166},
-                                            mapTypeControl: true,
-                                            mapTypeControlOptions: {
-                                                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-                                                position: google.maps.ControlPosition.TOP_CENTER
-                                            },
-                                            zoomControl: true,
-                                            zoomControlOptions: {
-                                                position: google.maps.ControlPosition.LEFT_CENTER
-                                            },
-                                            scaleControl: true,
-                                            streetViewControl: true,
-                                            streetViewControlOptions: {
-                                                position: google.maps.ControlPosition.LEFT_TOP
-                                            },
-                                            fullscreenControl: true
+                                            zoom: 10,
+                                            center: {lat: 36.8188, lng: 10.166}
+                                        });
+                                        directionsDisplay.setMap(map);
+
+                                        var control = document.getElementById('toC');
+
+                                        var onChangeHandler = function() {
+                                            calculateAndDisplayRoute(directionsService, directionsDisplay);
+                                        };
+                                        document.getElementById('fromC').addEventListener('change', onChangeHandler);
+                                        document.getElementById('toC').addEventListener('change', onChangeHandler);
+                                    }
+
+                                    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+                                        var start = document.getElementById('fromC').value;
+                                        var end = document.getElementById('toC').value;
+                                        directionsService.route({
+                                            origin: start,
+                                            destination: end,
+                                            travelMode: 'DRIVING'
+                                        }, function(response, status) {
+                                            if (status === 'OK') {
+                                                directionsDisplay.setDirections(response);
+                                            } else {
+                                                window.alert('Directions request failed due to ' + status);
+                                            }
                                         });
                                     }
                                 </script>
@@ -269,17 +280,24 @@
 	<script src="{{ asset('bundles/views/scripts/jquery-2.2.0.min.js') }}"></script>
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+{#
     <script src="{{ asset('bundles/views/scripts/infobox.min.js') }}"></script>
     <script src="{{ asset('bundles/views/scripts/markerclusterer.js') }}"></script>
     <script src="{{ asset('bundles/views/scripts/maps.js') }}"></script>
+#}
 
         <script>
+            $(document).ready(function() {
+                    $("#fromC").prop('disabled',true);
+                    $("#toC").prop('disabled',true);
+            });
             function updateCitiesFrom() {
                 jQuery.ajax({
                     url: Routing.generate('updateCities'),
-                    data:'state='+$("#from").val(),
+                    data: 'state=' + $("#from").val(),
                     type: 'POST',
-                    success:function(data) {
+                    success: function (data) {
+                        $("#fromC").prop('disabled',false);
                         var select = document.getElementById('fromC');
                         var length = select.options.length;
                         var j;
@@ -289,24 +307,27 @@
                         }
 
                         var _len = data.length;
-                        var i,post;
+                        var i, post;
                         for (i = 0; i < _len; i++) {
+                            console.log(data[i]);
                             post = data[i];
                             var option = document.createElement('option');
                             option.text = option.value = post.city;
                             select.appendChild(option);
                         }
                     },
-                    error:function (){}
+                    error: function () {
+                    }
                 });
             }
 
             function updateCitiesTo() {
                 jQuery.ajax({
                     url: Routing.generate('updateCities'),
-                    data:'state='+$("#to").val(),
+                    data: 'state=' + $("#to").val(),
                     type: 'POST',
-                    success:function(data) {
+                    success: function (data) {
+                        $("#toC").prop('disabled',false);
                         var select = document.getElementById('toC');
                         var length = select.options.length;
                         var j;
@@ -316,7 +337,7 @@
                         }
 
                         var _len = data.length;
-                        var i,post;
+                        var i, post;
                         for (i = 0; i < _len; i++) {
                             post = data[i];
                             var option = document.createElement('option');
@@ -324,10 +345,12 @@
                             select.appendChild(option);
                         }
                     },
-                    error:function (){}
+                    error: function () {
+                    }
                 });
             }
-    </script>
+
+        </script>
 
     {% endblock %}
 

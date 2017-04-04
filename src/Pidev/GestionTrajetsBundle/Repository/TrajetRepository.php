@@ -44,4 +44,9 @@ class TrajetRepository extends \Doctrine\ORM\EntityRepository
             ->setParameter('gamme',$gamme);
         return $query->getResult();
     }
+
+
+    //solution for multi search
+
+    /*SELECT * FROM `trajet` WHERE `destination` like '%' 'Arianna' '%' and `depart` like '%' 'Arianna' '%' and `nbrPlaceDispo` like '%' '' '%'*/
 }

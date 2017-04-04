@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Pidev\GestionTrajetsBundle\PidevGestionTrajetsBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Vresh\TwilioBundle\VreshTwilioBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
