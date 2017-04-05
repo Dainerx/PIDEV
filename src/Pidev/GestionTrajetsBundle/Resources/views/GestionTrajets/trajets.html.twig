@@ -359,15 +359,16 @@
                     url: Routing.generate('bookSeat'),
                     data: 'idTrajet=' + idTrajet +'&idMembre='+idMembre,
                     type: 'POST',
-                    success: function () {
+                    success: function (data) {
                         alert('You have successfully booked a seat in this ride.');
                     },
-                    error:function (){
-                        alert ('we are fucked');
+                    error:function (data) {
+                        alert('Fuck me right?');
                     }
                 });
             }
         </script>
+
 
 
 

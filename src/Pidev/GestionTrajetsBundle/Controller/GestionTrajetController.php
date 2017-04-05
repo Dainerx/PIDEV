@@ -69,8 +69,8 @@ class GestionTrajetController extends Controller
                 $em->persist($vehicule);
                 $em->flush();
 
-                $trajet->setDepart($request->get('from'));
-                $trajet->setDestination($request->get('to'));
+                $trajet->setDepart($request->get('fromC'));
+                $trajet->setDestination($request->get('toC'));
                 $trajet->setDescription($request->get('details'));
                 $trajet->setCout($request->get('price'));
                 $trajet->setNbrplacedispo($request->get('seats'));
