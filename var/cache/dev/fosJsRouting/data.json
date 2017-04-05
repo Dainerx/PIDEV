@@ -1,1 +1,1 @@
-{"updateCities":{"tokens":[["text","\/gestion\/update"]],"defaults":[],"requirements":[],"hosttokens":[]}}
+{"updateCities":{"tokens":[["text","\/gestion\/updateCity"]],"defaults":[],"requirements":[],"hosttokens":[]},"bookSeat":{"tokens":[["text","\/gestion\/bookseat"]],"defaults":[],"requirements":[],"hosttokens":[]}}

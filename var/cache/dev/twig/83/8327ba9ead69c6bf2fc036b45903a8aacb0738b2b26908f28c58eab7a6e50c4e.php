@@ -24,29 +24,29 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1d019eeb94eec4e4791a8f42cb453699a15f42fddc70e12d5355c1b689300005 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1d019eeb94eec4e4791a8f42cb453699a15f42fddc70e12d5355c1b689300005->enter($__internal_1d019eeb94eec4e4791a8f42cb453699a15f42fddc70e12d5355c1b689300005_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PidevGestionTrajets/GestionTrajets/shareride.html.twig"));
+        $__internal_714c4ca9b2965d38635d4f3938147c3855d29e7cb79dd3e8b47f7b89d3126e51 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_714c4ca9b2965d38635d4f3938147c3855d29e7cb79dd3e8b47f7b89d3126e51->enter($__internal_714c4ca9b2965d38635d4f3938147c3855d29e7cb79dd3e8b47f7b89d3126e51_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PidevGestionTrajets/GestionTrajets/shareride.html.twig"));
 
-        $__internal_3df8d3ed959f31ff3a12ec92ad67bdff40d694523ee8b98dac107010e4c8a2cd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_3df8d3ed959f31ff3a12ec92ad67bdff40d694523ee8b98dac107010e4c8a2cd->enter($__internal_3df8d3ed959f31ff3a12ec92ad67bdff40d694523ee8b98dac107010e4c8a2cd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PidevGestionTrajets/GestionTrajets/shareride.html.twig"));
+        $__internal_2397c54ed918c8a62c590aa27ff845652fa92ac9db684137cd9b4ee16055493c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2397c54ed918c8a62c590aa27ff845652fa92ac9db684137cd9b4ee16055493c->enter($__internal_2397c54ed918c8a62c590aa27ff845652fa92ac9db684137cd9b4ee16055493c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@PidevGestionTrajets/GestionTrajets/shareride.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_1d019eeb94eec4e4791a8f42cb453699a15f42fddc70e12d5355c1b689300005->leave($__internal_1d019eeb94eec4e4791a8f42cb453699a15f42fddc70e12d5355c1b689300005_prof);
+        $__internal_714c4ca9b2965d38635d4f3938147c3855d29e7cb79dd3e8b47f7b89d3126e51->leave($__internal_714c4ca9b2965d38635d4f3938147c3855d29e7cb79dd3e8b47f7b89d3126e51_prof);
 
         
-        $__internal_3df8d3ed959f31ff3a12ec92ad67bdff40d694523ee8b98dac107010e4c8a2cd->leave($__internal_3df8d3ed959f31ff3a12ec92ad67bdff40d694523ee8b98dac107010e4c8a2cd_prof);
+        $__internal_2397c54ed918c8a62c590aa27ff845652fa92ac9db684137cd9b4ee16055493c->leave($__internal_2397c54ed918c8a62c590aa27ff845652fa92ac9db684137cd9b4ee16055493c_prof);
 
     }
 
     // line 2
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_4ac59f9f3f2200749ef18e30f41c92605cba232d764da19f3c57358163ac1649 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_4ac59f9f3f2200749ef18e30f41c92605cba232d764da19f3c57358163ac1649->enter($__internal_4ac59f9f3f2200749ef18e30f41c92605cba232d764da19f3c57358163ac1649_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_da1d4cad35a103e2063a4cc574c02a139ca8330af60c423ba7db095bd90f19de = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_da1d4cad35a103e2063a4cc574c02a139ca8330af60c423ba7db095bd90f19de->enter($__internal_da1d4cad35a103e2063a4cc574c02a139ca8330af60c423ba7db095bd90f19de_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        $__internal_fd8c044a566cedf48442e120a5124351f1bc8a898e66fdb5d5fdb8589898a7f7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_fd8c044a566cedf48442e120a5124351f1bc8a898e66fdb5d5fdb8589898a7f7->enter($__internal_fd8c044a566cedf48442e120a5124351f1bc8a898e66fdb5d5fdb8589898a7f7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_c1dbbe663dd48211ff3b47c7698694e8c8530c03354c8f520046b0dafdaca21e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c1dbbe663dd48211ff3b47c7698694e8c8530c03354c8f520046b0dafdaca21e->enter($__internal_c1dbbe663dd48211ff3b47c7698694e8c8530c03354c8f520046b0dafdaca21e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 3
         echo "\t\t";
@@ -54,46 +54,27 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
         echo "
     ";
         
-        $__internal_fd8c044a566cedf48442e120a5124351f1bc8a898e66fdb5d5fdb8589898a7f7->leave($__internal_fd8c044a566cedf48442e120a5124351f1bc8a898e66fdb5d5fdb8589898a7f7_prof);
+        $__internal_c1dbbe663dd48211ff3b47c7698694e8c8530c03354c8f520046b0dafdaca21e->leave($__internal_c1dbbe663dd48211ff3b47c7698694e8c8530c03354c8f520046b0dafdaca21e_prof);
 
         
-        $__internal_4ac59f9f3f2200749ef18e30f41c92605cba232d764da19f3c57358163ac1649->leave($__internal_4ac59f9f3f2200749ef18e30f41c92605cba232d764da19f3c57358163ac1649_prof);
+        $__internal_da1d4cad35a103e2063a4cc574c02a139ca8330af60c423ba7db095bd90f19de->leave($__internal_da1d4cad35a103e2063a4cc574c02a139ca8330af60c423ba7db095bd90f19de_prof);
 
     }
 
     // line 6
     public function block_content($context, array $blocks = array())
     {
-        $__internal_aa31f5f7017d615c5097cef61bcac1dee130fb187671798db3025ab2bed38150 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_aa31f5f7017d615c5097cef61bcac1dee130fb187671798db3025ab2bed38150->enter($__internal_aa31f5f7017d615c5097cef61bcac1dee130fb187671798db3025ab2bed38150_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_c2e2f3efb2d85e0023557dee6e2f9b24b391a27160f2d6c4b3ad08a36e360942 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c2e2f3efb2d85e0023557dee6e2f9b24b391a27160f2d6c4b3ad08a36e360942->enter($__internal_c2e2f3efb2d85e0023557dee6e2f9b24b391a27160f2d6c4b3ad08a36e360942_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_8df62b0688b53055e356abcbdcf40a6f2b09c6f2dc997267d2d0a285da5ee97d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_8df62b0688b53055e356abcbdcf40a6f2b09c6f2dc997267d2d0a285da5ee97d->enter($__internal_8df62b0688b53055e356abcbdcf40a6f2b09c6f2dc997267d2d0a285da5ee97d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_7caefb0fced174e81babb732d6fd847635397647447185fd82a86d1ed19e90bc = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_7caefb0fced174e81babb732d6fd847635397647447185fd82a86d1ed19e90bc->enter($__internal_7caefb0fced174e81babb732d6fd847635397647447185fd82a86d1ed19e90bc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 7
         echo "        ";
         $this->displayBlock('topbody', $context, $blocks);
         // line 10
-        echo "        
-        <script type=\"text/javascript\">
-            function updateCitiesFrom() {
-                alert ('fuck off');
-                jQuery.ajax({
-                    url: ";
-        // line 15
-        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("updateCities");
-        echo ",
-                    data:'from='+\$(\"#from\").val(),
-                    type: \"POST\",
-                    success:function(data){
-                        \$(\"#fromC\").html(data);
-                    },
-                    error:function (){}
-                });
-            }
-        </script>
-
-
+        echo "
 
         <!-- Content
         ================================================== -->
@@ -120,11 +101,11 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
                                     <select onchange=\"updateCitiesFrom()\" id=\"from\" name=\"from\" class=\"chosen-select-no-single\" required>
                                         <option label=\"blank\">
                                         ";
-        // line 52
+        // line 36
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["states"]) ? $context["states"] : $this->getContext($context, "states")));
         foreach ($context['_seq'] as $context["_key"] => $context["state"]) {
-            // line 53
+            // line 37
             echo "                                        <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["state"], "id", array()), "html", null, true);
             echo "\">";
@@ -135,7 +116,7 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['state'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 55
+        // line 39
         echo "                                    </select>
                                 </div>
 
@@ -145,11 +126,11 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
                                     <select onchange=\"updateCitiesTo()\" id=\"to\" name=\"to\" class=\"chosen-select-no-single\" required>
                                         <option label=\"blank\">
                                             ";
-        // line 63
+        // line 47
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["states"]) ? $context["states"] : $this->getContext($context, "states")));
         foreach ($context['_seq'] as $context["_key"] => $context["state"]) {
-            // line 64
+            // line 48
             echo "                                        <option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["state"], "id", array()), "html", null, true);
             echo "\">";
@@ -160,7 +141,7 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['state'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 66
+        // line 50
         echo "                                    </select>
                                 </div>
 
@@ -173,7 +154,6 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
                                     <h5>City (Departure)</h5>
                                     <select class=\"chosen-select-no-single\" name=\"fromC\" id=\"fromC\" required>
                                         <option label=\"blank\"></option>
-                                        <option value=\"aze\">aze</option>
                                     </select>
                                 </div>
 
@@ -205,10 +185,59 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
 
 
                         <!-- Section -->
-                        <h3>Gallery</h3>
-                        <div class=\"submit-section\">
-                            <form action=\"/file-upload\" class=\"dropzone\"></form>
-                        </div>
+                        <h3>Map</h3>
+                            <div id=\"map-container\" class=\"homepage-map margin-bottom-0\">
+
+                                <div id=\"map\">
+                                    <!-- map goes here -->
+                                </div>
+                                <script>
+                                    function initMap() {
+                                        var directionsDisplay = new google.maps.DirectionsRenderer;
+                                        var directionsService = new google.maps.DirectionsService;
+                                        var map = new google.maps.Map(document.getElementById('map'), {
+                                            zoom: 10,
+                                            center: {lat: 36.8188, lng: 10.166}
+                                        });
+                                        directionsDisplay.setMap(map);
+
+                                        var control = document.getElementById('toC');
+
+                                        var onChangeHandler = function() {
+                                            calculateAndDisplayRoute(directionsService, directionsDisplay);
+                                        };
+                                        document.getElementById('fromC').addEventListener('change', onChangeHandler);
+                                        document.getElementById('toC').addEventListener('change', onChangeHandler);
+                                    }
+
+                                    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+                                        var start = document.getElementById('fromC').value;
+                                        var end = document.getElementById('toC').value;
+                                        directionsService.route({
+                                            origin: start,
+                                            destination: end,
+                                            travelMode: 'DRIVING'
+                                        }, function(response, status) {
+                                            if (status === 'OK') {
+                                                directionsDisplay.setDirections(response);
+                                            } else {
+                                                window.alert('Directions request failed due to ' + status);
+                                            }
+                                        });
+                                    }
+                                </script>
+                                <script async defer
+                                        src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXNneTVr8yaKCVD_sCEFj9CNCtcU85V8&callback=initMap\">
+                                </script>
+";
+        // line 165
+        echo "                                <!-- Map Navigation -->
+                                <a href=\"#\" id=\"scrollEnabling\" title=\"Enable or disable scrolling on map\">Enable Scrolling</a>
+                                <ul id=\"mapnav-buttons\">
+                                    <li><a href=\"#\" id=\"prevpoint\" title=\"Previous point on map\">Prev</a></li>
+                                    <li><a href=\"#\" id=\"nextpoint\" title=\"Next point on mp\">Next</a></li>
+                                </ul>
+                            </div>
                         <!-- Section / End -->
 
 
@@ -302,7 +331,7 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
                         <div class=\"divider\"></div>
                         <button type=\"submit\" class=\"button preview margin-top-5\">Share this ride <i class=\"fa fa-car\"></i></button>
 ";
-        // line 209
+        // line 267
         echo "
                     </div>
                 </div>
@@ -312,37 +341,28 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
         </div>
 
 
-
-
-
-
-
-
-
-
-
 \t";
-        // line 227
+        // line 276
         $this->displayBlock('footer', $context, $blocks);
-        // line 235
+        // line 356
         echo "
 ";
         
-        $__internal_8df62b0688b53055e356abcbdcf40a6f2b09c6f2dc997267d2d0a285da5ee97d->leave($__internal_8df62b0688b53055e356abcbdcf40a6f2b09c6f2dc997267d2d0a285da5ee97d_prof);
+        $__internal_7caefb0fced174e81babb732d6fd847635397647447185fd82a86d1ed19e90bc->leave($__internal_7caefb0fced174e81babb732d6fd847635397647447185fd82a86d1ed19e90bc_prof);
 
         
-        $__internal_aa31f5f7017d615c5097cef61bcac1dee130fb187671798db3025ab2bed38150->leave($__internal_aa31f5f7017d615c5097cef61bcac1dee130fb187671798db3025ab2bed38150_prof);
+        $__internal_c2e2f3efb2d85e0023557dee6e2f9b24b391a27160f2d6c4b3ad08a36e360942->leave($__internal_c2e2f3efb2d85e0023557dee6e2f9b24b391a27160f2d6c4b3ad08a36e360942_prof);
 
     }
 
     // line 7
     public function block_topbody($context, array $blocks = array())
     {
-        $__internal_2fe7dad360bbf8d95b01a59a02078adcad7c2ca96e87806b9438170babf86b09 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_2fe7dad360bbf8d95b01a59a02078adcad7c2ca96e87806b9438170babf86b09->enter($__internal_2fe7dad360bbf8d95b01a59a02078adcad7c2ca96e87806b9438170babf86b09_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "topbody"));
+        $__internal_21e8f8336dbb6374308408ddca4045db4e173b693e93517c22ec935e52685fec = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_21e8f8336dbb6374308408ddca4045db4e173b693e93517c22ec935e52685fec->enter($__internal_21e8f8336dbb6374308408ddca4045db4e173b693e93517c22ec935e52685fec_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "topbody"));
 
-        $__internal_9796fe949d5f4e0e25a7f640be29ae1d3090b4769b6c17b0fcc5f36c31c10366 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9796fe949d5f4e0e25a7f640be29ae1d3090b4769b6c17b0fcc5f36c31c10366->enter($__internal_9796fe949d5f4e0e25a7f640be29ae1d3090b4769b6c17b0fcc5f36c31c10366_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "topbody"));
+        $__internal_5e59501d91b633b98df7f71077e79becd77269ab81040dceb35a0684c27c3db9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5e59501d91b633b98df7f71077e79becd77269ab81040dceb35a0684c27c3db9->enter($__internal_5e59501d91b633b98df7f71077e79becd77269ab81040dceb35a0684c27c3db9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "topbody"));
 
         // line 8
         echo "            ";
@@ -350,46 +370,115 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
         echo "
         ";
         
-        $__internal_9796fe949d5f4e0e25a7f640be29ae1d3090b4769b6c17b0fcc5f36c31c10366->leave($__internal_9796fe949d5f4e0e25a7f640be29ae1d3090b4769b6c17b0fcc5f36c31c10366_prof);
+        $__internal_5e59501d91b633b98df7f71077e79becd77269ab81040dceb35a0684c27c3db9->leave($__internal_5e59501d91b633b98df7f71077e79becd77269ab81040dceb35a0684c27c3db9_prof);
 
         
-        $__internal_2fe7dad360bbf8d95b01a59a02078adcad7c2ca96e87806b9438170babf86b09->leave($__internal_2fe7dad360bbf8d95b01a59a02078adcad7c2ca96e87806b9438170babf86b09_prof);
+        $__internal_21e8f8336dbb6374308408ddca4045db4e173b693e93517c22ec935e52685fec->leave($__internal_21e8f8336dbb6374308408ddca4045db4e173b693e93517c22ec935e52685fec_prof);
 
     }
 
-    // line 227
+    // line 276
     public function block_footer($context, array $blocks = array())
     {
-        $__internal_69d0d2366583597d76db761c3781eb64388edc9eae0ca11e34310050adf51171 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_69d0d2366583597d76db761c3781eb64388edc9eae0ca11e34310050adf51171->enter($__internal_69d0d2366583597d76db761c3781eb64388edc9eae0ca11e34310050adf51171_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_15f1220b242229939f33059595d207e876b354d989616ab9f270831212fc4cdb = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_15f1220b242229939f33059595d207e876b354d989616ab9f270831212fc4cdb->enter($__internal_15f1220b242229939f33059595d207e876b354d989616ab9f270831212fc4cdb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
-        $__internal_9aacf9614c91e3f6364aba9b00fc2c5d1e96fd2b8c24e827bc25639ebaebc7b9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_9aacf9614c91e3f6364aba9b00fc2c5d1e96fd2b8c24e827bc25639ebaebc7b9->enter($__internal_9aacf9614c91e3f6364aba9b00fc2c5d1e96fd2b8c24e827bc25639ebaebc7b9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_bd068e578c8f2440eba1f40d675a4761df7919eb98be9b3e41cbe02f362db5cb = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_bd068e578c8f2440eba1f40d675a4761df7919eb98be9b3e41cbe02f362db5cb->enter($__internal_bd068e578c8f2440eba1f40d675a4761df7919eb98be9b3e41cbe02f362db5cb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 228
+        // line 277
         echo "\t";
         $this->displayParentBlock("footer", $context, $blocks);
         echo "
     <!-- Scripts
 ================================================== -->
 \t<script src=\"";
-        // line 231
+        // line 280
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bundles/views/scripts/jquery-2.2.0.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 232
+        // line 281
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("bundles/fosjsrouting/js/router.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 233
+        // line 282
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_js_routing_js", array("callback" => "fos.Router.setData"));
         echo "\"></script>
-\t";
+";
+        // line 288
+        echo "
+        <script>
+            \$(document).ready(function() {
+                    \$(\"#fromC\").prop('disabled',true);
+                    \$(\"#toC\").prop('disabled',true);
+            });
+            function updateCitiesFrom() {
+                jQuery.ajax({
+                    url: Routing.generate('updateCities'),
+                    data: 'state=' + \$(\"#from\").val(),
+                    type: 'POST',
+                    success: function (data) {
+                        \$(\"#fromC\").prop('disabled',false);
+                        var select = document.getElementById('fromC');
+                        var length = select.options.length;
+                        var j;
+
+                        for (j = 0; j < length; j++) {
+                            select.remove(select.j);
+                        }
+
+                        var _len = data.length;
+                        var i, post;
+                        for (i = 0; i < _len; i++) {
+                            console.log(data[i]);
+                            post = data[i];
+                            var option = document.createElement('option');
+                            option.text = option.value = post.city;
+                            select.appendChild(option);
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            }
+
+            function updateCitiesTo() {
+                jQuery.ajax({
+                    url: Routing.generate('updateCities'),
+                    data: 'state=' + \$(\"#to\").val(),
+                    type: 'POST',
+                    success: function (data) {
+                        \$(\"#toC\").prop('disabled',false);
+                        var select = document.getElementById('toC');
+                        var length = select.options.length;
+                        var j;
+
+                        for (j = 0; j < length; j++) {
+                            select.remove(select.j);
+                        }
+
+                        var _len = data.length;
+                        var i, post;
+                        for (i = 0; i < _len; i++) {
+                            post = data[i];
+                            var option = document.createElement('option');
+                            option.text = option.value = post.city;
+                            select.appendChild(option);
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            }
+
+        </script>
+
+    ";
         
-        $__internal_9aacf9614c91e3f6364aba9b00fc2c5d1e96fd2b8c24e827bc25639ebaebc7b9->leave($__internal_9aacf9614c91e3f6364aba9b00fc2c5d1e96fd2b8c24e827bc25639ebaebc7b9_prof);
+        $__internal_bd068e578c8f2440eba1f40d675a4761df7919eb98be9b3e41cbe02f362db5cb->leave($__internal_bd068e578c8f2440eba1f40d675a4761df7919eb98be9b3e41cbe02f362db5cb_prof);
 
         
-        $__internal_69d0d2366583597d76db761c3781eb64388edc9eae0ca11e34310050adf51171->leave($__internal_69d0d2366583597d76db761c3781eb64388edc9eae0ca11e34310050adf51171_prof);
+        $__internal_15f1220b242229939f33059595d207e876b354d989616ab9f270831212fc4cdb->leave($__internal_15f1220b242229939f33059595d207e876b354d989616ab9f270831212fc4cdb_prof);
 
     }
 
@@ -405,7 +494,7 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
 
     public function getDebugInfo()
     {
-        return array (  385 => 233,  381 => 232,  377 => 231,  370 => 228,  361 => 227,  348 => 8,  339 => 7,  328 => 235,  326 => 227,  306 => 209,  164 => 66,  153 => 64,  149 => 63,  139 => 55,  128 => 53,  124 => 52,  84 => 15,  77 => 10,  74 => 7,  65 => 6,  52 => 3,  43 => 2,  11 => 1,);
+        return array (  409 => 288,  405 => 282,  401 => 281,  397 => 280,  390 => 277,  381 => 276,  368 => 8,  359 => 7,  348 => 356,  346 => 276,  335 => 267,  234 => 165,  145 => 50,  134 => 48,  130 => 47,  120 => 39,  109 => 37,  105 => 36,  77 => 10,  74 => 7,  65 => 6,  52 => 3,  43 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -427,22 +516,6 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
         {% block topbody %}
             {{ parent() }}
         {% endblock %}
-        
-        <script type=\"text/javascript\">
-            function updateCitiesFrom() {
-                alert ('fuck off');
-                jQuery.ajax({
-                    url: {{ path('updateCities') }},
-                    data:'from='+\$(\"#from\").val(),
-                    type: \"POST\",
-                    success:function(data){
-                        \$(\"#fromC\").html(data);
-                    },
-                    error:function (){}
-                });
-            }
-        </script>
-
 
 
         <!-- Content
@@ -495,7 +568,6 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
                                     <h5>City (Departure)</h5>
                                     <select class=\"chosen-select-no-single\" name=\"fromC\" id=\"fromC\" required>
                                         <option label=\"blank\"></option>
-                                        <option value=\"aze\">aze</option>
                                     </select>
                                 </div>
 
@@ -527,10 +599,85 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
 
 
                         <!-- Section -->
-                        <h3>Gallery</h3>
-                        <div class=\"submit-section\">
-                            <form action=\"/file-upload\" class=\"dropzone\"></form>
-                        </div>
+                        <h3>Map</h3>
+                            <div id=\"map-container\" class=\"homepage-map margin-bottom-0\">
+
+                                <div id=\"map\">
+                                    <!-- map goes here -->
+                                </div>
+                                <script>
+                                    function initMap() {
+                                        var directionsDisplay = new google.maps.DirectionsRenderer;
+                                        var directionsService = new google.maps.DirectionsService;
+                                        var map = new google.maps.Map(document.getElementById('map'), {
+                                            zoom: 10,
+                                            center: {lat: 36.8188, lng: 10.166}
+                                        });
+                                        directionsDisplay.setMap(map);
+
+                                        var control = document.getElementById('toC');
+
+                                        var onChangeHandler = function() {
+                                            calculateAndDisplayRoute(directionsService, directionsDisplay);
+                                        };
+                                        document.getElementById('fromC').addEventListener('change', onChangeHandler);
+                                        document.getElementById('toC').addEventListener('change', onChangeHandler);
+                                    }
+
+                                    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+                                        var start = document.getElementById('fromC').value;
+                                        var end = document.getElementById('toC').value;
+                                        directionsService.route({
+                                            origin: start,
+                                            destination: end,
+                                            travelMode: 'DRIVING'
+                                        }, function(response, status) {
+                                            if (status === 'OK') {
+                                                directionsDisplay.setDirections(response);
+                                            } else {
+                                                window.alert('Directions request failed due to ' + status);
+                                            }
+                                        });
+                                    }
+                                </script>
+                                <script async defer
+                                        src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXNneTVr8yaKCVD_sCEFj9CNCtcU85V8&callback=initMap\">
+                                </script>
+{#
+                                <script>
+                                    function transformMap() {
+                                        var map = new google.maps.Map(document.getElementById('map'), {
+                                            zoom: 12,
+                                            center: {lat: 36.8188, lng: 10.166},
+                                            mapTypeControl: true,
+                                            mapTypeControlOptions: {
+                                                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                                                position: google.maps.ControlPosition.TOP_CENTER
+                                            },
+                                            zoomControl: true,
+                                            zoomControlOptions: {
+                                                position: google.maps.ControlPosition.LEFT_CENTER
+                                            },
+                                            scaleControl: true,
+                                            streetViewControl: true,
+                                            streetViewControlOptions: {
+                                                position: google.maps.ControlPosition.LEFT_TOP
+                                            },
+                                            fullscreenControl: true
+                                        });
+                                    }
+                                </script>
+                                <script async defer
+                                        src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXNneTVr8yaKCVD_sCEFj9CNCtcU85V8&callback=transformMap\">
+                                </script>
+#}
+                                <!-- Map Navigation -->
+                                <a href=\"#\" id=\"scrollEnabling\" title=\"Enable or disable scrolling on map\">Enable Scrolling</a>
+                                <ul id=\"mapnav-buttons\">
+                                    <li><a href=\"#\" id=\"prevpoint\" title=\"Previous point on map\">Prev</a></li>
+                                    <li><a href=\"#\" id=\"nextpoint\" title=\"Next point on mp\">Next</a></li>
+                                </ul>
+                            </div>
                         <!-- Section / End -->
 
 
@@ -635,23 +782,86 @@ class __TwigTemplate_ba9988b6f3e396ab7e4e915327da73cd0cf9bf22a14457070eaf1123452
         </div>
 
 
-
-
-
-
-
-
-
-
-
 \t{% block footer %}
 \t{{ parent() }}
     <!-- Scripts
 ================================================== -->
 \t<script src=\"{{ asset('bundles/views/scripts/jquery-2.2.0.min.js') }}\"></script>
     <script src=\"{{ asset('bundles/fosjsrouting/js/router.js') }}\"></script>
-    <script src=\"{{ path('fos_js_routing_js', {\"callback\": \"fos.Router.setData\"}) }}\"></script>
-\t{% endblock %}
+    <script src=\"{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}\"></script>
+{#
+    <script src=\"{{ asset('bundles/views/scripts/infobox.min.js') }}\"></script>
+    <script src=\"{{ asset('bundles/views/scripts/markerclusterer.js') }}\"></script>
+    <script src=\"{{ asset('bundles/views/scripts/maps.js') }}\"></script>
+#}
+
+        <script>
+            \$(document).ready(function() {
+                    \$(\"#fromC\").prop('disabled',true);
+                    \$(\"#toC\").prop('disabled',true);
+            });
+            function updateCitiesFrom() {
+                jQuery.ajax({
+                    url: Routing.generate('updateCities'),
+                    data: 'state=' + \$(\"#from\").val(),
+                    type: 'POST',
+                    success: function (data) {
+                        \$(\"#fromC\").prop('disabled',false);
+                        var select = document.getElementById('fromC');
+                        var length = select.options.length;
+                        var j;
+
+                        for (j = 0; j < length; j++) {
+                            select.remove(select.j);
+                        }
+
+                        var _len = data.length;
+                        var i, post;
+                        for (i = 0; i < _len; i++) {
+                            console.log(data[i]);
+                            post = data[i];
+                            var option = document.createElement('option');
+                            option.text = option.value = post.city;
+                            select.appendChild(option);
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            }
+
+            function updateCitiesTo() {
+                jQuery.ajax({
+                    url: Routing.generate('updateCities'),
+                    data: 'state=' + \$(\"#to\").val(),
+                    type: 'POST',
+                    success: function (data) {
+                        \$(\"#toC\").prop('disabled',false);
+                        var select = document.getElementById('toC');
+                        var length = select.options.length;
+                        var j;
+
+                        for (j = 0; j < length; j++) {
+                            select.remove(select.j);
+                        }
+
+                        var _len = data.length;
+                        var i, post;
+                        for (i = 0; i < _len; i++) {
+                            post = data[i];
+                            var option = document.createElement('option');
+                            option.text = option.value = post.city;
+                            select.appendChild(option);
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            }
+
+        </script>
+
+    {% endblock %}
 
 {% endblock %}", "@PidevGestionTrajets/GestionTrajets/shareride.html.twig", "/var/www/html/PIDEVS/src/Pidev/GestionTrajetsBundle/Resources/views/GestionTrajets/shareride.html.twig");
     }

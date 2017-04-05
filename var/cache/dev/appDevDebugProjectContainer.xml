@@ -20,6 +20,7 @@
       <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="PidevGestionTrajetsBundle">Pidev\GestionTrajetsBundle\PidevGestionTrajetsBundle</parameter>
       <parameter key="FOSJsRoutingBundle">FOS\JsRoutingBundle\FOSJsRoutingBundle</parameter>
+      <parameter key="VreshTwilioBundle">Vresh\TwilioBundle\VreshTwilioBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -85,6 +86,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/var/www/html/PIDEVS/vendor/friendsofsymfony/jsrouting-bundle</parameter>
         <parameter key="namespace">FOS\JsRoutingBundle</parameter>
+      </parameter>
+      <parameter key="VreshTwilioBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/var/www/html/PIDEVS/vendor/vresh/twilio-bundle</parameter>
+        <parameter key="namespace">Vresh\TwilioBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -426,6 +432,7 @@
       <parameter>AsseticBundle</parameter>
       <parameter>PidevGestionTrajetsBundle</parameter>
       <parameter>FOSJsRoutingBundle</parameter>
+      <parameter>VreshTwilioBundle</parameter>
       <parameter>DebugBundle</parameter>
       <parameter>WebProfilerBundle</parameter>
       <parameter>SensioDistributionBundle</parameter>
@@ -459,6 +466,9 @@
     <parameter key="fos_js_routing.cache_control" type="collection">
       <parameter key="enabled">false</parameter>
     </parameter>
+    <parameter key="twilio.class">Vresh\TwilioBundle\Service\TwilioWrapper</parameter>
+    <parameter key="twilio.capability.class">Vresh\TwilioBundle\Service\TwilioCapabilityWrapper</parameter>
+    <parameter key="twilio.lookups.class">Vresh\TwilioBundle\Service\TwilioLookupsWrapper</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -602,7 +612,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>F2PtJIkcN5</argument>
                 <argument>0</argument>
-                <argument>oHPg6fjwVVA+mcPU3lhuft</argument>
+                <argument>DF9-w5Hp8tfDcODngA+zaw</argument>
                 <argument>/var/www/html/PIDEVS/var/cache/dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -785,7 +795,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>RFC28vDT7Q</argument>
       <argument>0</argument>
-      <argument>oHPg6fjwVVA+mcPU3lhuft</argument>
+      <argument>DF9-w5Hp8tfDcODngA+zaw</argument>
       <argument>/var/www/html/PIDEVS/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -795,7 +805,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>b9OH5r9ZVG</argument>
       <argument>0</argument>
-      <argument>oHPg6fjwVVA+mcPU3lhuft</argument>
+      <argument>DF9-w5Hp8tfDcODngA+zaw</argument>
       <argument>/var/www/html/PIDEVS/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1846,7 +1856,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58e0244b9a7507.89416867</argument>
+            <argument>58e41dd17a1720.61445866</argument>
           </service>
         </argument>
       </argument>
@@ -2130,7 +2140,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58e0244b9a7507.89416867</argument>
+            <argument>58e41dd17a1720.61445866</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2411,6 +2421,7 @@
               <argument>AsseticBundle</argument>
               <argument>PidevGestionTrajetsBundle</argument>
               <argument>FOSJsRoutingBundle</argument>
+              <argument>VreshTwilioBundle</argument>
               <argument>DebugBundle</argument>
               <argument>WebProfilerBundle</argument>
               <argument>SensioDistributionBundle</argument>
@@ -3292,6 +3303,33 @@
               <argument type="service">
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
+                  <argument>VreshTwilioBundle</argument>
+                  <argument>/var/www/html/PIDEVS/app/Resources/VreshTwilioBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>VreshTwilioBundle</argument>
+                  <argument>/var/www/html/PIDEVS/vendor/vresh/twilio-bundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
                   <argument>DebugBundle</argument>
                   <argument>/var/www/html/PIDEVS/app/Resources/DebugBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
@@ -3456,6 +3494,7 @@
         <argument key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</argument>
         <argument key="PidevGestionTrajetsBundle">Pidev\GestionTrajetsBundle\PidevGestionTrajetsBundle</argument>
         <argument key="FOSJsRoutingBundle">FOS\JsRoutingBundle\FOSJsRoutingBundle</argument>
+        <argument key="VreshTwilioBundle">Vresh\TwilioBundle\VreshTwilioBundle</argument>
         <argument key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</argument>
         <argument key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</argument>
         <argument key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</argument>
@@ -3481,6 +3520,20 @@
           <service class="Symfony\Component\Serializer\Encoder\JsonEncoder" public="false"/>
         </argument>
       </argument>
+    </service>
+    <service id="twilio.api" class="Vresh\TwilioBundle\Service\TwilioWrapper">
+      <argument>ACfef81828dc8c64a7517d0e7126acab3f</argument>
+      <argument>fd1b8f43a66a33b480d208dea4f1a362</argument>
+      <argument>2010-04-01</argument>
+      <argument>1</argument>
+    </service>
+    <service id="twilio.capability" class="Vresh\TwilioBundle\Service\TwilioCapabilityWrapper">
+      <argument>ACfef81828dc8c64a7517d0e7126acab3f</argument>
+      <argument>fd1b8f43a66a33b480d208dea4f1a362</argument>
+    </service>
+    <service id="twilio.lookups" class="Vresh\TwilioBundle\Service\TwilioLookupsWrapper">
+      <argument>ACfef81828dc8c64a7517d0e7126acab3f</argument>
+      <argument>fd1b8f43a66a33b480d208dea4f1a362</argument>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>

@@ -85,61 +85,48 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     }
 
                     // _assetic_ec9911f_8
-                    if ($pathinfo === '/js/ec9911f_part_1_maps_9.js') {
+                    if ($pathinfo === '/js/ec9911f_part_1_markerclusterer_9.js') {
                         return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 8,  '_format' => 'js',  '_route' => '_assetic_ec9911f_8',);
                     }
 
                     // _assetic_ec9911f_9
-                    if ($pathinfo === '/js/ec9911f_part_1_markerclusterer_10.js') {
+                    if ($pathinfo === '/js/ec9911f_part_1_masonry.min_10.js') {
                         return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 9,  '_format' => 'js',  '_route' => '_assetic_ec9911f_9',);
                     }
 
-                    // _assetic_ec9911f_10
-                    if ($pathinfo === '/js/ec9911f_part_1_masonry.min_11.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 10,  '_format' => 'js',  '_route' => '_assetic_ec9911f_10',);
-                    }
-
                 }
 
-                if (0 === strpos($pathinfo, '/js/ec9911f_part_1_o')) {
-                    // _assetic_ec9911f_11
-                    if ($pathinfo === '/js/ec9911f_part_1_offerride_12.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 11,  '_format' => 'js',  '_route' => '_assetic_ec9911f_11',);
-                    }
-
-                    // _assetic_ec9911f_12
-                    if ($pathinfo === '/js/ec9911f_part_1_owl.carousel.min_13.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 12,  '_format' => 'js',  '_route' => '_assetic_ec9911f_12',);
-                    }
-
+                // _assetic_ec9911f_10
+                if ($pathinfo === '/js/ec9911f_part_1_owl.carousel.min_11.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 10,  '_format' => 'js',  '_route' => '_assetic_ec9911f_10',);
                 }
 
-                // _assetic_ec9911f_13
-                if ($pathinfo === '/js/ec9911f_part_1_rangeSlider_14.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 13,  '_format' => 'js',  '_route' => '_assetic_ec9911f_13',);
+                // _assetic_ec9911f_11
+                if ($pathinfo === '/js/ec9911f_part_1_rangeSlider_12.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 11,  '_format' => 'js',  '_route' => '_assetic_ec9911f_11',);
                 }
 
                 if (0 === strpos($pathinfo, '/js/ec9911f_part_1_s')) {
+                    // _assetic_ec9911f_12
+                    if ($pathinfo === '/js/ec9911f_part_1_slick.min_13.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 12,  '_format' => 'js',  '_route' => '_assetic_ec9911f_12',);
+                    }
+
+                    // _assetic_ec9911f_13
+                    if ($pathinfo === '/js/ec9911f_part_1_sticky-kit.min_14.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 13,  '_format' => 'js',  '_route' => '_assetic_ec9911f_13',);
+                    }
+
                     // _assetic_ec9911f_14
-                    if ($pathinfo === '/js/ec9911f_part_1_slick.min_15.js') {
+                    if ($pathinfo === '/js/ec9911f_part_1_switcher_15.js') {
                         return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 14,  '_format' => 'js',  '_route' => '_assetic_ec9911f_14',);
-                    }
-
-                    // _assetic_ec9911f_15
-                    if ($pathinfo === '/js/ec9911f_part_1_sticky-kit.min_16.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 15,  '_format' => 'js',  '_route' => '_assetic_ec9911f_15',);
-                    }
-
-                    // _assetic_ec9911f_16
-                    if ($pathinfo === '/js/ec9911f_part_1_switcher_17.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 16,  '_format' => 'js',  '_route' => '_assetic_ec9911f_16',);
                     }
 
                 }
 
-                // _assetic_ec9911f_17
-                if ($pathinfo === '/js/ec9911f_part_1_tooltips.min_18.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 17,  '_format' => 'js',  '_route' => '_assetic_ec9911f_17',);
+                // _assetic_ec9911f_15
+                if ($pathinfo === '/js/ec9911f_part_1_tooltips.min_16.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 15,  '_format' => 'js',  '_route' => '_assetic_ec9911f_15',);
                 }
 
             }
@@ -270,8 +257,18 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
 
             // updateCities
-            if ($pathinfo === '/gestion/update') {
+            if ($pathinfo === '/gestion/updateCity') {
                 return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\GestionTrajetController::updateCitiesAction',  '_route' => 'updateCities',);
+            }
+
+            // bookSeat
+            if ($pathinfo === '/gestion/bookseat') {
+                return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\GestionReservationController::bookAction',  '_route' => 'bookSeat',);
+            }
+
+            // SmsSend
+            if ($pathinfo === '/gestion/sms') {
+                return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\GestionReservationController::SmsAction',  '_route' => 'SmsSend',);
             }
 
         }

@@ -21,11 +21,11 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3295b37290693b5d7038289d94987609191a537f77226280fb8772e3c3b7b4be = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_3295b37290693b5d7038289d94987609191a537f77226280fb8772e3c3b7b4be->enter($__internal_3295b37290693b5d7038289d94987609191a537f77226280fb8772e3c3b7b4be_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/layout.html.twig"));
+        $__internal_2fdc8778f57e83e0f789af30b34aeebd26a5f6c3d52117999be610c43460203b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_2fdc8778f57e83e0f789af30b34aeebd26a5f6c3d52117999be610c43460203b->enter($__internal_2fdc8778f57e83e0f789af30b34aeebd26a5f6c3d52117999be610c43460203b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/layout.html.twig"));
 
-        $__internal_ca34bad82fac8bc796219af9781e2f1c0854537f21e62160b493d4205dc139db = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_ca34bad82fac8bc796219af9781e2f1c0854537f21e62160b493d4205dc139db->enter($__internal_ca34bad82fac8bc796219af9781e2f1c0854537f21e62160b493d4205dc139db_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/layout.html.twig"));
+        $__internal_206da2851ae3efd622b631446415c4eb42241d9042bba4e54e886a47005dccce = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_206da2851ae3efd622b631446415c4eb42241d9042bba4e54e886a47005dccce->enter($__internal_206da2851ae3efd622b631446415c4eb42241d9042bba4e54e886a47005dccce_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@FOSUser/layout.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -56,39 +56,39 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
 </html>
 ";
         
-        $__internal_3295b37290693b5d7038289d94987609191a537f77226280fb8772e3c3b7b4be->leave($__internal_3295b37290693b5d7038289d94987609191a537f77226280fb8772e3c3b7b4be_prof);
+        $__internal_2fdc8778f57e83e0f789af30b34aeebd26a5f6c3d52117999be610c43460203b->leave($__internal_2fdc8778f57e83e0f789af30b34aeebd26a5f6c3d52117999be610c43460203b_prof);
 
         
-        $__internal_ca34bad82fac8bc796219af9781e2f1c0854537f21e62160b493d4205dc139db->leave($__internal_ca34bad82fac8bc796219af9781e2f1c0854537f21e62160b493d4205dc139db_prof);
+        $__internal_206da2851ae3efd622b631446415c4eb42241d9042bba4e54e886a47005dccce->leave($__internal_206da2851ae3efd622b631446415c4eb42241d9042bba4e54e886a47005dccce_prof);
 
     }
 
     // line 6
     public function block_title($context, array $blocks = array())
     {
-        $__internal_96f240929302494fba9b67f5db273c6315b6c0dae6ed99aa5eb5b5867f9091c6 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_96f240929302494fba9b67f5db273c6315b6c0dae6ed99aa5eb5b5867f9091c6->enter($__internal_96f240929302494fba9b67f5db273c6315b6c0dae6ed99aa5eb5b5867f9091c6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_769a405be897661e21f3168d3eed22550def84950bcaec5d27dcea841d526810 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_769a405be897661e21f3168d3eed22550def84950bcaec5d27dcea841d526810->enter($__internal_769a405be897661e21f3168d3eed22550def84950bcaec5d27dcea841d526810_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_72f86076d9dca664e92fe62046b71b3e216ac105e3077ae5c7db4042e2411f79 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_72f86076d9dca664e92fe62046b71b3e216ac105e3077ae5c7db4042e2411f79->enter($__internal_72f86076d9dca664e92fe62046b71b3e216ac105e3077ae5c7db4042e2411f79_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_56b861e2c6567ab604845e4e74fe0a67a8e69092bfdfb6ef53cceb78b704dfd6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_56b861e2c6567ab604845e4e74fe0a67a8e69092bfdfb6ef53cceb78b704dfd6->enter($__internal_56b861e2c6567ab604845e4e74fe0a67a8e69092bfdfb6ef53cceb78b704dfd6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Findeo";
+        echo "Join My Ride";
         
-        $__internal_72f86076d9dca664e92fe62046b71b3e216ac105e3077ae5c7db4042e2411f79->leave($__internal_72f86076d9dca664e92fe62046b71b3e216ac105e3077ae5c7db4042e2411f79_prof);
+        $__internal_56b861e2c6567ab604845e4e74fe0a67a8e69092bfdfb6ef53cceb78b704dfd6->leave($__internal_56b861e2c6567ab604845e4e74fe0a67a8e69092bfdfb6ef53cceb78b704dfd6_prof);
 
         
-        $__internal_96f240929302494fba9b67f5db273c6315b6c0dae6ed99aa5eb5b5867f9091c6->leave($__internal_96f240929302494fba9b67f5db273c6315b6c0dae6ed99aa5eb5b5867f9091c6_prof);
+        $__internal_769a405be897661e21f3168d3eed22550def84950bcaec5d27dcea841d526810->leave($__internal_769a405be897661e21f3168d3eed22550def84950bcaec5d27dcea841d526810_prof);
 
     }
 
     // line 12
     public function block_stylesheets($context, array $blocks = array())
     {
-        $__internal_a17e863c9b8d586b8c9b280ebab7f6cdcff4bbdab5a9890ac5ffbb882c310405 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_a17e863c9b8d586b8c9b280ebab7f6cdcff4bbdab5a9890ac5ffbb882c310405->enter($__internal_a17e863c9b8d586b8c9b280ebab7f6cdcff4bbdab5a9890ac5ffbb882c310405_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_ba23f4a630c365e3e97b2ea3a03d572302c2ac4a24b63d18ae8eacc4ae503e99 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_ba23f4a630c365e3e97b2ea3a03d572302c2ac4a24b63d18ae8eacc4ae503e99->enter($__internal_ba23f4a630c365e3e97b2ea3a03d572302c2ac4a24b63d18ae8eacc4ae503e99_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        $__internal_90a0e20e08730557c97f392880b5c59d11150a80ecc75b7bc8a193dcbe92407f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_90a0e20e08730557c97f392880b5c59d11150a80ecc75b7bc8a193dcbe92407f->enter($__internal_90a0e20e08730557c97f392880b5c59d11150a80ecc75b7bc8a193dcbe92407f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
+        $__internal_74ee2df8809b7fed2b4361de1ed77646d2976b1c9644fb591906398ef1b373b9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_74ee2df8809b7fed2b4361de1ed77646d2976b1c9644fb591906398ef1b373b9->enter($__internal_74ee2df8809b7fed2b4361de1ed77646d2976b1c9644fb591906398ef1b373b9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 13
         echo "        <link rel=\"stylesheet\" href=\"";
@@ -100,21 +100,21 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
         echo "\" id=\"colors\">
     ";
         
-        $__internal_90a0e20e08730557c97f392880b5c59d11150a80ecc75b7bc8a193dcbe92407f->leave($__internal_90a0e20e08730557c97f392880b5c59d11150a80ecc75b7bc8a193dcbe92407f_prof);
+        $__internal_74ee2df8809b7fed2b4361de1ed77646d2976b1c9644fb591906398ef1b373b9->leave($__internal_74ee2df8809b7fed2b4361de1ed77646d2976b1c9644fb591906398ef1b373b9_prof);
 
         
-        $__internal_a17e863c9b8d586b8c9b280ebab7f6cdcff4bbdab5a9890ac5ffbb882c310405->leave($__internal_a17e863c9b8d586b8c9b280ebab7f6cdcff4bbdab5a9890ac5ffbb882c310405_prof);
+        $__internal_ba23f4a630c365e3e97b2ea3a03d572302c2ac4a24b63d18ae8eacc4ae503e99->leave($__internal_ba23f4a630c365e3e97b2ea3a03d572302c2ac4a24b63d18ae8eacc4ae503e99_prof);
 
     }
 
     // line 18
     public function block_content($context, array $blocks = array())
     {
-        $__internal_8a2e1a376293ef758738f2ace94a0974de9b686337b05c0b0dbc94b6078c5664 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_8a2e1a376293ef758738f2ace94a0974de9b686337b05c0b0dbc94b6078c5664->enter($__internal_8a2e1a376293ef758738f2ace94a0974de9b686337b05c0b0dbc94b6078c5664_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_8b8e3875376a0442119277b9724b11d8b7edc4f1d0817865521f6f376520d678 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_8b8e3875376a0442119277b9724b11d8b7edc4f1d0817865521f6f376520d678->enter($__internal_8b8e3875376a0442119277b9724b11d8b7edc4f1d0817865521f6f376520d678_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_650f0ca3203d3a19cde5e4ab3421233aaa3d958f5f88e34caef74a45c076a527 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_650f0ca3203d3a19cde5e4ab3421233aaa3d958f5f88e34caef74a45c076a527->enter($__internal_650f0ca3203d3a19cde5e4ab3421233aaa3d958f5f88e34caef74a45c076a527_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_a8056c514e6413944f5f3cd67b27fd4ee2df745d95e30fb62ed5a5cbcc8540e9 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a8056c514e6413944f5f3cd67b27fd4ee2df745d95e30fb62ed5a5cbcc8540e9->enter($__internal_a8056c514e6413944f5f3cd67b27fd4ee2df745d95e30fb62ed5a5cbcc8540e9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 19
         echo "
@@ -138,7 +138,10 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
                     <!-- Breadcrumbs -->
                     <nav id=\"breadcrumbs\">
                         <ul>
-                            <li><a href=\"#\">Home</a></li>
+                            <li><a href=\"";
+        // line 202
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("homeuser");
+        echo "\">Home</a></li>
                             <li>Log In & Register</li>
                         </ul>
                     </nav>
@@ -334,21 +337,21 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
 </div>
 ";
         
-        $__internal_650f0ca3203d3a19cde5e4ab3421233aaa3d958f5f88e34caef74a45c076a527->leave($__internal_650f0ca3203d3a19cde5e4ab3421233aaa3d958f5f88e34caef74a45c076a527_prof);
+        $__internal_a8056c514e6413944f5f3cd67b27fd4ee2df745d95e30fb62ed5a5cbcc8540e9->leave($__internal_a8056c514e6413944f5f3cd67b27fd4ee2df745d95e30fb62ed5a5cbcc8540e9_prof);
 
         
-        $__internal_8a2e1a376293ef758738f2ace94a0974de9b686337b05c0b0dbc94b6078c5664->leave($__internal_8a2e1a376293ef758738f2ace94a0974de9b686337b05c0b0dbc94b6078c5664_prof);
+        $__internal_8b8e3875376a0442119277b9724b11d8b7edc4f1d0817865521f6f376520d678->leave($__internal_8b8e3875376a0442119277b9724b11d8b7edc4f1d0817865521f6f376520d678_prof);
 
     }
 
     // line 20
     public function block_topbody($context, array $blocks = array())
     {
-        $__internal_0fd2d53c7cdf90ae78d349fa85221a327b177b0294d745acad590f127707ded1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_0fd2d53c7cdf90ae78d349fa85221a327b177b0294d745acad590f127707ded1->enter($__internal_0fd2d53c7cdf90ae78d349fa85221a327b177b0294d745acad590f127707ded1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "topbody"));
+        $__internal_17be9cf1029f92e146c01b33f9053821c4e7ca1480de697a3e592807c41c8600 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_17be9cf1029f92e146c01b33f9053821c4e7ca1480de697a3e592807c41c8600->enter($__internal_17be9cf1029f92e146c01b33f9053821c4e7ca1480de697a3e592807c41c8600_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "topbody"));
 
-        $__internal_598e3cc94c2e3e385e66f9c7c84b0499c91bae23efcc78a13cf262664f70fe00 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_598e3cc94c2e3e385e66f9c7c84b0499c91bae23efcc78a13cf262664f70fe00->enter($__internal_598e3cc94c2e3e385e66f9c7c84b0499c91bae23efcc78a13cf262664f70fe00_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "topbody"));
+        $__internal_a975e35a83e543b4e764e8c4b0bbc12ca867ca7b5a38b05987285a1e5b2acf86 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a975e35a83e543b4e764e8c4b0bbc12ca867ca7b5a38b05987285a1e5b2acf86->enter($__internal_a975e35a83e543b4e764e8c4b0bbc12ca867ca7b5a38b05987285a1e5b2acf86_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "topbody"));
 
         // line 21
         echo "<div>
@@ -420,8 +423,8 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
 
                     <!-- Top bar -->
                     <ul class=\"top-bar-menu\">
-                        <li><i class=\"fa fa-phone\"></i> (123) 123-456 </li>
-                        <li><i class=\"fa fa-envelope\"></i> <a href=\"#\"><span class=\"__cf_email__\" data-cfemail=\"513e3737383234113429303c213d347f323e3c\">[email&#160;protected]</span><script data-cfhash='f9e31' type=\"text/javascript\">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></li>
+                        <li><i class=\"fa fa-phone\"></i> +216 20 795 937 </li>
+                        <li><i class=\"fa fa-envelope\"></i><a href=\"mailto:support@joinmyride.tn\">support@joinmyride.tn</a></li>
 
                     </ul>
 
@@ -497,7 +500,10 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
                     <nav id=\"navigation\" class=\"style-1\">
                         <ul id=\"responsive\">
 
-                            <li><a href=\"#\">Home</a>
+                            <li><a href=\"";
+        // line 114
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("homeuser");
+        echo "\">Home</a>
 
                             </li>
 
@@ -555,7 +561,10 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
                     <!-- Header Widget -->
                     <div class=\"header-widget\">
                         <a href=\"login-register.htm\" class=\"sign-in\"><i class=\"fa fa-user\"></i> Log In / Register</a>
-                        <a href=\"submit-property.htm\" class=\"button border\">Submit Property</a>
+                        <a href=\"";
+        // line 172
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("rideoffer");
+        echo "\" class=\"button border\">Offer a ride</a>
                     </div>
                     <!-- Header Widget / End -->
                 </div>
@@ -570,40 +579,40 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
     <!-- Header Container / End -->
     ";
         
-        $__internal_598e3cc94c2e3e385e66f9c7c84b0499c91bae23efcc78a13cf262664f70fe00->leave($__internal_598e3cc94c2e3e385e66f9c7c84b0499c91bae23efcc78a13cf262664f70fe00_prof);
+        $__internal_a975e35a83e543b4e764e8c4b0bbc12ca867ca7b5a38b05987285a1e5b2acf86->leave($__internal_a975e35a83e543b4e764e8c4b0bbc12ca867ca7b5a38b05987285a1e5b2acf86_prof);
 
         
-        $__internal_0fd2d53c7cdf90ae78d349fa85221a327b177b0294d745acad590f127707ded1->leave($__internal_0fd2d53c7cdf90ae78d349fa85221a327b177b0294d745acad590f127707ded1_prof);
+        $__internal_17be9cf1029f92e146c01b33f9053821c4e7ca1480de697a3e592807c41c8600->leave($__internal_17be9cf1029f92e146c01b33f9053821c4e7ca1480de697a3e592807c41c8600_prof);
 
     }
 
     // line 221
     public function block_fos_user_content($context, array $blocks = array())
     {
-        $__internal_077bf0552f13882592cfcecc651d76b2fc19b3c40056b19d3dd2b7dfb521ea04 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_077bf0552f13882592cfcecc651d76b2fc19b3c40056b19d3dd2b7dfb521ea04->enter($__internal_077bf0552f13882592cfcecc651d76b2fc19b3c40056b19d3dd2b7dfb521ea04_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
+        $__internal_3622ced1a04c711d260e00c188bf62b3fc272301552f2d36d610499d7d78a05a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_3622ced1a04c711d260e00c188bf62b3fc272301552f2d36d610499d7d78a05a->enter($__internal_3622ced1a04c711d260e00c188bf62b3fc272301552f2d36d610499d7d78a05a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
 
-        $__internal_4b7e6c879d2de58da82f9a246f232152d9a97a68a5287e738c7f36d73e42cb97 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_4b7e6c879d2de58da82f9a246f232152d9a97a68a5287e738c7f36d73e42cb97->enter($__internal_4b7e6c879d2de58da82f9a246f232152d9a97a68a5287e738c7f36d73e42cb97_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
+        $__internal_9566ba5d2a47730e2ad2a7d97cf598a990b3ca99b21243cc6a157b5fde3e2d50 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_9566ba5d2a47730e2ad2a7d97cf598a990b3ca99b21243cc6a157b5fde3e2d50->enter($__internal_9566ba5d2a47730e2ad2a7d97cf598a990b3ca99b21243cc6a157b5fde3e2d50_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
 
         // line 222
         echo "                    ";
         
-        $__internal_4b7e6c879d2de58da82f9a246f232152d9a97a68a5287e738c7f36d73e42cb97->leave($__internal_4b7e6c879d2de58da82f9a246f232152d9a97a68a5287e738c7f36d73e42cb97_prof);
+        $__internal_9566ba5d2a47730e2ad2a7d97cf598a990b3ca99b21243cc6a157b5fde3e2d50->leave($__internal_9566ba5d2a47730e2ad2a7d97cf598a990b3ca99b21243cc6a157b5fde3e2d50_prof);
 
         
-        $__internal_077bf0552f13882592cfcecc651d76b2fc19b3c40056b19d3dd2b7dfb521ea04->leave($__internal_077bf0552f13882592cfcecc651d76b2fc19b3c40056b19d3dd2b7dfb521ea04_prof);
+        $__internal_3622ced1a04c711d260e00c188bf62b3fc272301552f2d36d610499d7d78a05a->leave($__internal_3622ced1a04c711d260e00c188bf62b3fc272301552f2d36d610499d7d78a05a_prof);
 
     }
 
     // line 232
     public function block_footer($context, array $blocks = array())
     {
-        $__internal_29eb18a104dcc73925b62121a49fe6ec11c6651f5c737138d7893bf3442e26d0 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_29eb18a104dcc73925b62121a49fe6ec11c6651f5c737138d7893bf3442e26d0->enter($__internal_29eb18a104dcc73925b62121a49fe6ec11c6651f5c737138d7893bf3442e26d0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_8eb8f3a0a1fac2c3ac6adbfd8325a3c78cb5975fc94c7ceeb9f4632ebd9bc2dc = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_8eb8f3a0a1fac2c3ac6adbfd8325a3c78cb5975fc94c7ceeb9f4632ebd9bc2dc->enter($__internal_8eb8f3a0a1fac2c3ac6adbfd8325a3c78cb5975fc94c7ceeb9f4632ebd9bc2dc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
-        $__internal_14af8f1774902f1937ce42a7fdd6e95958d80cdd3d84c3404090548f94a6da30 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_14af8f1774902f1937ce42a7fdd6e95958d80cdd3d84c3404090548f94a6da30->enter($__internal_14af8f1774902f1937ce42a7fdd6e95958d80cdd3d84c3404090548f94a6da30_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_c16519159693e83dccb2dd132bcb5a326504250df55af9dfa6fe5b6775477d10 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c16519159693e83dccb2dd132bcb5a326504250df55af9dfa6fe5b6775477d10->enter($__internal_c16519159693e83dccb2dd132bcb5a326504250df55af9dfa6fe5b6775477d10_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
         // line 233
         echo "    <!-- Footer
@@ -642,7 +651,7 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
         // line 246
         echo "
                     <br><br>
-                    <p>Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper.</p>
+                    <p>Join My Ride is a crossplatform application developed by Tunisians to help the community embrace the sharing economy mentality.</p>
                 </div>
 
                 <div class=\"col-md-4 col-sm-6 \">
@@ -669,9 +678,9 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
                 <div class=\"col-md-3  col-sm-12\">
                     <h4>Contact Us</h4>
                     <div class=\"text-widget\">
-                        <span>12345 Little Lonsdale St, Melbourne</span> <br>
-                        Phone: <span>(123) 123-456 </span><br>
-                        E-Mail:<span> <a href=\"#\"><span class=\"__cf_email__\" data-cfemail=\"315e5757585254715449505c415d541f525e5c\">[email&#160;protected]</span><script data-cfhash='f9e31' type=\"text/javascript\">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a> </span><br>
+                        <span>Arianna, El Ghazela, Esprit</span> <br>
+                        Phone: <span> +216 20 795 937 </span><br>
+                        E-Mail: <span><a href=\"mailto:support@joinmyride.tn\">support@joinmyride.tn</a></span><br>
                     </div>
 
                     <ul class=\"social-icons margin-top-20\">
@@ -688,7 +697,7 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
             <!-- Copyright -->
             <div class=\"row\">
                 <div class=\"col-md-12\">
-                    <div class=\"copyrights\">© 2016 Findeo. All Rights Reserved.</div>
+                    <div class=\"copyrights\">© 2016 Join My Ride. All Rights Reserved.</div>
                 </div>
             </div>
 
@@ -702,10 +711,10 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
     <div id=\"backtotop\"><a href=\"#\"></a></div>
     ";
         
-        $__internal_14af8f1774902f1937ce42a7fdd6e95958d80cdd3d84c3404090548f94a6da30->leave($__internal_14af8f1774902f1937ce42a7fdd6e95958d80cdd3d84c3404090548f94a6da30_prof);
+        $__internal_c16519159693e83dccb2dd132bcb5a326504250df55af9dfa6fe5b6775477d10->leave($__internal_c16519159693e83dccb2dd132bcb5a326504250df55af9dfa6fe5b6775477d10_prof);
 
         
-        $__internal_29eb18a104dcc73925b62121a49fe6ec11c6651f5c737138d7893bf3442e26d0->leave($__internal_29eb18a104dcc73925b62121a49fe6ec11c6651f5c737138d7893bf3442e26d0_prof);
+        $__internal_8eb8f3a0a1fac2c3ac6adbfd8325a3c78cb5975fc94c7ceeb9f4632ebd9bc2dc->leave($__internal_8eb8f3a0a1fac2c3ac6adbfd8325a3c78cb5975fc94c7ceeb9f4632ebd9bc2dc_prof);
 
     }
 
@@ -716,7 +725,7 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
 
     public function getDebugInfo()
     {
-        return array (  643 => 246,  637 => 244,  634 => 243,  627 => 244,  624 => 243,  620 => 242,  609 => 233,  600 => 232,  590 => 222,  581 => 221,  487 => 101,  481 => 99,  478 => 98,  471 => 99,  468 => 98,  464 => 97,  406 => 41,  399 => 39,  390 => 36,  385 => 35,  380 => 34,  375 => 33,  373 => 32,  369 => 30,  366 => 29,  364 => 28,  361 => 27,  359 => 23,  357 => 22,  354 => 21,  345 => 20,  302 => 313,  186 => 311,  182 => 310,  177 => 307,  175 => 232,  164 => 223,  162 => 221,  125 => 186,  123 => 20,  120 => 19,  111 => 18,  99 => 14,  94 => 13,  85 => 12,  67 => 6,  55 => 345,  53 => 18,  49 => 16,  47 => 12,  38 => 6,  31 => 1,);
+        return array (  652 => 246,  646 => 244,  643 => 243,  636 => 244,  633 => 243,  629 => 242,  618 => 233,  609 => 232,  599 => 222,  590 => 221,  566 => 172,  505 => 114,  490 => 101,  484 => 99,  481 => 98,  474 => 99,  471 => 98,  467 => 97,  409 => 41,  402 => 39,  393 => 36,  388 => 35,  383 => 34,  378 => 33,  376 => 32,  372 => 30,  369 => 29,  367 => 28,  364 => 27,  362 => 23,  360 => 22,  357 => 21,  348 => 20,  305 => 313,  189 => 311,  185 => 310,  180 => 307,  178 => 232,  167 => 223,  165 => 221,  143 => 202,  125 => 186,  123 => 20,  120 => 19,  111 => 18,  99 => 14,  94 => 13,  85 => 12,  67 => 6,  55 => 345,  53 => 18,  49 => 16,  47 => 12,  38 => 6,  31 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -734,7 +743,7 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
 <head>
     <!-- Basic Page Needs
  ================================================== -->
-    <title>{% block title %}Findeo{% endblock title %}</title>
+    <title>{% block title %}Join My Ride{% endblock title %}</title>
     <meta charset=\"utf-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">
 
@@ -786,8 +795,8 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
 
                     <!-- Top bar -->
                     <ul class=\"top-bar-menu\">
-                        <li><i class=\"fa fa-phone\"></i> (123) 123-456 </li>
-                        <li><i class=\"fa fa-envelope\"></i> <a href=\"#\"><span class=\"__cf_email__\" data-cfemail=\"513e3737383234113429303c213d347f323e3c\">[email&#160;protected]</span><script data-cfhash='f9e31' type=\"text/javascript\">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></li>
+                        <li><i class=\"fa fa-phone\"></i> +216 20 795 937 </li>
+                        <li><i class=\"fa fa-envelope\"></i><a href=\"mailto:support@joinmyride.tn\">support@joinmyride.tn</a></li>
 
                     </ul>
 
@@ -842,7 +851,7 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
                     <nav id=\"navigation\" class=\"style-1\">
                         <ul id=\"responsive\">
 
-                            <li><a href=\"#\">Home</a>
+                            <li><a href=\"{{ path('homeuser') }}\">Home</a>
 
                             </li>
 
@@ -900,7 +909,7 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
                     <!-- Header Widget -->
                     <div class=\"header-widget\">
                         <a href=\"login-register.htm\" class=\"sign-in\"><i class=\"fa fa-user\"></i> Log In / Register</a>
-                        <a href=\"submit-property.htm\" class=\"button border\">Submit Property</a>
+                        <a href=\"{{ path('rideoffer') }}\" class=\"button border\">Offer a ride</a>
                     </div>
                     <!-- Header Widget / End -->
                 </div>
@@ -930,7 +939,7 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
                     <!-- Breadcrumbs -->
                     <nav id=\"breadcrumbs\">
                         <ul>
-                            <li><a href=\"#\">Home</a></li>
+                            <li><a href=\"{{ path('homeuser') }}\">Home</a></li>
                             <li>Log In & Register</li>
                         </ul>
                     </nav>
@@ -976,7 +985,7 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
                     {% endimage %}
 
                     <br><br>
-                    <p>Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper.</p>
+                    <p>Join My Ride is a crossplatform application developed by Tunisians to help the community embrace the sharing economy mentality.</p>
                 </div>
 
                 <div class=\"col-md-4 col-sm-6 \">
@@ -1003,9 +1012,9 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
                 <div class=\"col-md-3  col-sm-12\">
                     <h4>Contact Us</h4>
                     <div class=\"text-widget\">
-                        <span>12345 Little Lonsdale St, Melbourne</span> <br>
-                        Phone: <span>(123) 123-456 </span><br>
-                        E-Mail:<span> <a href=\"#\"><span class=\"__cf_email__\" data-cfemail=\"315e5757585254715449505c415d541f525e5c\">[email&#160;protected]</span><script data-cfhash='f9e31' type=\"text/javascript\">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a> </span><br>
+                        <span>Arianna, El Ghazela, Esprit</span> <br>
+                        Phone: <span> +216 20 795 937 </span><br>
+                        E-Mail: <span><a href=\"mailto:support@joinmyride.tn\">support@joinmyride.tn</a></span><br>
                     </div>
 
                     <ul class=\"social-icons margin-top-20\">
@@ -1022,7 +1031,7 @@ class __TwigTemplate_ac25640c47f0c1062d2b7d1e429bf22af191749c76785aa0564589026e0
             <!-- Copyright -->
             <div class=\"row\">
                 <div class=\"col-md-12\">
-                    <div class=\"copyrights\">© 2016 Findeo. All Rights Reserved.</div>
+                    <div class=\"copyrights\">© 2016 Join My Ride. All Rights Reserved.</div>
                 </div>
             </div>
 
