@@ -17,8 +17,7 @@
 <body>
 {% block content %}
 
-    {% block topbody %}
-<div>
+ <div>
     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         {# {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
          <a href="{{ path('fos_user_security_logout') }}">
@@ -96,7 +95,9 @@
 
                         {% image 'bundles/views/images/logo.png' %}
 
+{#
                         <img src="{{ asset_url }}" href="index-1.html" alt="Example"/>
+#}
                         {% endimage %}
                     </div>
 
