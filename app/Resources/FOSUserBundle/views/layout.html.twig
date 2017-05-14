@@ -43,6 +43,7 @@
 
     <!-- Header Container
     ================================================== -->
+    {% block topbody %}
     <header id="header-container">
 
         <!-- Topbar -->
@@ -116,20 +117,18 @@
 
                             </li>
 
-                            <li><a href="#">Listings</a>
+                            <li><a href="#">Rides</a>
                                 <ul>
-                                    <li><a href="#">List Layout</a>
+                                    <li><a href="{{ path('trajets') }}">Rides shared</a>
 
                                     </li>
-                                    <li><a href="#">Grid Layout</a>
-
-                                    </li>
-                                    <li><a href="#">Half Map</a>
+                                    <li><a href="{{ path('rideoffer') }}">Offer ride!</a>
 
                                     </li>
                                 </ul>
                             </li>
 
+{#
                             <li><a href="#">Features</a>
                                 <ul>
                                     <li><a href="#">Single Properties</a>
@@ -147,13 +146,16 @@
                                     <li><a href="submit-property.htm">Submit Property</a></li>
                                 </ul>
                             </li>
+#}
 
-                            <li><a class="current" href="#">Pages</a>
+                            <li><a class="current" href="#">Links</a>
                                 <ul>
-                                    <li><a href="blog.htm">Blog</a>
-
+                                    <li><a href="#">My Account</a>
                                     </li>
-
+                                    <li><a href="#">Events</a>
+                                    </li>
+                                    <li><a href="#">Forum</a>
+                                    </li>
                                 </ul>
                             </li>
 
@@ -165,12 +167,18 @@
                 </div>
                 <!-- Left Side Content / End -->
 
+
                 <!-- Right Side Content / End -->
                 <div class="right-side">
                     <!-- Header Widget -->
+
                     <div class="header-widget">
-                        <a href="login-register.htm" class="sign-in"><i class="fa fa-user"></i> Log In / Register</a>
-                        <a href="{{ path('rideoffer') }}" class="button border">Offer a ride</a>
+                        {% if not is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <a href="{{ path('fos_user_security_login') }}" class="sign-in"><i class="fa fa-user"></i> Log In / Register</a>
+                        {% else %}
+                            <a href="{{ path('fos_user_security_logout') }}" class="sign-in"><i class="fa fa-user"></i> Logout</a>
+                            <a href="{{ path('rideoffer') }}" class="button border">Offer a ride</a>
+                        {% endif %}
                     </div>
                     <!-- Header Widget / End -->
                 </div>
@@ -188,7 +196,7 @@
 
 
     <!-- Titlebar
-    ================================================== -->1
+    ================================================== -->
 
     <div id="titlebar">
         <div class="container">

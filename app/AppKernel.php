@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Pidev\GestionTrajetsBundle\PidevGestionTrajetsBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Vresh\TwilioBundle\VreshTwilioBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

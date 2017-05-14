@@ -66,7 +66,7 @@ doctrine:
 swiftmailer:
     transport: gmail
     username:  dainerxx.21@gmail.com
-    password:  21541010oOdi@iedzszs
+    password:  21541010oOdi@iedzszsde_password
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
@@ -90,3 +90,36 @@ vresh_twilio:
     sid: 'ACfef81828dc8c64a7517d0e7126acab3f'
     #(Required) Your Auth Token from www.twilio.com/user/account
     authToken: 'fd1b8f43a66a33b480d208dea4f1a362'
+
+nomaya_social:
+    buttons:
+        facebook:
+            url:            null
+            locale:         "fr_FR"
+            send:           false
+            width:          300
+            showFaces:      false
+            layout:         "button_count"
+        twitter:
+            url:            null
+            locale:         "fr"
+            message:        "Je veux partager ça avec vous"
+            text:           "Tweet"
+            via:            "L'Equipe cartedevisitevirtuelle.fr"
+            tag:            "ttot"
+        googleplus:
+            url:            null
+            locale :        "fr"
+            size :          "medium"
+            annotation :    "bubble"
+            width :         300
+        linkedin:
+            url:            null
+            locale:         "fr_FR"
+            counter:        "right"
+        pinterest:
+            url:            null
+    links:
+        facebook:           "http://www.facebook.com/yann.chauvel"
+        googleplus:         "https://plus.google.com/105931415830389032796"
+    theme:                  'default' # optional

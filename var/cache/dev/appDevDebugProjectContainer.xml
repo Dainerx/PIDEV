@@ -21,6 +21,7 @@
       <parameter key="PidevGestionTrajetsBundle">Pidev\GestionTrajetsBundle\PidevGestionTrajetsBundle</parameter>
       <parameter key="FOSJsRoutingBundle">FOS\JsRoutingBundle\FOSJsRoutingBundle</parameter>
       <parameter key="VreshTwilioBundle">Vresh\TwilioBundle\VreshTwilioBundle</parameter>
+      <parameter key="NomayaSocialBundle">Nomaya\SocialBundle\NomayaSocialBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -91,6 +92,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/var/www/html/PIDEVS/vendor/vresh/twilio-bundle</parameter>
         <parameter key="namespace">Vresh\TwilioBundle</parameter>
+      </parameter>
+      <parameter key="NomayaSocialBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/var/www/html/PIDEVS/vendor/nomaya/social-bundle/Nomaya/SocialBundle</parameter>
+        <parameter key="namespace">Nomaya\SocialBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -222,21 +228,20 @@
     <parameter key="swiftmailer.email_sender.listener.class">Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener</parameter>
     <parameter key="swiftmailer.data_collector.class">Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector</parameter>
     <parameter key="swiftmailer.mailer.default.transport.name">smtp</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">null</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.port">25</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.host">127.0.0.1</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.username">null</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.password">null</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">ssl</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.port">465</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.gmail.com</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.username">dainerxx.21@gmail.com</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.password">21541010oOdi@iedzszsde_password</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">login</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">/var/www/html/PIDEVS/var/cache/dev/swiftmailer/spool/default</parameter>
-    <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
+    <parameter key="swiftmailer.mailer.default.spool.enabled">false</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
     <parameter key="swiftmailer.mailer.default.delivery.enabled">true</parameter>
-    <parameter key="swiftmailer.spool.enabled">true</parameter>
+    <parameter key="swiftmailer.spool.enabled">false</parameter>
     <parameter key="swiftmailer.delivery.enabled">true</parameter>
     <parameter key="swiftmailer.single_address">null</parameter>
     <parameter key="swiftmailer.mailers" type="collection">
@@ -433,6 +438,7 @@
       <parameter>PidevGestionTrajetsBundle</parameter>
       <parameter>FOSJsRoutingBundle</parameter>
       <parameter>VreshTwilioBundle</parameter>
+      <parameter>NomayaSocialBundle</parameter>
       <parameter>DebugBundle</parameter>
       <parameter>WebProfilerBundle</parameter>
       <parameter>SensioDistributionBundle</parameter>
@@ -469,6 +475,62 @@
     <parameter key="twilio.class">Vresh\TwilioBundle\Service\TwilioWrapper</parameter>
     <parameter key="twilio.capability.class">Vresh\TwilioBundle\Service\TwilioCapabilityWrapper</parameter>
     <parameter key="twilio.lookups.class">Vresh\TwilioBundle\Service\TwilioLookupsWrapper</parameter>
+    <parameter key="buttons.facebook" type="collection">
+      <parameter key="url">null</parameter>
+      <parameter key="locale">fr_FR</parameter>
+      <parameter key="send">false</parameter>
+      <parameter key="width">300</parameter>
+      <parameter key="showFaces">false</parameter>
+      <parameter key="layout">button_count</parameter>
+      <parameter key="share">true</parameter>
+    </parameter>
+    <parameter key="buttons.twitter" type="collection">
+      <parameter key="url">null</parameter>
+      <parameter key="locale">fr</parameter>
+      <parameter key="message">Je veux partager ça avec vous</parameter>
+      <parameter key="text">Tweet</parameter>
+      <parameter key="via">L'Equipe cartedevisitevirtuelle.fr</parameter>
+      <parameter key="tag">ttot</parameter>
+      <parameter key="showFaces">false</parameter>
+      <parameter key="send">true</parameter>
+      <parameter key="share">true</parameter>
+    </parameter>
+    <parameter key="buttons.googleplus" type="collection">
+      <parameter key="url">null</parameter>
+      <parameter key="locale">fr</parameter>
+      <parameter key="size">medium</parameter>
+      <parameter key="annotation">bubble</parameter>
+      <parameter key="width">300</parameter>
+      <parameter key="showFaces">false</parameter>
+      <parameter key="send">true</parameter>
+      <parameter key="share">true</parameter>
+    </parameter>
+    <parameter key="buttons.linkedin" type="collection">
+      <parameter key="url">null</parameter>
+      <parameter key="locale">fr_FR</parameter>
+      <parameter key="counter">right</parameter>
+      <parameter key="showFaces">false</parameter>
+      <parameter key="send">true</parameter>
+      <parameter key="share">true</parameter>
+    </parameter>
+    <parameter key="buttons.pinterest" type="collection">
+      <parameter key="url">null</parameter>
+      <parameter key="locale">en</parameter>
+      <parameter key="showFaces">false</parameter>
+      <parameter key="send">true</parameter>
+      <parameter key="share">true</parameter>
+    </parameter>
+    <parameter key="links.facebook" type="collection">
+      <parameter key="network">facebook</parameter>
+      <parameter key="url">http://www.facebook.com/yann.chauvel</parameter>
+      <parameter key="theme">default</parameter>
+    </parameter>
+    <parameter key="links.googleplus" type="collection">
+      <parameter key="network">googleplus</parameter>
+      <parameter key="url">https://plus.google.com/105931415830389032796</parameter>
+      <parameter key="theme">default</parameter>
+    </parameter>
+    <parameter key="social.theme">default</parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -612,7 +674,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>F2PtJIkcN5</argument>
                 <argument>0</argument>
-                <argument>DF9-w5Hp8tfDcODngA+zaw</argument>
+                <argument>Rl8hwvy57i-9bxcxlZn0v9</argument>
                 <argument>/var/www/html/PIDEVS/var/cache/dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -795,7 +857,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>RFC28vDT7Q</argument>
       <argument>0</argument>
-      <argument>DF9-w5Hp8tfDcODngA+zaw</argument>
+      <argument>Rl8hwvy57i-9bxcxlZn0v9</argument>
       <argument>/var/www/html/PIDEVS/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -805,7 +867,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>b9OH5r9ZVG</argument>
       <argument>0</argument>
-      <argument>DF9-w5Hp8tfDcODngA+zaw</argument>
+      <argument>Rl8hwvy57i-9bxcxlZn0v9</argument>
       <argument>/var/www/html/PIDEVS/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1856,7 +1918,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>58e41dd17a1720.61445866</argument>
+            <argument>5918499a2cffd3.89400587</argument>
           </service>
         </argument>
       </argument>
@@ -2140,7 +2202,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>58e41dd17a1720.61445866</argument>
+            <argument>5918499a2cffd3.89400587</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2422,6 +2484,7 @@
               <argument>PidevGestionTrajetsBundle</argument>
               <argument>FOSJsRoutingBundle</argument>
               <argument>VreshTwilioBundle</argument>
+              <argument>NomayaSocialBundle</argument>
               <argument>DebugBundle</argument>
               <argument>WebProfilerBundle</argument>
               <argument>SensioDistributionBundle</argument>
@@ -2434,6 +2497,12 @@
             </argument>
           </service>
         </argument>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="twig.extension.nomaya_social_bar"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="twig.extension.nomaya_social_links"/>
       </call>
       <call method="addExtension">
         <argument type="service">
@@ -2578,7 +2647,6 @@
       <argument type="service" id="service_container"/>
       <argument type="service" id="logger" on-invalid="null"/>
     </service>
-    <service id="swiftmailer.mailer.default.transport.eventdispatcher" class="Swift_Events_SimpleEventDispatcher" public="false"/>
     <service id="swiftmailer.mailer.default" class="Swift_Mailer">
       <argument type="service" id="swiftmailer.mailer.default.transport"/>
     </service>
@@ -3330,6 +3398,33 @@
               <argument type="service">
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
+                  <argument>NomayaSocialBundle</argument>
+                  <argument>/var/www/html/PIDEVS/app/Resources/NomayaSocialBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>NomayaSocialBundle</argument>
+                  <argument>/var/www/html/PIDEVS/vendor/nomaya/social-bundle/Nomaya/SocialBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
                   <argument>DebugBundle</argument>
                   <argument>/var/www/html/PIDEVS/app/Resources/DebugBundle/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
@@ -3495,6 +3590,7 @@
         <argument key="PidevGestionTrajetsBundle">Pidev\GestionTrajetsBundle\PidevGestionTrajetsBundle</argument>
         <argument key="FOSJsRoutingBundle">FOS\JsRoutingBundle\FOSJsRoutingBundle</argument>
         <argument key="VreshTwilioBundle">Vresh\TwilioBundle\VreshTwilioBundle</argument>
+        <argument key="NomayaSocialBundle">Nomaya\SocialBundle\NomayaSocialBundle</argument>
         <argument key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</argument>
         <argument key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</argument>
         <argument key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</argument>
@@ -3521,7 +3617,7 @@
         </argument>
       </argument>
     </service>
-    <service id="twilio.api" class="Vresh\TwilioBundle\Service\TwilioWrapper">
+    <service id="oussama.api" class="Vresh\TwilioBundle\Service\TwilioWrapper">
       <argument>ACfef81828dc8c64a7517d0e7126acab3f</argument>
       <argument>fd1b8f43a66a33b480d208dea4f1a362</argument>
       <argument>2010-04-01</argument>
@@ -3534,6 +3630,31 @@
     <service id="twilio.lookups" class="Vresh\TwilioBundle\Service\TwilioLookupsWrapper">
       <argument>ACfef81828dc8c64a7517d0e7126acab3f</argument>
       <argument>fd1b8f43a66a33b480d208dea4f1a362</argument>
+    </service>
+    <service id="nomaya.socialbarhelper" class="Nomaya\SocialBundle\Helpers\SocialBarHelper">
+      <tag name="templating.helper" alias="social-buttons"/>
+      <argument type="service" id="templating"/>
+    </service>
+    <service id="twig.extension.nomaya_social_bar" class="Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialBar">
+      <tag name="twig.extension"/>
+      <argument type="service" id="service_container"/>
+      <call method="setNetworks">
+        <argument type="collection">
+          <argument>facebook</argument>
+          <argument>twitter</argument>
+          <argument>googleplus</argument>
+          <argument>linkedin</argument>
+          <argument>pinterest</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="nomaya.sociallinkshelper" class="Nomaya\SocialBundle\Helpers\SocialLinksHelper">
+      <tag name="templating.helper" alias="social-links"/>
+      <argument type="service" id="templating"/>
+    </service>
+    <service id="twig.extension.nomaya_social_links" class="Nomaya\SocialBundle\Twig\Extension\NomayaTwigSocialLinks">
+      <tag name="twig.extension"/>
+      <argument type="service" id="service_container"/>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
@@ -3876,15 +3997,7 @@
       </call>
       <autowiring-type>Psr\Log\LoggerInterface</autowiring-type>
     </service>
-    <service id="swiftmailer.mailer.default.transport" class="Swift_Transport_SpoolTransport">
-      <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
-      <argument type="service" id="swiftmailer.mailer.default.spool"/>
-      <call method="registerPlugin">
-        <argument type="service" id="swiftmailer.mailer.default.plugin.messagelogger"/>
-      </call>
-    </service>
-    <service id="swiftmailer.mailer.default.spool" class="Swift_MemorySpool"/>
-    <service id="swiftmailer.mailer.default.transport.real" class="Swift_Transport_EsmtpTransport">
+    <service id="swiftmailer.mailer.default.transport" class="Swift_Transport_EsmtpTransport">
       <argument type="service">
         <service class="Swift_Transport_StreamBuffer" public="false">
           <argument type="service">
@@ -3907,32 +4020,37 @@
               </argument>
             </argument>
             <call method="setUsername">
-              <argument>null</argument>
+              <argument>dainerxx.21@gmail.com</argument>
             </call>
             <call method="setPassword">
-              <argument>null</argument>
+              <argument>21541010oOdi@iedzszsde_password</argument>
             </call>
             <call method="setAuthMode">
-              <argument>null</argument>
+              <argument>login</argument>
             </call>
           </service>
         </argument>
       </argument>
-      <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
+      <argument type="service">
+        <service class="Swift_Events_SimpleEventDispatcher" public="false"/>
+      </argument>
       <call method="setHost">
-        <argument>127.0.0.1</argument>
+        <argument>smtp.gmail.com</argument>
       </call>
       <call method="setPort">
-        <argument>25</argument>
+        <argument>465</argument>
       </call>
       <call method="setEncryption">
-        <argument>null</argument>
+        <argument>ssl</argument>
       </call>
       <call method="setTimeout">
         <argument>30</argument>
       </call>
       <call method="setSourceIp">
         <argument>null</argument>
+      </call>
+      <call method="registerPlugin">
+        <argument type="service" id="swiftmailer.mailer.default.plugin.messagelogger"/>
       </call>
       <configurator method="configure">
         <service class="Symfony\Bundle\SwiftmailerBundle\DependencyInjection\SmtpTransportConfigurator" public="false">
@@ -4009,6 +4127,10 @@
         <argument>PidevGestionTrajets</argument>
       </call>
       <call method="addPath">
+        <argument>/var/www/html/PIDEVS/vendor/nomaya/social-bundle/Nomaya/SocialBundle/Resources/views</argument>
+        <argument>NomayaSocial</argument>
+      </call>
+      <call method="addPath">
         <argument>/var/www/html/PIDEVS/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -4026,8 +4148,6 @@
     <service id="cache.app_clearer" alias="cache.default_clearer"/>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>
-    <service id="swiftmailer.spool" alias="swiftmailer.mailer.default.spool"/>
-    <service id="swiftmailer.transport.real" alias="swiftmailer.mailer.default.transport.real"/>
     <service id="swiftmailer.plugin.messagelogger" alias="swiftmailer.mailer.default.plugin.messagelogger"/>
     <service id="swiftmailer.mailer" alias="swiftmailer.mailer.default"/>
     <service id="swiftmailer.transport" alias="swiftmailer.mailer.default.transport"/>

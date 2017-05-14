@@ -85,48 +85,95 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     }
 
                     // _assetic_ec9911f_8
-                    if ($pathinfo === '/js/ec9911f_part_1_markerclusterer_9.js') {
+                    if ($pathinfo === '/js/ec9911f_part_1_maps_9.js') {
                         return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 8,  '_format' => 'js',  '_route' => '_assetic_ec9911f_8',);
                     }
 
                     // _assetic_ec9911f_9
-                    if ($pathinfo === '/js/ec9911f_part_1_masonry.min_10.js') {
+                    if ($pathinfo === '/js/ec9911f_part_1_markerclusterer_10.js') {
                         return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 9,  '_format' => 'js',  '_route' => '_assetic_ec9911f_9',);
                     }
 
-                }
+                    // _assetic_ec9911f_10
+                    if ($pathinfo === '/js/ec9911f_part_1_masonry.min_11.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 10,  '_format' => 'js',  '_route' => '_assetic_ec9911f_10',);
+                    }
 
-                // _assetic_ec9911f_10
-                if ($pathinfo === '/js/ec9911f_part_1_owl.carousel.min_11.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 10,  '_format' => 'js',  '_route' => '_assetic_ec9911f_10',);
                 }
 
                 // _assetic_ec9911f_11
-                if ($pathinfo === '/js/ec9911f_part_1_rangeSlider_12.js') {
+                if ($pathinfo === '/js/ec9911f_part_1_owl.carousel.min_12.js') {
                     return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 11,  '_format' => 'js',  '_route' => '_assetic_ec9911f_11',);
                 }
 
-                if (0 === strpos($pathinfo, '/js/ec9911f_part_1_s')) {
-                    // _assetic_ec9911f_12
-                    if ($pathinfo === '/js/ec9911f_part_1_slick.min_13.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 12,  '_format' => 'js',  '_route' => '_assetic_ec9911f_12',);
+                if (0 === strpos($pathinfo, '/js/ec9911f_part_1_p')) {
+                    if (0 === strpos($pathinfo, '/js/ec9911f_part_1_plugins')) {
+                        // _assetic_ec9911f_12
+                        if ($pathinfo === '/js/ec9911f_part_1_plugins_13.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 12,  '_format' => 'js',  '_route' => '_assetic_ec9911f_12',);
+                        }
+
+                        // _assetic_ec9911f_13
+                        if ($pathinfo === '/js/ec9911f_part_1_plugins.min_14.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 13,  '_format' => 'js',  '_route' => '_assetic_ec9911f_13',);
+                        }
+
                     }
 
-                    // _assetic_ec9911f_13
-                    if ($pathinfo === '/js/ec9911f_part_1_sticky-kit.min_14.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 13,  '_format' => 'js',  '_route' => '_assetic_ec9911f_13',);
-                    }
+                    if (0 === strpos($pathinfo, '/js/ec9911f_part_1_pratham')) {
+                        // _assetic_ec9911f_14
+                        if ($pathinfo === '/js/ec9911f_part_1_pratham_15.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 14,  '_format' => 'js',  '_route' => '_assetic_ec9911f_14',);
+                        }
 
-                    // _assetic_ec9911f_14
-                    if ($pathinfo === '/js/ec9911f_part_1_switcher_15.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 14,  '_format' => 'js',  '_route' => '_assetic_ec9911f_14',);
+                        // _assetic_ec9911f_15
+                        if ($pathinfo === '/js/ec9911f_part_1_pratham.min_16.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 15,  '_format' => 'js',  '_route' => '_assetic_ec9911f_15',);
+                        }
+
                     }
 
                 }
 
-                // _assetic_ec9911f_15
-                if ($pathinfo === '/js/ec9911f_part_1_tooltips.min_16.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 15,  '_format' => 'js',  '_route' => '_assetic_ec9911f_15',);
+                // _assetic_ec9911f_16
+                if ($pathinfo === '/js/ec9911f_part_1_rangeSlider_17.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 16,  '_format' => 'js',  '_route' => '_assetic_ec9911f_16',);
+                }
+
+                if (0 === strpos($pathinfo, '/js/ec9911f_part_1_s')) {
+                    // _assetic_ec9911f_17
+                    if ($pathinfo === '/js/ec9911f_part_1_slick.min_18.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 17,  '_format' => 'js',  '_route' => '_assetic_ec9911f_17',);
+                    }
+
+                    // _assetic_ec9911f_18
+                    if ($pathinfo === '/js/ec9911f_part_1_sticky-kit.min_19.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 18,  '_format' => 'js',  '_route' => '_assetic_ec9911f_18',);
+                    }
+
+                    // _assetic_ec9911f_19
+                    if ($pathinfo === '/js/ec9911f_part_1_switcher_20.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 19,  '_format' => 'js',  '_route' => '_assetic_ec9911f_19',);
+                    }
+
+                }
+
+                // _assetic_ec9911f_20
+                if ($pathinfo === '/js/ec9911f_part_1_tooltips.min_21.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 20,  '_format' => 'js',  '_route' => '_assetic_ec9911f_20',);
+                }
+
+                if (0 === strpos($pathinfo, '/js/ec9911f_part_1_vendor')) {
+                    // _assetic_ec9911f_21
+                    if ($pathinfo === '/js/ec9911f_part_1_vendor_22.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 21,  '_format' => 'js',  '_route' => '_assetic_ec9911f_21',);
+                    }
+
+                    // _assetic_ec9911f_22
+                    if ($pathinfo === '/js/ec9911f_part_1_vendor.min_23.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'ec9911f',  'pos' => 22,  '_format' => 'js',  '_route' => '_assetic_ec9911f_22',);
+                    }
+
                 }
 
             }
@@ -244,6 +291,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\GestionTrajetController::ListTrajetsAction',  '_route' => 'trajets',);
                 }
 
+                // trajetsMobile
+                if ($pathinfo === '/gestion/trajetsMobile') {
+                    return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\GestionTrajetController::ListTrajetsMobileAction',  '_route' => 'trajetsMobile',);
+                }
+
                 // trajetsSearch
                 if ($pathinfo === '/gestion/trajetsRecherche') {
                     return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\GestionTrajetController::RechercheListTrajetsAction',  '_route' => 'trajetsSearch',);
@@ -269,6 +321,31 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             // SmsSend
             if ($pathinfo === '/gestion/sms') {
                 return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\GestionReservationController::SmsAction',  '_route' => 'SmsSend',);
+            }
+
+            // carlin
+            if ($pathinfo === '/gestion/test') {
+                return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\UserController::testAction',  '_route' => 'carlin',);
+            }
+
+            // backofficeList
+            if ($pathinfo === '/gestion/backoffice') {
+                return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\GestionTrajetController::backofficeTrajetsAction',  '_route' => 'backofficeList',);
+            }
+
+            // deleteTrajet
+            if ($pathinfo === '/gestion/deleteTrajet') {
+                return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\GestionTrajetController::deleteAction',  '_route' => 'deleteTrajet',);
+            }
+
+            // fillCar
+            if ($pathinfo === '/gestion/fillcar') {
+                return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\GestionTrajetController::getVehiculeAction',  '_route' => 'fillCar',);
+            }
+
+            // cookieRedirect
+            if ($pathinfo === '/gestion/cookieredirect') {
+                return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\GestionTrajetController::cookieRedirectAction',  '_route' => 'cookieRedirect',);
             }
 
         }
@@ -363,7 +440,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         return $this->redirect($pathinfo.'/', 'fos_user_registration_register');
                     }
 
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
+                    return array (  '_controller' => 'Pidev\\GestionTrajetsBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
                 }
                 not_fos_user_registration_register:
 
