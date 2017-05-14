@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="PIDEV.jnlp">
+  <information>
+    <title>PIDEV</title>
+    <vendor>dainer</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="PIDEV.jar" size="296390" download="eager" />
+    <jar href="lib/controlsfx-8.40.12.jar" size="996389" download="eager" />
+    <jar href="lib/dsn.jar" size="18478" download="eager" />
+    <jar href="lib/fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib/gtranslateapi-1.0.jar" size="11086" download="eager" />
+    <jar href="lib/imap.jar" size="178013" download="eager" />
+    <jar href="lib/itextpdf-5.5.10.jar" size="2290510" download="eager" />
+    <jar href="lib/jl1.0.jar" size="105446" download="eager" />
+    <jar href="lib/mail.jar" size="507849" download="eager" />
+    <jar href="lib/mailapi.jar" size="270835" download="eager" />
+    <jar href="lib/mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib/pop3.jar" size="43991" download="eager" />
+    <jar href="lib/smtp.jar" size="52787" download="eager" />
+    <jar href="lib/swsms-2.6.3.jar" size="171974" download="eager" />
+    <jar href="lib/twilio-7.5.0-jar-with-dependencies.jar" size="7027599" download="eager" />
+    <jar href="lib/twilio-7.5.0.jar" size="1253598" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="PIDEV" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="View.Trajets"  name="PIDEV" />
+  <update check="always"/>
+</jnlp>

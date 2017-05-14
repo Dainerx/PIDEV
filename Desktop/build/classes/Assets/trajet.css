@@ -1,0 +1,46 @@
+.btnBlue {
+  -fx-display:block;
+  -fx-height: 300px;
+  -fx-width: 300px;
+  -fx-border-radius: 50%;
+  -fx-border: 1px;
+}
+
+.body {
+    -fx-background-image: url('appground.jpg');      
+}
+
+.car 
+{
+  -fx-background-image: url('places.jpg');      
+}
+
+.btn {
+    -fx-background-color: #42C0FB; 
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-width: 2px;
+    -fx-border-color: black;
+}
+.btnBack {
+    -fx-background-color: #42C0FB; 
+    -fx-text-fill: white;   
+    -fx-font-weight: bold;    
+    -fx-graphic: url('home.png');
+    -fx-border-width: 2px;
+    -fx-border-color: black;
+
+}
+
+.btnBook {
+    -fx-background-color: #42C0FB; 
+    -fx-text-fill: white;  
+    -fx-font-weight: bold;
+    -fx-graphic: url('tick.png');
+    -fx-border-width: 2px;
+    -fx-border-color: black;    
+}
+.textField {
+    -fx-border-width: 1px;
+    -fx-border-color: black;
+}

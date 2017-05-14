@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.textfield.*?>
+<?import org.controlsfx.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="769.0" prefWidth="1382.0" styleClass="body" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.TrajetController">
+   <children>
+      <AnchorPane layoutX="4.0" layoutY="165.0" prefHeight="599.0" prefWidth="1373.0">
+         <children>
+            <WebView fx:id="maps" prefHeight="599.0" prefWidth="1373.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <SplitPane dividerPositions="0.4210144927536232, 0.8188405797101449" layoutX="-1.0" layoutY="2.0" prefHeight="164.0" prefWidth="1382.0" styleClass="trajet">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="208.0" styleClass="body">
+               <children>
+                  <Label layoutX="12.0" layoutY="10.0" prefHeight="26.0" prefWidth="144.0" text="Voiture" textFill="WHITE">
+                     <font>
+                        <Font name="DejaVu Serif Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="49.0" text="Marque:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="9.0" layoutY="83.0" text="Modele:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="8.0" layoutY="116.0" text="Gamme:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="gammeV" layoutX="9.0" layoutY="134.0" prefHeight="16.0" prefWidth="188.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="marqueV" layoutX="10.0" layoutY="66.0" prefHeight="16.0" prefWidth="194.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Separator layoutX="201.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="162.0" prefWidth="26.0" />
+                  <Separator layoutX="4.0" layoutY="31.0" prefHeight="10.0" prefWidth="572.0" />
+                  <Label fx:id="matriculeV" layoutX="228.0" layoutY="10.0" prefHeight="26.0" prefWidth="326.0">
+                     <font>
+                        <Font name="DejaVu Sans Bold" size="22.0" />
+                     </font></Label>
+                  <Label layoutX="224.0" layoutY="46.0" prefHeight="15.0" prefWidth="81.0" text="Chaffeur:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="modeleV" layoutX="9.0" layoutY="99.0" onMouseClicked="#rechercherModele" prefHeight="16.0" prefWidth="194.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="chaffeurV" layoutX="227.0" layoutY="61.0" prefHeight="26.0" prefWidth="333.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Label layoutX="225.0" layoutY="88.0" prefHeight="15.0" prefWidth="137.0" text="Informations:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="tel" layoutX="224.0" layoutY="106.0" prefHeight="16.0" prefWidth="302.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="email" layoutX="225.0" layoutY="128.0" prefHeight="15.0" prefWidth="326.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="162.0" prefWidth="597.0" styleClass="body">
+               <children>
+                  <TextArea fx:id="description" layoutX="7.0" layoutY="8.0" prefHeight="74.0" prefWidth="523.0" styleClass="textField" />
+                  <Label layoutX="15.0" layoutY="87.0" text="Suivie de sécurité">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="places" layoutX="322.0" layoutY="92.0" prefHeight="16.0" prefWidth="144.0" text="Nombre de Places:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <Label fx:id="cout" layoutX="323.0" layoutY="119.0" prefHeight="15.0" prefWidth="144.0" text="Cout:">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font></Label>
+                  <ToggleSwitch fx:id="suivie" layoutX="154.0" layoutY="86.0" prefHeight="20.0" prefWidth="44.0" />
+                  <Label fx:id="places" layoutX="467.0" layoutY="92.0" prefHeight="16.0" prefWidth="59.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="162.0" prefWidth="119.0" styleClass="body">
+               <children>
+                  <Button layoutX="12.0" layoutY="14.0" mnemonicParsing="false" onAction="#reserverTrajet" prefHeight="49.0" prefWidth="225.0" styleClass="btnBook" text="Réserver!" />
+                  <Button layoutX="10.0" layoutY="69.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="225.0" styleClass="btn" text="Contacter ce Membre" />
+                  <Button layoutX="10.0" layoutY="107.0" mnemonicParsing="false" onAction="#retourAcceuil" prefHeight="49.0" prefWidth="225.0" styleClass="btnBack" text="Retour au acceuil" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <AnchorPane layoutX="3.0" layoutY="742.0" prefHeight="25.0" prefWidth="929.0" />
+   </children>
+</AnchorPane>
