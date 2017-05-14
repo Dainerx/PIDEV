@@ -1,23 +1,14 @@
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/service_container.html
 parameters:
-  app.file.twig.extension.class: Pidev\UserBundle\Twig\Extension\FileExtension
+#    parameter_name: value
 
 services:
     authentication.handler.login_success_handler:
-        class:  Pidev\UserBundle\Security\LoginSuccessHandler
+        class:  Pidev\GestionTrajetsBundle\Security\LoginSuccessHandler
         arguments:  ['@router', '@security.authorization_checker']
 
     app.form.registration:
-            class: Pidev\UserBundle\Form\RegistrationType
-            tags:
-                - { name: form.type, alias: app_user_registration }
-
-    app.file.twig.extension:
-            class: %app.file.twig.extension.class%
-            tags:
-                - { name: twig.extension }
-
-
-
-
+        class: Pidev\GestionTrajetsBundle\Form\RegistrationType
+        tags:
+            - { name: form.type, alias: app_user_registration }
