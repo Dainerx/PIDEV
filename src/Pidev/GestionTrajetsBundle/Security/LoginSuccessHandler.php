@@ -28,7 +28,7 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface {
         $response = null;
 
         if ($this->authorizationChecker->isGranted('ROLE_ADMIN')) {
-            $response = new RedirectResponse($this->router->generate('homeadmin'));
+            $response = new RedirectResponse($this->router->generate('backofficeList'));
         }
         else
         {

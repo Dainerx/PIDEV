@@ -2508,7 +2508,7 @@ function drawChart() {
 			['2007',  1030,      540]
 		]);
 		var options = {
-			title: 'Company Performance',
+			title: 'Rides per year shared on ShareMyRide.tn',
 			subtitle: 'Sales and Expenses: 2004-2007',
 			curveType: 'function',
 			height: 400,

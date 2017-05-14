@@ -1,5 +1,5 @@
 {% extends ("@FOSUser/layout.html.twig") %}
-{% block title %}Index{% endblock %}
+{% block title %}Share my Ride{% endblock %}
     {% block stylesheets %}
         {{ parent() }}
     {% endblock %}
@@ -18,7 +18,6 @@
 
                 <!-- Title -->
                 <h3 class="search-title">Search</h3>
-
                 <!-- Box -->
                 <form method="POST" action={{ path('trajetsSearch') }}>
                 <div class="main-search-box">
@@ -31,9 +30,9 @@
                             <div class="select-input">
                                 <input type="text" name="depart" placeholder="Departure" data-unit="" required>
                                 <select >
-                                    <option>Tunis
-                                    <option>Arianna
-                                    <option>Ben Arous
+                                    {% for c in cities %}
+                                        <option value="{{ c.city }}">{{ c.city }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -43,9 +42,9 @@
                             <div class="select-input">
                                 <input type="text" name="destination" placeholder="Destination" data-unit="" value="" required>
                                 <select>
-                                <option>Tunis
-                                <option>Arianna
-                                <option>Ben Arous
+                                    {% for c in cities %}
+                                        <option value="{{ c.city }}">{{ c.city }}</option>
+                                    {% endfor %}
                                 </select>
                             </div>
                         </div>
@@ -53,7 +52,7 @@
                         <!-- Main Search Input -->
                         <div class="col-md-6">
                             <div class="main-search-input">
-                                <input type="text" placeholder="Enter address e.g. street, city or state" value="">
+                                <input type="text" placeholder="Enter address e.g. street, city or state" value="" disabled>
                                 <button class="button" type="submit">Search</button>
                             </div>
                         </div>
@@ -107,30 +106,20 @@
 
                             <!-- Select Input -->
                             <div class="select-input disabled-first-option">
-                                <input type="text" placeholder="Min Price Per Person" data-unit="Dt">
+                                <input type="text" placeholder="Min Price Per Person" name="low" data-unit="Dt">
                                 <select>
                                     <option>Min Price
-                                    <option>1 000
-                                    <option>2 000
-                                    <option>3 000
-                                    <option>4 000
-                                    <option>5 000
-                                    <option>10 000
-                                    <option>15 000
-                                    <option>20 000
-                                    <option>30 000
-                                    <option>40 000
-                                    <option>50 000
-                                    <option>60 000
-                                    <option>70 000
-                                    <option>80 000
-                                    <option>90 000
-                                    <option>100 000
-                                    <option>110 000
-                                    <option>120 000
-                                    <option>130 000
-                                    <option>140 000
-                                    <option>150 000
+                                    <option>5
+                                    <option>10
+                                    <option>20
+                                    <option>30
+                                    <option>40
+                                    <option>50
+                                    <option>60
+                                    <option>70
+                                    <option>80
+                                    <option>90
+                                    <option>100
                                 </select>
                             </div>
                             <!-- Select Input / End -->
@@ -143,30 +132,20 @@
 
                             <!-- Select Input -->
                             <div class="select-input disabled-first-option">
-                                <input type="text" placeholder="Max Price Per Person" data-unit="Dt">
+                                <input type="text" placeholder="Max Price Per Person" name="high" data-unit="Dt">
                                 <select>
                                     <option>Max Price
-                                    <option>1 000
-                                    <option>2 000
-                                    <option>3 000
-                                    <option>4 000
-                                    <option>5 000
-                                    <option>10 000
-                                    <option>15 000
-                                    <option>20 000
-                                    <option>30 000
-                                    <option>40 000
-                                    <option>50 000
-                                    <option>60 000
-                                    <option>70 000
-                                    <option>80 000
-                                    <option>90 000
-                                    <option>100 000
-                                    <option>110 000
-                                    <option>120 000
-                                    <option>130 000
-                                    <option>140 000
-                                    <option>150 000
+                                    <option>10
+                                    <option>20
+                                    <option>30
+                                    <option>40
+                                    <option>50
+                                    <option>60
+                                    <option>70
+                                    <option>80
+                                    <option>90
+                                    <option>100
+                                    <option>200
                                 </select>
                             </div>
                             <!-- Select Input / End -->
@@ -227,10 +206,10 @@
             <div class="listings-container list-layout">
 
                 <!-- Listing Item -->
+                {% set counter=0 %}
                 {% for trajet in trajets %}
                 <div class="listing-item" id="{{ trajet[0].id }}">
-
-                    <a href="#" onclick="showMap({{ trajet[0].depart }},{{ trajet[0].destination }})" class="listing-img-container">
+                    <a href="https://www.google.com/maps/dir/{{ trajet[0].depart }}/{{ trajet[0].destination }}" target="_blank" class="listing-img-container">
 
                         <div class="listing-badges">
                             <span class="featured">Featured</span>
@@ -251,19 +230,19 @@
                     <div class="listing-content">
 
                         <div class="listing-title">
-                            <h4><a href="https://www.google.com/maps/dir/{{ trajet[0].depart }}/{{ trajet[0].destination }}" class="listing-address popup-gmaps">
-                                    <i class="fa fa-map-pin"></i>
-                                    {{ trajet[0].depart }}
-                                </a>
+                            <h4><i class="fa fa-map-pin"></i><a href="https://www.google.com/maps/dir/{{ trajet[0].depart }}/{{ trajet[0].destination }}" id="start{{ counter }}" target="_blank" {#class="listing-address popup-gmaps"#}> {{ trajet[0].depart }}</a>
                                 <br>
-                                <a href="https://www.google.com/maps/dir/{{ trajet[0].depart }}/{{ trajet[0].destination }}" class="listing-address popup-gmaps">
-                                    <i class="fa fa-map-marker"></i>
-                            {{ trajet[0].destination }}
-                            </a>
+                                <i class="fa fa-map-marker"></i><a href="https://www.google.com/maps/dir/{{ trajet[0].depart }}/{{ trajet[0].destination }}" id="end{{ counter }}" target="_blank" {#class="listing-address popup-gmaps"#}> {{ trajet[0].destination }}</a>
                             </h4>
                             <p>{{ trajet[0].description }}</p>
                             <h5><i class="fa fa-calendar"> {{ trajet[0].datedepart|date('d-m-Y') }}</i></h5>
-                            <a href="#" onclick="book({{ trajet[0].id }},{{ trajet[0].idMembre.id }},{{ trajet[0].nbrplacedispo }})" class="details button border">Book</a>
+                            <div id="booking{{ counter }}">
+                            {%  if currentuser == trajet[0].idMembre.username %}
+                            <a href="#" id="booked" class="details button border">Booked <i class="fa fa-check"></i></a>
+                            {% else %}
+                            <a href="#" id="book{{ counter }}" onclick="book({{ trajet[0].id }},{{ trajet[0].idMembre.id }},{{ trajet[0].nbrplacedispo }},{{ counter }}); return false" class="details button border">Book</a>
+                            {% endif %}
+                            </div>
                         </div>
 
 
@@ -282,11 +261,50 @@
                             {% else %}
                                 <span><i class="fa fa-calendar-o"></i>{{ leftDays }} days ago</span>
                             {% endif %}
+                            {{ facebookButton() }}
                         </div>
 
                     </div>
-
                 </div>
+                <script>
+                function book(idTrajet,idMembre,places,counter){
+                    var result = confirm("Are you sure you wanna book a seat in this ride?");
+                    if (result == false)
+                        return;
+                    else if (places==0)
+                    {
+                        alert ('This ride is full you cannot book a seat on it.');
+                        return;
+                    }
+                    else
+                        bookAction(idTrajet,idMembre,counter);
+                }
+
+                function bookAction(idTrajet,idMembre,counter) {
+                    $.ajax({
+                        url: Routing.generate('bookSeat'),
+                        data: 'idTrajet=' + idTrajet +'&idMembre='+idMembre,
+                        type: 'POST',
+                        success: function (data) {
+                            alert('You have successfully booked a seat in this ride.');
+                            $("#book"+counter).remove();
+                            $("#booking"+counter).append("<a href='#' id='booked' class='details button border'>Booked <i class='fa fa-check'></i></a>");
+                            setCookie('ride{{ currentuser }}',$("#start"+counter).text()+'|'+$("#end"+counter).text(),7);
+                        },
+                        error:function (data) {
+                            alert('Something went wrong!');
+                        }
+                    });
+                }
+
+                function setCookie(cname, cvalue, exdays) {
+                    var d = new Date();
+                    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                    var expires = "expires="+ d.toUTCString();
+                    document.cookie = cname + "=" + cvalue + ";" + expires;
+                }
+                </script>
+                {% set counter=counter+1 %}
                 {% endfor %}
                 <!-- Listing Item / End -->
             </div>
@@ -337,107 +355,9 @@
     <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
     <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 
-
-
-        <script>
-            function book(idTrajet,idMembre,places){
-                var result = confirm("Are you sure you wanna book a seat in this ride?");
-                if (result == false)
-                    return;
-                else if (places==0)
-                {
-                    alert ('This ride is full you cannot book a seat on it.');
-                    return;
-                }
-                else
-                    bookAction(idTrajet,idMembre);
-            }
-
-
-            function bookAction(idTrajet,idMembre) {
-                $.ajax({
-                    url: Routing.generate('bookSeat'),
-                    data: 'idTrajet=' + idTrajet +'&idMembre='+idMembre,
-                    type: 'POST',
-                    success: function (data) {
-                        alert('You have successfully booked a seat in this ride.');
-                    },
-                    error:function (data) {
-                        alert('Fuck me right?');
-                    }
-                });
-            }
-        </script>
-
-
-
-
-{#
-        <script>
-            function initMap() {
-                var directionsDisplay = new google.maps.DirectionsRenderer;
-                var directionsService = new google.maps.DirectionsService;
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 10,
-                    center: {lat: 36.8188, lng: 10.166}
-                });
-                directionsDisplay.setMap(map);
-
-                var onChangeHandler = function() {
-                    calculateAndDisplayRoute(directionsService, directionsDisplay);
-                };
-                document.getElementById('fromC').addEventListener('change', onChangeHandler);
-                document.getElementById('toC').addEventListener('change', onChangeHandler);
-            }
-
-            function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-                var start = document.getElementById('fromC').value;
-                var end = document.getElementById('toC').value;
-                directionsService.route({
-                    origin: start,
-                    destination: end,
-                    travelMode: 'DRIVING'
-                }, function(response, status) {
-                    if (status === 'OK') {
-                        directionsDisplay.setDirections(response);
-                    } else {
-                        window.alert('Directions request failed due to ' + status);
-                    }
-                });
-            }
-        </script>
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXNneTVr8yaKCVD_sCEFj9CNCtcU85V8&callback=initMap">
-        </script>
-
-
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div id="map">
-                            <!-- map goes here -->
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-#}
-
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- Style Switcher
     ================================================== -->
     <script src="{{ asset('bundles/views/scripts/switcher.js') }}"></script>

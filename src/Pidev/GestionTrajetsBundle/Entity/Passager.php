@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Passager
  *
  * @ORM\Table(name="passager", indexes={@ORM\Index(name="id_trajet", columns={"id_trajet", "id_membre"}), @ORM\Index(name="id_membre", columns={"id_membre"}), @ORM\Index(name="id_trajet_2", columns={"id_trajet"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pidev\GestionTrajetsBundle\Repository\TrajetRepository")
  */
 class Passager
 {

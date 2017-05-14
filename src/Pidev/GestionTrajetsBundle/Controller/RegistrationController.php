@@ -1,44 +1,55 @@
 <?php
-// src/AppBundle/Controller/RegistrationController.php
 
 namespace Pidev\GestionTrajetsBundle\Controller;
 
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use FOS\UserBundle\Controller\RegistrationController as BaseController;
+use Pidev\GestionTrajetsBundle\Entity\Membre;
+use Pidev\GestionTrajetsBundle\Form\RegistrationType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\Date;
+
+use FOS\UserBundle\Event\FilterUserResponseEvent;
+use FOS\UserBundle\Event\FormEvent;
+use FOS\UserBundle\Event\GetResponseUserEvent;
+use FOS\UserBundle\Form\Factory\FactoryInterface;
+use FOS\UserBundle\FOSUserEvents;
+use FOS\UserBundle\Model\UserInterface;
+use FOS\UserBundle\Model\UserManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 class RegistrationController extends BaseController
 {
+
+
     public function registerAction(Request $request)
     {
-        $form = $this->container->get('fos_user.registration.form');
-        $formHandler = $this->container->get('fos_user.registration.form.handler');
-        $confirmationEnabled = $this->container->getParameter('fos_user.registration.confirmation.enabled');
+        $form= $this->createForm(RegistrationType::class) ;
+        $form->handleRequest($request) ;
+        $user = new Membre() ;
 
-        $process = $formHandler->process($confirmationEnabled);
-        if ($process) {
-            $user = $form->getData();
-
-            $this->container->get('logger')->info(
-                sprintf('New user registration: %s', $user)
-            );
-
-            if ($confirmationEnabled) {
-                $this->container->get('session')->set('fos_user_send_confirmation_email/email', $user->getEmail());
-                $route = 'fos_user_registration_check_email';
-            } else {
-                $this->authenticateUser($user);
-                $route = 'fos_user_registration_confirmed';
-            }
-
-            $this->setFlash('fos_user_success', 'registration.flash.user_created');
-            $url = $this->container->get('router')->generate($route);
-
-            return new RedirectResponse($url);
+        if ($form->isValid())
+        {
+            $date = new \DateTime();
+            $user=$form->getData() ;
+            $user->setDateInscri($date) ;
+            $user->setPointsFidelite(0);
+            $user->setEnabled(true);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($user);
+            $em->flush();
+            $this->addFlash('success', 'Welcome ' . $user->getEmail());
+            $this->checkEmailAction() ;
         }
 
-        return $this->container->get('templating')->renderResponse('@FOSUser/Registration/register.html.twig', array(
-            'form' => $form->createView(),
-        ));
+        return $this->render('FOSUserBundle:Registration:register.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
+
+
 }

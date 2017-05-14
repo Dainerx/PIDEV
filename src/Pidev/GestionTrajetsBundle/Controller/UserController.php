@@ -15,5 +15,12 @@ class UserController extends Controller
     {
         return $this->render('PidevGestionTrajetsBundle:BackOffice:index.html.twig') ;
     }
+
+    public function testAction()
+    {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $id=$user->getId();
+        return $this->render("@PidevGestionTrajets/GestionTrajets/test.html.twig", array('id'=>$id));
+    }
 }
 

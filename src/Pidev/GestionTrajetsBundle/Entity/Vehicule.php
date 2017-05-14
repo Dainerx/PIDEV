@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Vehicule
  *
  * @ORM\Table(name="vehicule")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pidev\GestionTrajetsBundle\Repository\VehiculesRespository")
  */
 class Vehicule
 {

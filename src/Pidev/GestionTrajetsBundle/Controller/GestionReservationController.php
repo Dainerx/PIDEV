@@ -30,18 +30,14 @@ class GestionReservationController extends Controller
             $trajet->setNbrplacedispo($trajet->getNbrplacedispo()-1);
             $em->persist($trajet);
             $em->flush();
-
-
-            //fix this to dynamic
-            $membre=$em->getRepository("PidevGestionTrajetsBundle:Membre")->find(2);
+            $membre = $this->container->get('security.token_storage')->getToken()->getUser();
+            //$membre=$em->getRepository("PidevGestionTrajetsBundle:Membre")->find(2);
             $passager->setIdTrajet($trajet);
             $passager->setIdMembre($membre);
             $em->persist($passager);
             $em->flush();
 
-
-
-            $this->MailAction($membre,$trajet);
+            $this->MailAction($trajet->getIdMembre(),$trajet);
             $this->SmsAction($membre, $trajet);
             return new JsonResponse(array('status'=>'success'));
         }
@@ -52,7 +48,7 @@ class GestionReservationController extends Controller
     public function SmsAction($membre,$trajet)
     {
         //returns an instance of Vresh\TwilioBundle\Service\TwilioWrapper
-        $twilio = $this->get('twilio.api');
+        $twilio = $this->get('oussama.api');
         $text = "Hi " .$trajet->getIdMembre()->getNom(). ", ". $membre->getNom() ." has booked a seat in your ride share from " . $trajet->getDepart() . " to " . $trajet->getDestination();
 
         $message = $twilio->account->messages->sendMessage(
