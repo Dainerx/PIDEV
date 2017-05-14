@@ -16,12 +16,12 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
+            new Pidev\UserBundle\PidevUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-            new Pidev\GestionTrajetsBundle\PidevGestionTrajetsBundle(),
-            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
-            new Vresh\TwilioBundle\VreshTwilioBundle(),
-            new Nomaya\SocialBundle\NomayaSocialBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new FOS\MessageBundle\FOSMessageBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

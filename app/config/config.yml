@@ -2,7 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: "@PidevGestionTrajetsBundle/Resources/config/services.yml" }
+    - { resource: "@PidevUserBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -65,19 +65,19 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport: gmail
-    username:  dainerxx.21@gmail.com
-    password:  21541010oOdi@iedzszsde_password
+    username:  safwane.ettih@esprit.tn
+    password:  22101995
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
-    user_class: Pidev\GestionTrajetsBundle\Entity\Membre
+    user_class: Pidev\UserBundle\Entity\Membre
     from_email:
-        address: resetting@example.com
-        sender_name: Demo
+        address: "safwane.Ettih@esprit.tn"
+        sender_name: "safwane"
     registration:
-        form:
-            type: Pidev\GestionTrajetsBundle\Form\RegistrationType
+            form:
+                type: Pidev\UserBundle\Form\RegistrationType
 
 assetic:
     debug:          '%kernel.debug%'
@@ -85,41 +85,31 @@ assetic:
     filters:
         cssrewrite: ~
 
-vresh_twilio:
-    #(Required) Your Account SID from www.twilio.com/user/account
-    sid: 'ACfef81828dc8c64a7517d0e7126acab3f'
-    #(Required) Your Auth Token from www.twilio.com/user/account
-    authToken: 'fd1b8f43a66a33b480d208dea4f1a362'
 
-nomaya_social:
-    buttons:
-        facebook:
-            url:            null
-            locale:         "fr_FR"
-            send:           false
-            width:          300
-            showFaces:      false
-            layout:         "button_count"
-        twitter:
-            url:            null
-            locale:         "fr"
-            message:        "Je veux partager ça avec vous"
-            text:           "Tweet"
-            via:            "L'Equipe cartedevisitevirtuelle.fr"
-            tag:            "ttot"
-        googleplus:
-            url:            null
-            locale :        "fr"
-            size :          "medium"
-            annotation :    "bubble"
-            width :         300
-        linkedin:
-            url:            null
-            locale:         "fr_FR"
-            counter:        "right"
-        pinterest:
-            url:            null
-    links:
-        facebook:           "http://www.facebook.com/yann.chauvel"
-        googleplus:         "https://plus.google.com/105931415830389032796"
-    theme:                  'default' # optional
+vich_uploader:
+    db_driver: orm
+    mappings:
+        Profil_photo:
+            uri_prefix:         /images/uploads
+            upload_destination: '%kernel.root_dir%/../web/images/uploads'
+
+        Publication:
+                    uri_prefix:         /images/uploads/pubs
+                    upload_destination: '%kernel.root_dir%/../web/images/uploads/pubs'
+
+
+fos_message:
+    db_driver: orm
+    thread_class: Pidev\UserBundle\Entity\Messages\Thread
+    message_class: Pidev\UserBundle\Entity\Messages\Message
+
+knp_paginator:
+    page_range:                 5          # default page range used in pagination control
+    default_options:
+        page_name:              page       # page query parameter name
+        sort_field_name:        sort       # sort field query parameter name
+        sort_direction_name:    direction  # sort direction query parameter name
+        distinct:               true       # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig     # sliding pagination controls template
+        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig                         # sort link template

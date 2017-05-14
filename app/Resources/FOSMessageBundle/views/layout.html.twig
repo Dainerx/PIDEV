@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic Page Needs
+ ================================================== -->
+    <title>{% block title %}Findeo{% endblock title %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/views/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/views/css/colors/main.css') }}" id="colors">
+    {% endblock %}
+</head>
+<body>
+<div>
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        {# {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+         <a href="{{ path('fos_user_security_logout') }}">
+             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+         </a>#}
+    {% else %}
+        {#<a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>#}
+    {% endif %}
+</div>
+
+{% if app.request.hasPreviousSession %}
+    {% for type, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="flash-{{ type }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+
+<div id="wrapper">
+
+
+    <!-- Header Container
+    ================================================== -->
+    <header id="header-container">
+
+        <!-- Topbar -->
+        <div id="top-bar">
+            <div class="container">
+
+                <!-- Left Side Content -->
+                <div class="left-side">
+
+                    <!-- Top bar -->
+
+
+                </div>
+                <!-- Left Side Content / End -->
+
+
+                <!-- Left Side Content -->
+                <div class="right-side">
+
+                    <!-- Social Icons -->
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
+                        <li><a class="pinterest" href="#"><i class="icon-pinterest"></i></a></li>
+                    </ul>
+
+                </div>
+                <!-- Left Side Content / End -->
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <!-- Topbar / End -->
+
+
+        <!-- Header -->
+        <div id="header">
+            <div class="container">
+
+                <!-- Left Side Content -->
+                <div class="left-side">
+
+                    <!-- Logo -->
+                    <div id="logo">
+
+                        {% image 'bundles/views/images/logo.png' %}
+
+                        <img src="{{ asset_url }}" href="{{ path('fos_user_security_login') }}" alt="Example"/>
+                        {% endimage %}
+                    </div>
+
+
+                    <!-- Mobile Navigation -->
+                    <div class="menu-responsive">
+                        <i class="fa fa-reorder menu-trigger"></i>
+                    </div>
+
+
+                    <!-- Main Navigation -->
+                    <nav id="navigation" class="style-1">
+                        <ul id="responsive">
+
+                            <li><a href="#">Home</a>
+
+                            </li>
+
+                            <li><a href="#">Social</a>
+                                <ul>
+
+                                    {% block MyprofileLink %}  {% endblock %}
+                                    </li>
+                                    <li><a href="{% block BrowseMembersLink %}{% endblock %}">Browse Members</a>
+
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+
+
+
+
+
+                        </ul>
+                    </nav>
+                    <div class="clearfix"></div>
+                    <!-- Main Navigation / End -->
+
+                </div>
+                <!-- Left Side Content / End -->
+
+                <!-- Right Side Content / End -->
+                <div class="right-side">
+                    <!-- Header Widget -->
+                    <div class="header-widget">
+                        {% if not is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
+                            <a href="{{ path('fos_user_security_login') }}" class="sign-in"><i class="fa fa-user"></i> Log In / Register</a>
+                        {% else %}
+
+                            <a href="{{ path('fos_user_security_logout') }}" class="sign-in"><i class="fa fa-user"></i> Logout</a>
+                        {% endif %}
+
+                    </div>
+                    <!-- Header Widget / End -->
+                </div>
+                <!-- Right Side Content / End -->
+
+            </div>
+        </div>
+        <!-- Header / End -->
+
+    </header>
+    <div class="clearfix"></div>
+    <!-- Header Container / End -->
+
+
+
+    <!-- Titlebar
+    ================================================== -->1
+
+    <div id="titlebar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h2>{% block Page_title %} {% endblock %}</h2>
+
+                    <!-- Breadcrumbs -->
+                    <nav id="breadcrumbs">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li>{% block where %} {% endblock %}</li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact
+    ================================================== -->
+
+    <!-- Container -->
+    <div class="container">
+        <h1>{% trans from 'FOSMessageBundle' %}messenger{% endtrans %}</h1>
+
+        <ul>
+            <li><a href="{{ url('fos_message_inbox') }}">{% trans from 'FOSMessageBundle' %}inbox{% endtrans %}</a></li>
+            <li><a href="{{ url('fos_message_sent') }}">{% trans from 'FOSMessageBundle' %}sent{% endtrans %}</a></li>
+            <li><a href="{{ url('fos_message_deleted') }}">{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</a></li>
+        </ul>
+
+        {% block fos_message_content %}{% endblock %}
+
+    </div>
+    <!-- Footer
+================================================== -->
+    <div class="margin-top-55"></div>
+
+    <div id="footer">
+        <!-- Main -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 col-sm-6">
+                    {% image 'bundles/views/images/logo.png' %}
+
+                    <img src="{{ asset_url }}" href="index-1.html"  class="footer-logo" alt="Example"/>
+                    {% endimage %}
+
+                    <br><br>
+                    <p>
+                        Join My ride est une plateforme de covoiturage en ligne  .
+
+
+                    </p>                        </div>
+
+                <div class="col-md-4 col-sm-6 ">
+                    <h4>Helpful Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
+                        <li><a href="{{ path('fos_user_registration_register') }}">Sign Up</a></li>
+
+                        <li><a href="{{ path('fos_user_security_login') }}">My Account</a></li>
+
+                        <li><a href="#">Add Property</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+
+
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="col-md-3  col-sm-12">
+                    <h4>Contact Us</h4>
+                    <div class="text-widget">
+                        <span>12345 Tunis, Benarous</span> <br>
+                        Phone: <span>(123) 123-456 </span><br>
+                        E-Mail:<span> <a href="#"><span class="__cf_email__" data-cfemail="315e5757585254715449505c415d541f525e5c">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a> </span><br>
+                    </div>
+
+                    <ul class="social-icons margin-top-20">
+                        <li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
+                        <li><a class="vimeo" href="#"><i class="icon-vimeo"></i></a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyrights">© 2017 JoinMyride. All Rights Reserved.</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Footer / End -->
+
+
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
+
+
+    <!-- Scripts
+    ================================================== -->
+    {% javascripts 'bundles/views/scripts/*' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>

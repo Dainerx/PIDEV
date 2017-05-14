@@ -1,0 +1,56 @@
+pidev_user_homepage:
+    path:     /
+    defaults: { _controller: PidevUserBundle:Default:index }
+
+homeadmin:
+    path:    /homeadmin
+    defaults: { _controller: PidevUserBundle:User:Admin }
+
+homeuser:
+    path:     /home
+    defaults: { _controller: PidevUserBundle:User:index }
+
+
+profileTest:
+      path:     /prof
+      defaults: { _controller: PidevUserBundle:Profile:init }
+
+
+MembreProfileInit:
+      path:     /profile/Init
+      defaults: { _controller: PidevUserBundle:Profile:init }
+
+MembreProfileAdd:
+      path:     /profile/add
+      defaults: { _controller:  PidevUserBundle:Profile:newProfile}
+
+MembreProfile:
+      path:     /MyProfile
+      defaults: { _controller:  PidevUserBundle:Profile:init}
+
+ListProfiles:
+      path:     /Listmembres
+      defaults: { _controller:  PidevUserBundle:Profile:ListProfiles}
+
+RechercheProfile:
+      path:     /RechercheMembre
+      defaults: { _controller:  PidevUserBundle:Profile:RechercheProfile}
+
+Profile:
+      path: /profile/{id}
+      defaults: { _controller:  PidevUserBundle:Profile:Affiche1Profile}
+
+
+AjoutComment:
+      path: /AjouterCommentaire
+      defaults: { _controller:  PidevUserBundle:Comment:AjoutCommentaire}
+
+
+Follow:
+      path: /Follow/{id}
+      defaults: { _controller:  PidevUserBundle:Following:Follow}
+
+unFollow:
+      path: /unFollow/{id}
+      defaults: { _controller:  PidevUserBundle:Following:Unfollow}
+
