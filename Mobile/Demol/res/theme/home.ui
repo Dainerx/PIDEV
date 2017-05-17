@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="home" cloudDestinationProperty="home" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="SpanButton" name="allLink" cloudDestinationProperty="allLink" >
+    <custom name="text" type="java.lang.String" value="Tous les trajets!" />
+  </component>
+  <component type="SpanButton" name="addLink" cloudDestinationProperty="addLink" tensileDragEnabled="true" >
+    <custom name="text" type="java.lang.String" value="Ajouter un trajet!" />
+  </component>
+</component>

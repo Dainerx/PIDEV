@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="addTrajetI" cloudDestinationProperty="addTrajetI" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Label" name="Label" cloudDestinationProperty="Label" text="Marque" >
+  </component>
+  <component type="TextField" name="marque" cloudBoundProperty="text" cloudDestinationProperty="TextField" rtl="true" text="" editable="true" >
+  </component>
+  <component type="Label" name="Label1" cloudDestinationProperty="Label1" text="Modele" >
+  </component>
+  <component type="TextField" name="modele" cloudBoundProperty="text" cloudDestinationProperty="TextField1" rtl="true" text="" >
+  </component>
+  <component type="Label" name="Label2" cloudDestinationProperty="Label2" text="Immatriculation" >
+  </component>
+  <component type="TextField" name="immatriculation" cloudBoundProperty="text" cloudDestinationProperty="TextField2" rtl="true" text="" >
+  </component>
+  <component type="Label" name="Label3" cloudDestinationProperty="Label3" text="Gamme" >
+  </component>
+  <component type="ComboBox" name="gamme" cloudDestinationProperty="ComboBox" >
+  </component>
+  <component type="Slider" name="Slider" cloudDestinationProperty="Slider" text="" progress="2" increments="1" maxValue="3" >
+  </component>
+  <component type="Button" name="next1" cloudDestinationProperty="Button" text="Suivant" >
+  </component>
+</component>

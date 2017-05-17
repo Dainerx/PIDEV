@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="addTrajetII" cloudDestinationProperty="addTrajetII" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Label" name="Label" cloudDestinationProperty="Label" text="Date Trajet" >
+  </component>
+  <component type="DateSpinner" name="datedepart" cloudDestinationProperty="DateSpinner" >
+  </component>
+  <component type="Label" name="Label1" cloudDestinationProperty="Label1" text="Description" >
+  </component>
+  <component type="TextArea" name="description" cloudBoundProperty="text" cloudDestinationProperty="TextArea" text="" >
+  </component>
+  <component type="Container" name="Container" cloudDestinationProperty="Container" layout="BoxLayout" boxLayoutAxis="Y" >
+    <component type="Label" name="Label2" cloudDestinationProperty="Label2" text="Nombre de places" >
+    </component>
+    <component type="TextField" name="nbrplace" cloudBoundProperty="text" cloudDestinationProperty="nbrplace" text="" >
+    </component>
+    <component type="Label" name="Label3" cloudDestinationProperty="Label3" text="Cout" >
+    </component>
+    <component type="TextField" name="cout" cloudBoundProperty="text" cloudDestinationProperty="cout" scrollVisible="true" text="" >
+    </component>
+  </component>
+  <component type="Slider" name="Slider" cloudDestinationProperty="Slider" text="" progress="3" maxValue="3" >
+  </component>
+  <component type="Button" name="addTrajetButton" cloudDestinationProperty="addTrajet" text="Proposer ce trajet!" >
+  </component>
+</component>

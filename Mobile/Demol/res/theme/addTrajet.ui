@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="addTrajet" cloudDestinationProperty="addTrajet" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Label" name="" cloudDestinationProperty="" text="Depart" >
+  </component>
+  <component type="ComboBox" name="depart" cloudDestinationProperty="ComboBox" >
+  </component>
+  <component type="Label" name="Label" cloudDestinationProperty="Label" text="Destination" >
+  </component>
+  <component type="ComboBox" name="destination" cloudDestinationProperty="ComboBox1" >
+  </component>
+  <component type="Container" name="mapWrapper" cloudDestinationProperty="mapWrapper" >
+  </component>
+  <component type="Slider" name="Slider1" cloudDestinationProperty="Slider1" text="" progress="1" maxValue="3" >
+  </component>
+  <component type="Button" name="next" cloudDestinationProperty="Button" text="Suivant" >
+  </component>
+</component>

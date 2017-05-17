@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="book" cloudDestinationProperty="book" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="Label" name="user" cloudDestinationProperty="user" scrollVisible="false" text="Propos&#xe9; par: " >
+  </component>
+  <component type="Slider" name="Slider2" cloudDestinationProperty="Slider2" text="" progress="1" maxValue="3" >
+  </component>
+  <component type="Label" name="Label" cloudDestinationProperty="Label" text="Description" >
+  </component>
+  <component type="TextArea" name="description" cloudBoundProperty="text" cloudDestinationProperty="description" text="" >
+  </component>
+  <component type="Label" name="places" cloudDestinationProperty="places" rtl="false" text="Nombre de places: " >
+  </component>
+  <component type="Label" name="cout" cloudDestinationProperty="cout" text="Cout: " >
+  </component>
+  <component type="Slider" name="Slider" cloudDestinationProperty="Slider" text="" progress="2" maxValue="3" >
+  </component>
+  <component type="Label" name="car" cloudDestinationProperty="car" text="Voiture" >
+  </component>
+  <component type="Label" name="marque" cloudDestinationProperty="marque" text="Marque: " >
+  </component>
+  <component type="Label" name="modele" cloudDestinationProperty="modele" text="Modele:" >
+  </component>
+  <component type="Label" name="matricule" cloudDestinationProperty="matricule" text="Immatriculation: " >
+  </component>
+  <component type="Label" name="gamme" cloudDestinationProperty="gamme" text="Gamme: " >
+  </component>
+  <component type="Slider" name="Slider1" cloudDestinationProperty="Slider1" text="" progress="3" maxValue="3" >
+  </component>
+  <component type="Button" name="gomap" cloudDestinationProperty="Button" text="Voir sur Google Maps" >
+  </component>
+  <component type="Button" name="bookAction" cloudDestinationProperty="bookAction" text="R&#xe9;server!" >
+  </component>
+</component>
