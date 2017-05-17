@@ -1,0 +1,421 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+   
+    Author     : ameni
+*/
+.note
+{
+     -fx-border:none;
+     -fx-background: transparent;
+    -fx-background-image: url(../../ressources/images/notebg7.png);
+    -fx-background-repeat: repeat;
+}
+
+
+.errorTextField{
+    -fx-background-color: #FFF0F0;
+    -fx-border-color: #DBB1B1;
+}
+
+.champsModifiable{
+
+    -fx-border-color: #AC58FA ;
+}
+
+
+
+.inputError
+{
+    -fx-border-color: #e01212; 
+}
+.inputNormal 
+{
+    -fx-border-color : rgba(0,0,0,0.3) ;
+    
+    -fx-focus-color: -fx-control-inner-background ;
+    -fx-background-color: -fx-control-inner-background ;
+    
+}
+.inputNormal:focused
+{
+    -fx-background-color: #f9f9f9;
+    -fx-border-color :  #229abf;
+}
+.inputError
+{
+    -fx-border-color: #e01212;
+}
+.bgDeconnexion
+{
+    -fx-background-size: 12% ;
+    
+    -fx-background-position: 8%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url(../../ressources/images/deconnexion.png);
+}
+.bgDeconnexion:hover
+{
+    -fx-background-image: url(../../ressources/images/deconnexionHover.png);
+}
+.bgArbitre
+{
+    -fx-background-size: 12% ;
+    -fx-background-position: 8%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url(../../ressources/images/admin/arbitre.png);
+}
+.bgArbitre:hover
+{
+    -fx-background-image: url(../../ressources/images/admin/arbitreHover.png);
+}
+.bgFormation
+{
+    -fx-background-size: 15% ;
+    -fx-background-position: 6%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url(../../ressources/images/responsable/formation.png);
+}
+.bgFormation:hover
+{
+    -fx-background-image: url(../../ressources/images/responsable/formationHover.png);
+}
+.bgClub
+{
+    -fx-background-size: 15% ;
+    -fx-background-position: 6%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url(../../ressources/images/responsable/club.png);
+}
+.bgClub:hover
+{
+    -fx-background-image: url(../../ressources/images/responsable/clubHover.png);
+}
+
+.bgMessage
+{
+    -fx-background-size: 15% ;
+    -fx-background-position: 6%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url(../../ressources/images/responsable/message.png);
+}
+.bgMessage:hover
+{
+    -fx-background-image: url(../../ressources/images/responsable/messageHover.png);
+}
+.bgMatchs
+{
+    -fx-background-size: 15% ;
+    -fx-background-position: 6%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url(../../ressources/images/responsable/matchs.png);
+}
+.bgMatchs:hover
+{
+    -fx-background-image: url(../../ressources/images/responsable/matchsHover.png);
+}
+.bgMedecin
+{
+    -fx-background-size: 12% ;
+    -fx-background-position: 8%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url(../../ressources/images/admin/medecin.png);
+}
+.bgMedecin:hover
+{
+    -fx-background-image: url(../../ressources/images/admin/medecinHover.png);
+}
+.bgStade
+{
+    -fx-background-size: 15% ;
+    -fx-background-position: 6%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url(../../ressources/images/responsable/stade.png);
+}
+.bgStade:hover,.bgStade:focused
+{
+    -fx-background-image: url(../../ressources/images/responsable/stadeHover.png);
+}
+.bgMedecin
+{
+    -fx-background-size: 15% ;
+    -fx-background-position: 6%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url(../../ressources/images/admin/medecin.png);
+}
+.bgMedecin:hover
+{
+    -fx-background-image: url(../../ressources/images/admin/medecinHover.png);
+}
+.bgCup
+{
+    -fx-background-size: 10% ;
+    -fx-background-position: 8%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url(../../ressources/images/responsable/cup.png);
+}
+.bgCup:hover
+{
+    -fx-background-image: url(../../ressources/images/responsable/cupHover.png);
+}
+
+.bgJoueur
+{
+    -fx-background-size: 12% ;
+    -fx-background-position: 8%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-image: url(../../ressources/images/admin/joueur.png);
+}.bgJoueur:hover
+{
+    -fx-background-image: url(../../ressources/images/admin/joueurHover.png);
+}
+
+
+
+.menuBoutons{
+    -fx-background-color: #29778e;
+    -fx-text-alignment: left;
+   -fx-text-align: left;
+   -fx-cursor : hand;
+}
+.menuBoutons:hover{
+    -fx-background-color: #144d5e;
+}
+.menuBoutonsPressed{
+    -fx-background-color: #144d5e;
+    -fx-text-alignment: left;
+   -fx-text-align: left;
+}
+.backgroundListPane{
+    -fx-background-color: #FFF;
+   
+}
+.titleListPane
+{
+    -fx-background-color: #26778f;
+}
+.godpane
+{
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-background-color: #144d5e;
+    -fx-border-color :  rgba(0,0,0,0.3);
+}
+.backGroundPane{
+    -fx-background-color: #000080;
+}
+.logo{
+    -fx-background-color: #229abf;
+     -fx-background-image: url(../../guesthouse/utils/guesthouselo.png);
+    -fx-background-repeat: no-repeat;
+   
+   
+}
+.img{
+
+
+  -fx-border-radius: 10 10 0 0;
+  -fx-background-radius: 10 10 0 0;
+
+  /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+
+}
+
+#ROOTNODE {
+-fx-background-radius: 30;
+
+-fx-border-radius: 30;
+-fx-border-width:5;
+-fx-border-color:blue;
+}
+.selectPane
+{
+    -fx-background-color: #229abf;
+     -fx-background-image: url(../../ressources/images/logov2.png);
+         -fx-border-insets: 0;
+         -fx-border-width: 1;
+         -fx-border-style: solid;
+    -fx-background-Radius:50%;
+    -fx-background-repeat: no-repeat;
+   
+} 
+.imageContainerButton
+{
+    -fx-font-size : 12;
+    -fx-background-color: #FFF;
+    -fx-text-fill : #D71B21;
+    -fx-border-insets: 0;
+         -fx-border-width: 1;
+         -fx-border-style: solid;
+         -fx-border-color: #D71B21;
+}
+.imageContainerButton:hover
+{
+    -fx-background-color: #D71B21;
+    -fx-text-fill : #FFF;
+    -fx-border-insets: 0;
+         -fx-border-width: 1;
+         -fx-border-style: solid;
+         -fx-border-color: #D71B21;
+}
+.corpsPane{
+    -fx-background-color: #dedede;
+    -fx-background-size: 100%;
+     
+}
+
+/*.corpsGalerie{
+    -fx-background-image: url(../../guesthouse/utils/ff.png);
+    -fx-background-size: 100%;
+    -fx-background-repeat: no-repeat;
+}*/
+.corpsProfil{
+   -fx-background-image: url(../../guesthouse/utils/Guesthouse_1.png);
+    -fx-background-size: 100%;
+    -fx-background-repeat: no-repeat; 
+}
+.titlePane{
+    -fx-background-color: #FFF;
+}
+.boutonGlissant
+{
+    -fx-background-color: #FFF;
+}
+.boutonGlissantBouton1
+{
+   -fx-background-radius: 15px;
+   -fx-cursor: hand;
+  
+}
+.btn {
+     -fx-alignment : center-left;
+  
+    -fx-background-color: linear-gradient(#54beef, #2ea1d7);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 12 30 12 30;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+     
+}
+.btnEnvoyer {
+     -fx-alignment : center;
+  
+    -fx-background-color: linear-gradient(#54beef, #2ea1d7);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 3,2,2,2;
+    -fx-padding: 12 30 12 30;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+     
+}
+
+.btn:hover,.btnEnvoyer:hover{
+  
+  
+    -fx-background-color: 
+       
+        linear-gradient(#76cef8, #2ea1d7);
+    
+
+
+}
+
+
+.compteContainer
+{
+    -fx-border-color :  rgba(0,0,0,0.3);
+    -fx-background-color: #FFF;
+    -fx-background-size: 100%;
+   
+    -fx-background-position: 50% 0%;
+    -fx-background-repeat:no-repeat;
+    -fx-background-image: url(Images/arbitreAvatar.jpg);
+   
+    
+}
+
+
+
+
+.vbox {
+    -fx-background-image: url("../../ressources/images/logov2.png");
+    -fx-background-size: 96, 205;
+    -fx-background-repeat: no-repeat;
+    -fx-border-color: #2e8b57;
+    -fx-border-width: 2px;
+    -fx-padding: 10;
+    -fx-spacing: 8;
+}
+
+#hbox-custom {
+    -fx-background-image: url("../../ressources/images/logov2.png");
+    -fx-background-size: 60,69;
+    -fx-padding: 18 3 18 6;
+    -fx-background-radius: 5.0; 
+}
+
+#button-custom {
+    -fx-rotate: 45;
+    -fx-text-alignment: center;
+}
+
+
+
+
+.table-view {
+    -fx-base:  #020308;
+    -fx-control-inner-background:  #020308;
+    -fx-background-color: #1d1d1d;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color: 
+        transparent
+        transparent
+        derive(-fx-base, 80%) 
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+
+#intitule{
+     -fx-font-size: 40pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-opacity: 1;
+}
+
+#labeldescription , #labelsdate ,#labelcategory
+,#labelnbsolvers
+,#labelcomp ,labeldate{
+     -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-opacity: 1;
+}
+
+/*#e2e2e2*/
+
+
