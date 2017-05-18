@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="967.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EspaceUtilisateurController">
+   <children>
+      <AnchorPane id="grandParent_Pane" fx:id="backgroundPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="653.0" prefWidth="967.0" styleClass="backGroundPane" stylesheets="@../assets/mainSheet.css">
+         <children>
+            <AnchorPane id="menuContainer" layoutX="165.0" layoutY="108.0" prefHeight="585.0" prefWidth="0.0" AnchorPane.leftAnchor="165.0" />
+            <AnchorPane id="titlePane" layoutX="-14.0" layoutY="47.0" prefHeight="57.0" prefWidth="1100.0" styleClass="titlePane" AnchorPane.leftAnchor="-14.0" AnchorPane.rightAnchor="14.0">
+               <children>
+                  <JFXButton buttonType="RAISED" layoutX="648.0" layoutY="15.0" prefHeight="27.0" prefWidth="138.0" styleClass="imageContainerButton" text="Mon Profil" />
+                  <ImageView fitHeight="84.0" fitWidth="84.0" layoutX="39.0" layoutY="-42.0" opacity="0.79" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/car.png" />
+                     </image>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="Corps" fx:id="CoprsProjet" layoutY="110.0" prefHeight="534.0" prefWidth="960.0" styleClass="corpsPane" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="110.0">
+               <effect>
+                  <InnerShadow color="#0000003c" />
+               </effect>
+               <children>
+                  <Pane layoutX="20.0" layoutY="22.0" prefHeight="44.0" prefWidth="522.0" styleClass="titleListPane">
+                     <children>
+                        <Label layoutX="20.0" layoutY="10.0" prefHeight="25.0" prefWidth="208.0" text="Liste des offres de location" textFill="#2c2a2a">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <AnchorPane id="ajouterArbitreContainer" layoutX="556.0" layoutY="66.0" prefHeight="386.0" prefWidth="390.0" style="-fx-background-color: #FFF;">
+                     <children>
+                        <HBox layoutX="35.0" layoutY="35.0" />
+                        <Label layoutX="32.0" layoutY="117.0" prefHeight="39.0" prefWidth="75.0" text="Offre" />
+                        <Button fx:id="ajLocation" layoutX="107.0" layoutY="290.0" mnemonicParsing="false" onAction="#ajLocation" prefHeight="44.0" prefWidth="181.0" styleClass="btnEnvoyer" text="Envoyer Demande" textAlignment="CENTER" />
+                        <HBox layoutX="27.0" layoutY="156.0" />
+                        <Label layoutX="32.0" layoutY="229.0" prefHeight="17.0" prefWidth="61.0" text="Date Fin" />
+                        <Label layoutX="32.0" layoutY="179.0" text="Date Debut" />
+                        <Label fx:id="labelOffre" layoutX="146.0" layoutY="124.0" prefHeight="25.0" prefWidth="181.0" />
+                        <DatePicker fx:id="dd1" layoutX="149.0" layoutY="167.0" />
+                        <DatePicker fx:id="df1" layoutX="149.0" layoutY="222.0" />
+                        <Label layoutX="27.0" layoutY="47.0" prefHeight="44.0" prefWidth="285.0" text="Veuillez choisir les dates de reservation desirés" />
+                        <Hyperlink fx:id="dEnvoye" layoutX="197.0" layoutY="24.0" onAction="#dEnvoye" prefHeight="23.0" prefWidth="138.0" text="Demandes envoyés" />
+                        <Label layoutX="35.0" layoutY="91.0" prefHeight="17.0" prefWidth="52.0" text="Cout" />
+                        <Label fx:id="labelCout" layoutX="149.0" layoutY="91.0" prefHeight="23.0" prefWidth="149.0" />
+                     </children>
+                  </AnchorPane>
+                  <Pane layoutX="556.0" layoutY="22.0" prefHeight="44.0" prefWidth="390.0" styleClass="titleListPane" />
+                  <TableView fx:id="tabLocation" layoutX="20.0" layoutY="66.0" prefHeight="386.0" prefWidth="522.0" AnchorPane.bottomAnchor="82.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="418.0" AnchorPane.topAnchor="66.0">
+                     <columns>
+                        <TableColumn fx:id="id_location" prefWidth="90.0" text="Offre" />
+                        <TableColumn fx:id="cout" prefWidth="94.0" text="Cout" />
+                        <TableColumn fx:id="marque" prefWidth="108.0" text="Marque" />
+                        <TableColumn fx:id="modele" minWidth="0.0" prefWidth="108.0" text="Modele" />
+                        <TableColumn fx:id="envoyerD" prefWidth="117.0" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="Corps" fx:id="CoprsProjet1" layoutX="176.0" layoutY="116.0" prefHeight="610.0" prefWidth="1056.0" styleClass="corpsPane" visible="false">
+               <effect>
+                  <InnerShadow color="#0000003c" />
+               </effect>
+               <children>
+                  <AnchorPane id="tableViewMedecin" layoutX="14.0" layoutY="158.0" prefHeight="420.0" prefWidth="942.0" styleClass="backgroundListPane">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="915.0" styleClass="titleListPane" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0">
+                           <children>
+                              <Label layoutX="48.0" layoutY="6.0" text="Liste des réservations" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <ImageView fx:id="close" fitHeight="40.0" fitWidth="44.0" layoutX="884.0" layoutY="7.0" onMouseClicked="#closeAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/close.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="reduce" fitHeight="40.0" fitWidth="44.0" layoutX="831.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/reduce.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

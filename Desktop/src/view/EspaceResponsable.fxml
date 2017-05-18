@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EspaceResponsableController">
+   <children>
+      <AnchorPane id="grandParent_Pane" fx:id="backgroundPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="865.0" styleClass="backGroundPane">
+         <children>
+            <AnchorPane id="menuContainer" layoutX="165.0" layoutY="108.0" prefHeight="585.0" prefWidth="0.0" AnchorPane.leftAnchor="165.0" />
+            <AnchorPane id="titlePane" layoutY="54.0" prefHeight="67.0" prefWidth="814.0" styleClass="titlePane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="26.0">
+               <children>
+                  <JFXButton fx:id="GestionLocation" buttonType="RAISED" layoutX="501.0" layoutY="19.0" onAction="#GestonLocation" prefHeight="29.0" prefWidth="124.0" styleClass="imageContainerButton" text="Gestion D'offres" />
+                  <ImageView fitHeight="84.0" fitWidth="84.0" layoutX="28.0" layoutY="-42.0" opacity="0.79" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/car.png" />
+                     </image>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="Corps" fx:id="CoprsProjet" layoutY="117.0" prefHeight="534.0" prefWidth="884.0" styleClass="corpsPane" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="117.0">
+               <effect>
+                  <InnerShadow color="#0000003c" />
+               </effect>
+               <children>
+                  <TableView fx:id="tableDemande" layoutX="26.0" layoutY="43.0" prefHeight="454.0" prefWidth="800.0">
+                    <columns>
+                      <TableColumn fx:id="locataire" prefWidth="104.0" text="Locataire" />
+                      <TableColumn fx:id="voiture" prefWidth="95.0" text="Offre" />
+                        <TableColumn fx:id="dd" prefWidth="112.0" text="Date Debut" />
+                        <TableColumn fx:id="df" prefWidth="124.0" text="Date Fin" />
+                        <TableColumn fx:id="etat" prefWidth="93.0" text="Etat" />
+                        <TableColumn fx:id="decision" prefWidth="85.0" />
+                        <TableColumn fx:id="confirm" prefWidth="85.0" />
+                        <TableColumn fx:id="accept" prefWidth="97.0" />
+                    </columns>
+                  </TableView>
+                  <Pane layoutX="26.0" prefHeight="44.0" prefWidth="800.0" styleClass="titleListPane">
+                     <children>
+                        <Label layoutX="22.0" layoutY="10.0" prefHeight="25.0" prefWidth="250.0" text="Liste de demandes de location" textFill="#2c2a2a">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <ImageView fx:id="close" fitHeight="40.0" fitWidth="44.0" layoutX="781.0" layoutY="7.0" onMouseClicked="#closeAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/close.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="reduce" fitHeight="40.0" fitWidth="44.0" layoutX="735.0" layoutY="7.0" onMouseClicked="#reduceAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/reduce.png" />
+               </image>
+            </ImageView>
+         </children>
+         <stylesheets>
+            <URL value="@../utils/mainSheet.css" />
+            <URL value="@../assets/mainSheet.css" />
+         </stylesheets>
+      </AnchorPane>
+   </children>
+</AnchorPane>

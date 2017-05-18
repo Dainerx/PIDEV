@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="689.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Forum_locationController">
+   <children>
+      <Label layoutX="7.0" layoutY="236.0" prefHeight="188.0" prefWidth="631.0" />
+      <Label layoutX="28.0" layoutY="62.0" text="Join My Ride">
+         <font>
+            <Font name="Bernard MT Condensed" size="36.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="18.0" layoutY="107.0" prefHeight="573.0" prefWidth="752.0" style="-fx-background-color: #5F9EA0;">
+         <children>
+            <Label layoutX="32.0" layoutY="21.0" prefHeight="29.0" prefWidth="181.0" text="Les publications des membres:">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Label>
+            <ListView fx:id="listvv" layoutX="23.0" layoutY="50.0" onMouseClicked="#listview_clicked" prefHeight="147.0" prefWidth="707.0" />
+            <Button fx:id="affpubloc" layoutX="165.0" layoutY="208.0" mnemonicParsing="false" onAction="#actionaffpubloc" prefHeight="61.0" prefWidth="382.0" text="Afficher la publication afin de la commenter">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Label layoutX="23.0" layoutY="287.0" text="Le titre de votre publication:">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="titrepublicationloc" layoutX="23.0" layoutY="309.0" prefHeight="38.0" prefWidth="222.0" />
+            <Label layoutX="23.0" layoutY="355.0" prefHeight="29.0" prefWidth="181.0" text="Votre Publication:">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="publicationloc" layoutX="23.0" layoutY="384.0" prefHeight="83.0" prefWidth="707.0" />
+            <Button fx:id="idpre" layoutX="32.0" layoutY="496.0" mnemonicParsing="false" onAction="#handleButtonprecedentAction" prefHeight="47.0" prefWidth="181.0" text="precedent">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Button fx:id="publier" layoutX="567.0" layoutY="496.0" onAction="#handleButtonpublocAction" prefHeight="47.0" prefWidth="171.0" text="Publier">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <Button fx:id="butsup" layoutX="599.0" layoutY="216.0" mnemonicParsing="false" onAction="#ActionSupprimer" prefHeight="45.0" prefWidth="120.0" text="Supprimer">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+         </children>
+      </AnchorPane>
+      <Label layoutX="323.0" layoutY="64.0" prefHeight="41.0" prefWidth="249.0" text="Location" textFill="#006060">
+         <font>
+            <Font name="Berlin Sans FB" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="336.0" prefHeight="64.0" prefWidth="198.0" text="Forum">
+         <font>
+            <Font name="Bernard MT Condensed" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="64.0" fitWidth="72.0" layoutX="83.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/16901688_1754398874889594_1170268541_n.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

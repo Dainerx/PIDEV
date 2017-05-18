@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="532.0" prefWidth="427.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AcceuilController">
+   <children>
+      <AnchorPane id="grandParent_Pane" fx:id="backgroundPane" layoutX="-7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="442.0" styleClass="backGroundPane" stylesheets="@../assets/mainSheet.css">
+         <children>
+            <AnchorPane id="menuContainer" layoutX="165.0" layoutY="108.0" prefHeight="585.0" prefWidth="0.0" AnchorPane.leftAnchor="165.0" />
+            <AnchorPane id="titlePane" layoutX="28.0" layoutY="63.0" prefHeight="57.0" prefWidth="375.0" styleClass="titlePane" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="39.0">
+               <effect>
+                  <MotionBlur angle="124.29" />
+               </effect></AnchorPane>
+            <AnchorPane id="Corps" fx:id="CoprsProjet" layoutX="28.0" layoutY="120.0" prefHeight="386.0" prefWidth="375.0" styleClass="corpsPane" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="120.0">
+               <effect>
+                  <InnerShadow color="#0000003c" />
+               </effect>
+               <children>
+                  <JFXButton fx:id="utilisateur" buttonType="RAISED" layoutX="112.0" layoutY="166.0" onAction="#Uti" prefHeight="27.0" prefWidth="138.0" styleClass="imageContainerButton" text="Espace Utilisateur" />
+                  <JFXButton fx:id="responsable" buttonType="RAISED" layoutX="112.0" layoutY="97.0" onAction="#RES" prefHeight="27.0" prefWidth="138.0" styleClass="imageContainerButton" text="Espace Responsable" />
+               </children>
+            </AnchorPane>
+            <AnchorPane id="Corps" fx:id="CoprsProjet1" layoutX="176.0" layoutY="116.0" prefHeight="610.0" prefWidth="1056.0" styleClass="corpsPane" visible="false">
+               <effect>
+                  <InnerShadow color="#0000003c" />
+               </effect>
+               <children>
+                  <AnchorPane id="tableViewMedecin" layoutX="14.0" layoutY="158.0" prefHeight="420.0" prefWidth="942.0" styleClass="backgroundListPane">
+                     <children>
+                        <Pane layoutX="14.0" layoutY="14.0" prefHeight="39.0" prefWidth="915.0" styleClass="titleListPane" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0">
+                           <children>
+                              <Label layoutX="48.0" layoutY="6.0" text="Liste des réservations" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <ImageView fx:id="reduce" fitHeight="40.0" fitWidth="44.0" layoutX="332.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/reduce.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="close" fitHeight="40.0" fitWidth="44.0" layoutX="383.0" layoutY="14.0" onMouseClicked="#closeAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/close.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="70.0" layoutX="37.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/car.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

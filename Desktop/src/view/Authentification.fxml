@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="477.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AuthentificationController">
+   <children>
+      <AnchorPane id="grandParent_Pane" fx:id="backgroundPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="477.0" styleClass="backGroundPane" stylesheets="@../assets/mainSheet.css">
+         <children>
+            <AnchorPane id="titlePane" layoutX="22.0" layoutY="70.0" prefHeight="428.0" prefWidth="439.0" styleClass="titlePane" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="16.0">
+               <children>
+                  <GridPane layoutX="84.0" layoutY="122.0" prefHeight="148.0" prefWidth="337.0">
+                     <children>
+                        <JFXPasswordField fx:id="password" focusColor="#e01010" labelFloat="true" maxWidth="337.0" minWidth="251.0" prefHeight="31.0" prefWidth="251.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="username" focusColor="#e01010" labelFloat="true" maxWidth="339.0" minWidth="311.0" prefHeight="31.0" prefWidth="339.0" promptText="Username" GridPane.columnIndex="1" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="157.33334350585938" minWidth="1.0" prefWidth="1.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="342.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <Button fx:id="signIn" layoutX="251.0" layoutY="323.0" mnemonicParsing="false" onAction="#signIn" prefHeight="44.0" prefWidth="126.0" styleClass="btnEnvoyer" text="LOG IN" textAlignment="CENTER" />
+                  <ImageView fitHeight="84.0" fitWidth="84.0" layoutX="7.0" layoutY="-56.0" opacity="0.79" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/car.png" />
+                     </image>
+                     <effect>
+                        <Blend />
+                     </effect>
+                  </ImageView>
+               </children>
+               <effect>
+                  <ColorAdjust />
+               </effect></AnchorPane>
+            <ImageView fx:id="reduce" fitHeight="40.0" fitWidth="44.0" layoutX="373.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/reduce.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="close" fitHeight="40.0" fitWidth="44.0" layoutX="421.0" layoutY="20.0" onMouseClicked="#closeAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/close.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
