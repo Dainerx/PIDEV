@@ -89,23 +89,29 @@ public class BaseForm extends Form {
                         new Label(res.getImage("profile-pic.jpg"), "PictureWhiteBackgrond"))
         ));
 
-       
-        
         tb.addMaterialCommandToSideMenu("Proposer un Trajet", FontImage.MATERIAL_ADD, e -> {
-                addTrajetUI ui = new addTrajetUI(res);
-                ui.getForm().show();
+            addTrajetUI ui = new addTrajetUI(res);
+            ui.getForm().show();
 
         });
-        
+
         tb.addMaterialCommandToSideMenu("Mon Profile", FontImage.MATERIAL_SETTINGS, e -> {
             try {
                 new ProfileForm(res, Ps.getProfileByUser(Current)).show();
             } catch (IOException ex) {
             }
         });
+        tb.addMaterialCommandToSideMenu("Evenement", FontImage.MATERIAL_EVENT, e -> new EventsForm(res).show());
+        tb.addMaterialCommandToSideMenu("Trajet", FontImage.MATERIAL_COMMENT, e -> new trajetForm(res).show());
+        tb.addMaterialCommandToSideMenu("Cadeau", FontImage.MATERIAL_PRESENT_TO_ALL, e -> new cadeauForm(res, new Membre(3)).show());
+        tb.addMaterialCommandToSideMenu("Liste des Offres", FontImage.MATERIAL_UPDATE, e -> new Client(res).show());
+        tb.addMaterialCommandToSideMenu("Mes Demandes de Location", FontImage.MATERIAL_ADD, e -> new ClientDemande(res).show());
+        tb.addMaterialCommandToSideMenu("Statistiques", FontImage.MATERIAL_STARS, e -> new Satistiques(res).show());
+        tb.addMaterialCommandToSideMenu("Geo Info", FontImage.MATERIAL_INFO, e -> new smsForm(res).show());
         tb.addMaterialCommandToSideMenu("Acceuil", FontImage.MATERIAL_EXIT_TO_APP, e -> {
-                trajetsUI ui = new trajetsUI(res);
-                ui.getForm().show();
+            trajetsUI ui = new trajetsUI(res);
+            ui.getForm().show();
         });
+
     }
 }
