@@ -1,0 +1,87 @@
+
+root { 
+    display: block;
+}
+.root {
+-fx-background-image: url("background.jpg");
+}
+.label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+.welcome-text {
+   -fx-font-size: 32px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: #818181;
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+#actiontarget {
+  -fx-fill: FIREBRICK;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );  
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+	
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 10;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color: 
+        transparent
+        transparent
+        derive(-fx-base, 80%) 
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+.text-field, .text-area {
+    -fx-font-size: 18;
+    -fx-background-color:
+        rgba(255, 255, 255, 0.3),
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) 50%),
+        rgb(218, 226, 224);
+    -fx-background-insets: 0 0 -1 0, 0, 1.5;
+    -fx-background-radius: 6, 5, 4;
+    -fx-padding: 6 10 4 10;
+    -fx-effect: innershadow( gaussian, rgba(0, 0, 0, 0.8), 5, 0, 0, 2 );
+    -fx-font-family: "Arial";
+}
+
+.text-area {
+    -fx-padding: 6 5 6 5;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-prompt-text-fill:
+        rgb(128,128,128);
+    -fx-background-color:
+        rgba(235, 235, 235, 0.5),
+        rgba(0, 0, 0, 0.4),
+        rgb(255, 255, 255);
+}
+.tab-pane {
+    -fx-tab-max-height: 0 ;
+} 
+.tab-pane .tab-header-area {
+    visibility: hidden ;
+}
