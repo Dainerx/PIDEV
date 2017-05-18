@@ -1,0 +1,34 @@
+commentaire_index:
+    path:     /
+    defaults: { _controller: "PidevForumBundle:Commentaire:index" }
+    methods:  GET
+
+commentaire_show:
+    path:     /{id}/show
+    defaults: { _controller: "PidevForumBundle:Commentaire:show" }
+    methods:  GET
+
+commentaire_new:
+    path:     /new
+    defaults: { _controller: "PidevForumBundle:Commentaire:new" }
+    methods:  [GET, POST]
+
+commentaire_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PidevForumBundle:Commentaire:edit" }
+    methods:  [GET, POST,DELETE]
+
+commentaire_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PidevForumBundle:Commentaire:delete" }
+    methods:  [DELETE,GET]
+
+forum_indexx:
+    path:     /forum
+    defaults: { _controller: "PidevForumBundle:PublicationForum:index" }
+    methods:  GET
+
+forum_showw:
+    path:     /{id}/forum/show
+    defaults: { _controller: "PidevForumBundle:PublicationForum:show" }
+    methods:  GET

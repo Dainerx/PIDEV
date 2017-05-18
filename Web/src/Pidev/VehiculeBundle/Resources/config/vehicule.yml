@@ -1,0 +1,24 @@
+vehicule_index:
+    path:     /
+    defaults: { _controller: "PidevVehiculeBundle:Vehicule:index" }
+    methods:  GET
+
+vehicule_show:
+    path:     /{id}/show
+    defaults: { _controller: "PidevVehiculeBundle:Vehicule:show" }
+    methods:  GET
+
+vehicule_new:
+    path:     /new
+    defaults: { _controller: "PidevVehiculeBundle:Vehicule:new" }
+    methods:  [GET, POST]
+
+vehicule_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PidevVehiculeBundle:Vehicule:edit" }
+    methods:  [GET, POST]
+
+vehicule_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PidevVehiculeBundle:Vehicule:delete" }
+    methods:  DELETE

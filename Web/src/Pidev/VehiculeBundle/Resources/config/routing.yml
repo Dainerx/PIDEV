@@ -1,0 +1,6 @@
+pidev_vehicule_homepage:
+    path:     /
+    defaults: { _controller: PidevVehiculeBundle:Default:index }
+pidev_user_vehicule:
+    resource: "@PidevVehiculeBundle/Resources/config/vehicule.yml"
+    prefix:   /vehicule

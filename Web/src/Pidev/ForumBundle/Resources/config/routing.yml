@@ -1,0 +1,11 @@
+pidev_forum_homepage:
+    path:     /
+    defaults: { _controller: PidevForumBundle:Default:index }
+
+pidev_user_forum:
+    resource: "@PidevForumBundle/Resources/config/publicationforum.yml"
+    prefix:   /forum
+pidev_user_commentaire:
+    resource: "@PidevForumBundle/Resources/config/commentaire.yml"
+    prefix:   /commentaire
+

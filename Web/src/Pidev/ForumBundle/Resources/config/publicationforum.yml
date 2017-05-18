@@ -1,0 +1,68 @@
+forum_index:
+    path:     /
+    defaults: { _controller: "PidevForumBundle:PublicationForum:index" }
+    methods:  GET
+
+forum_show:
+    path:     /{id}/show
+    defaults: { _controller: "PidevForumBundle:PublicationForum:show" }
+    methods:  GET
+
+forum_new:
+    path:     /new
+    defaults: { _controller: "PidevForumBundle:PublicationForum:new" }
+    methods:  [GET, POST]
+
+forum_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PidevForumBundle:PublicationForum:edit" }
+    methods:  [GET, POST]
+
+forum_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PidevForumBundle:PublicationForum:delete" }
+    methods:  DELETE
+covoiturage:
+     path:     /covoiturage
+     defaults: { _controller: "PidevForumBundle:PublicationForum:covoiturage" }
+     methods:  GET
+location:
+     path:     /location
+     defaults: { _controller: "PidevForumBundle:PublicationForum:location" }
+     methods:  GET
+partenariat:
+     path:     /partenariat
+     defaults: { _controller: "PidevForumBundle:PublicationForum:partenariat" }
+     methods:  GET
+
+noterpubcov:
+     path:     /consultercov/{note}/{id}
+     defaults: { _controller: "PidevForumBundle:PublicationForum:notercov" }
+     methods:  [GET, POST]
+noterpubloc:
+     path:     /consulterloc/{note}/{id}
+     defaults: { _controller: "PidevForumBundle:PublicationForum:noterloc" }
+     methods:  [GET, POST]
+noterpubpart:
+     path:     /consulterpart/{note}/{id}
+     defaults: { _controller: "PidevForumBundle:PublicationForum:noterpart" }
+     methods:  [GET, POST]
+homeuser:
+     path:     /home
+     defaults: { _controller: "PidevUserBundle:User:index" }
+signe:
+     path:     /signe/{id}
+     defaults: { _controller: "PidevForumBundle:PublicationForum:signaler" }
+commentaire_indexx:
+    path:     /commentaire
+    defaults: { _controller: "PidevForumBundle:Commentaire:index" }
+    methods:  GET
+commentaire_neww:
+    path:     /{id}/commentaire/new
+    defaults: { _controller: "PidevForumBundle:Commentaire:new" }
+    methods:  [GET, POST]
+
+commentaire_editt:
+    path:     /{id}/commentaire/edit
+    defaults: { _controller: "PidevForumBundle:Commentaire:edit" }
+    methods:  [GET, POST]

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Commentaire</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idcom</th>
+                <td>{{ commentaire.idCom }}</td>
+            </tr>
+            <tr>
+                <th>Texte</th>
+                <td>{{ commentaire.texte }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if commentaire.date %}{{ commentaire.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('commentaire_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a {% if publicationForum.idPersonne == id_user %} href="{{ path('commentaire_edit', { 'id': commentaire.idCom }) }}"{% else %} disabled="true" {% endif %}>Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
