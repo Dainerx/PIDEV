@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" stylesheets="@../assets/login.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FXMLFrontFeedController">
+   <children>
+      <TabPane fx:id="tabParent" layoutX="-2.0" prefHeight="542.0" prefWidth="763.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab fx:id="tabAccueil" text="Accueil">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.3425559947299078" layoutX="1.0" layoutY="-1.0" prefHeight="514.0" prefWidth="761.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <GridPane layoutX="-95.0" layoutY="12.0" prefHeight="512.0" prefWidth="223.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="97.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="97.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="124.0" minHeight="10.0" prefHeight="103.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="122.0" minHeight="10.0" prefHeight="106.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="107.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="107.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <JFXButton fx:id="buttonPublier" onAction="#gotoAjoutComm" prefHeight="98.0" prefWidth="257.0" text="Commenter un trajet" />
+                                          <JFXButton fx:id="buttonTrajetPers" onAction="#gotoAjoutComm" prefHeight="98.0" prefWidth="257.0" text="Choisir un trajet personnalisé" GridPane.rowIndex="1" />
+                                          <JFXButton fx:id="buttonConsulterEvenement" onAction="#gotoAffficherEvt" prefHeight="78.0" prefWidth="257.0" text="Consulter les évènements" GridPane.rowIndex="2" />
+                                          <JFXButton fx:id="buttonConsulterCadeau" onAction="#gotoAfficherCadeau" prefHeight="105.0" prefWidth="257.0" text="Consulter ses cadeaux" GridPane.rowIndex="3" />
+                                          <JFXButton fx:id="buttonConsulterPoints" lineSpacing="5.0" onAction="#gotoAfficherCommentaires" prefHeight="120.0" prefWidth="257.0" text="Consulter les commentaires" GridPane.rowIndex="4" />
+                                          <JFXButton onAction="#gotoStat" prefHeight="111.0" prefWidth="257.0" text="Consulter Les statistiques de nos feedbacks" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                                 <effect>
+                                    <InnerShadow color="#2f2d2d" />
+                                 </effect>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="529.0" prefWidth="496.0" styleClass="root">
+                                 <children>
+                                    <Label layoutX="13.0" layoutY="82.0" prefHeight="17.0" prefWidth="181.0" styleClass="welcome-text" text="Welcome" />
+                                    <Label fx:id="labelBienvenu" layoutX="29.0" layoutY="147.0" prefHeight="17.0" prefWidth="208.0" />
+                                 </children></AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab fx:id="tabAjout" text="Ajout">
+               <content>
+                  <AnchorPane id="AnchorPane" prefHeight="441.0" prefWidth="682.0">
+                     <children>
+                        <GridPane layoutX="376.0" layoutY="41.0" prefHeight="397.0" prefWidth="339.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="376.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="41.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="516.0" minWidth="10.0" prefWidth="109.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="468.0" minWidth="10.0" prefWidth="230.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="112.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="132.0" minHeight="8.0" prefHeight="92.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="144.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label fx:id="labelMembre" text="Membre" />
+                              <Label fx:id="LabelSujet" text="Sujet" GridPane.rowIndex="1" />
+                              <Label fx:id="labelRating" text="Rating" textFill="#1384ee" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font></Label>
+                              <Label fx:id="LabelDate" text="Date" textFill="#1384ee" GridPane.rowIndex="3" />
+                              <Label fx:id="LabelCommentaire" text="Commentaire" GridPane.rowIndex="4" />
+                              <TextField fx:id="id" accessibleRole="IMAGE_VIEW" GridPane.columnIndex="1" />
+                              <TextField fx:id="sujet" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextArea fx:id="commentaire" prefHeight="138.0" prefWidth="221.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <DatePicker fx:id="date" prefHeight="25.0" prefWidth="426.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="rating" prefHeight="25.0" prefWidth="185.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <HBox fx:id="ratinghbox" prefHeight="23.0" prefWidth="266.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <Button fx:id="buttonAjouter" layoutX="604.0" layoutY="470.0" mnemonicParsing="false" onAction="#AjouterFeedback" prefHeight="25.0" prefWidth="111.0" text="Ajouter" />
+                        <TableView fx:id="TrajetTV" layoutX="26.0" layoutY="39.0" onMousePressed="#RecupererIdTrajet" prefHeight="404.0" prefWidth="307.0" />
+                        <JFXButton layoutX="27.0" layoutY="458.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="108.0" text="Retour" />
+                        <JFXButton layoutX="145.0" layoutY="457.0" onAction="#gotoMap" prefHeight="23.0" prefWidth="190.0" text="Personnaliser trajet" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab fx:id="tabAffichage" text="Affichage">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="759.0">
+                     <children>
+                        <TableView fx:id="affichageFeedback" layoutX="7.0" layoutY="56.0" onMousePressed="#RecupererFeedback" prefHeight="380.0" prefWidth="742.0" />
+                        <ButtonBar layoutX="536.0" layoutY="435.0" prefHeight="40.0" prefWidth="200.0">
+                           <buttons>
+                              <Button fx:id="buttonModif" mnemonicParsing="false" onAction="#ModifierFeedback" text="Editer" />
+                              <Button fx:id="buttonSupprimer" mnemonicParsing="false" onAction="#SupprimerFeedback" text="Supprimer" />
+                           </buttons>
+                        </ButtonBar>
+                        <TextField fx:id="idRecherche" layoutX="9.0" layoutY="21.0" onKeyReleased="#RechercherFeedback" prefHeight="31.0" prefWidth="236.0" />
+                        <JFXButton layoutX="9.0" layoutY="443.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="104.0" text="Retour" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab fx:id="tabModifier" text="Modifier">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="23.0" layoutY="33.0" prefHeight="432.0" prefWidth="719.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.0" minWidth="10.0" prefWidth="137.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="423.0" minWidth="10.0" prefWidth="423.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="134.0" minHeight="10.0" prefHeight="134.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="78.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="122.0" minHeight="8.0" prefHeight="122.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="122.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label text="ID Membre" />
+                              <Label text="Sujet" GridPane.rowIndex="1" />
+                              <Label text="Rating" GridPane.rowIndex="2" />
+                              <Label text="Date" GridPane.rowIndex="3" />
+                              <Label text="Commentaire" GridPane.rowIndex="4" />
+                              <TextField fx:id="idModif" prefHeight="30.0" prefWidth="421.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="sujetModif" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="ratingModif" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextArea fx:id="commentaireModif" prefHeight="76.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <DatePicker fx:id="dateModif" prefHeight="25.0" prefWidth="426.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <HBox fx:id="ratinghbox1" prefHeight="23.0" prefWidth="423.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <Button fx:id="buttonEnregistrer" layoutX="647.0" layoutY="474.0" mnemonicParsing="false" onAction="#EnregistrerModif" text="Enregistrer" />
+                        <JFXButton layoutX="23.0" layoutY="473.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="123.0" text="Retour" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabLocalisation" text="Localisation">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="393.0" prefWidth="617.0">
+                     <children>
+                        <JFXTextArea fx:id="villesIntermediairesTA" layoutX="14.0" layoutY="112.0" prefHeight="232.0" prefWidth="182.0" />
+                        <BorderPane fx:id="map_container" layoutX="204.0" layoutY="-1.0" prefHeight="488.0" prefWidth="560.0" />
+                        <JFXButton layoutX="22.0" layoutY="502.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="179.0" text="Retour" />
+                        <JFXButton layoutX="22.0" layoutY="464.0" onAction="#clearVilles" prefHeight="23.0" prefWidth="179.0" text="rechoisir" />
+                        <JFXButton layoutX="22.0" layoutY="423.0" onAction="#setDestinationModifiee" prefHeight="23.0" prefWidth="179.0" text="Confirmer" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabMail">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutX="40.0" layoutY="109.0" prefHeight="357.0" prefWidth="689.0" styleClass="table-view" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="109.0" />
+                        <JFXTextArea fx:id="mail" layoutX="36.0" layoutY="116.0" prefHeight="352.0" prefWidth="696.0" />
+                        <JFXTextField fx:id="Destinataire" layoutX="40.0" layoutY="64.0" prefHeight="31.0" prefWidth="253.0" />
+                        <JFXButton layoutX="633.0" layoutY="487.0" onAction="#EnvoyerMail" prefHeight="23.0" prefWidth="101.0" text="Envoyer" />
+                        <JFXButton layoutX="40.0" layoutY="487.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="121.0" text="Retour" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabEvt" text="Evènements">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableEvt" layoutX="21.0" layoutY="50.0" prefHeight="388.0" prefWidth="726.0" />
+                        <JFXButton layoutX="21.0" layoutY="470.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="134.0" text="Retour" />
+                        <JFXTextField fx:id="rechercheEvtTF" layoutX="21.0" layoutY="14.0" onKeyReleased="#rechercherEvt" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabCadeau" text="Cadeaux">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableCadeau" layoutX="22.0" layoutY="50.0" prefHeight="408.0" prefWidth="728.0" />
+                        <JFXButton layoutX="23.0" layoutY="478.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="95.0" text="Retour" />
+                        <JFXTextField fx:id="rechercheCadTF" layoutX="23.0" layoutY="14.0" onKeyReleased="#rechercherCadeau" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabStat" text="Statistiques">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <PieChart fx:id="statFeed" layoutX="41.0" layoutY="14.0" prefHeight="443.0" prefWidth="681.0" />
+                        <JFXButton layoutX="35.0" layoutY="481.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="106.0" text="Retour" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

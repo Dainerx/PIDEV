@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" fx:id="owner" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.FXMLBackController">
+   <children>
+      <TabPane fx:id="tabParent" layoutX="27.0" layoutY="26.0" prefHeight="349.0" prefWidth="562.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab fx:id="tabAccueil" text="Accueil">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="14.0" layoutY="51.0" prefHeight="342.0" prefWidth="562.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXButton onAction="#gotoFeed" prefHeight="23.0" prefWidth="562.0" text="Feedbacks" />
+                              <JFXButton onAction="#gotoEvt" prefHeight="23.0" prefWidth="564.0" text="Evenements" GridPane.rowIndex="1" />
+                              <JFXButton onAction="#gotoLieu" prefHeight="23.0" prefWidth="562.0" text="Lieu evenement" GridPane.rowIndex="2" />
+                              <JFXButton onAction="#gotoCadeau" prefHeight="23.0" prefWidth="570.0" text="Cadeaux" GridPane.rowIndex="3" />
+                              <JFXButton onAction="#gotoHistorique" prefHeight="23.0" prefWidth="570.0" text="Historique cadeaux" GridPane.rowIndex="4" />
+                              <JFXButton onAction="#gotoCadeauEdit" prefHeight="23.0" prefWidth="564.0" text="Cadeau edit" GridPane.rowIndex="5" />
+                              <JFXButton onAction="#gotoMailCadeau" prefHeight="23.0" prefWidth="567.0" text="Cadeau mail" GridPane.rowIndex="6" />
+                              <JFXButton fx:id="gotoStat" onAction="#gotoStat" prefHeight="23.0" prefWidth="570.0" text="Statistique" GridPane.rowIndex="7" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab fx:id="gestionFeedTab" text="Feedbacks">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.29797979797979796" layoutX="60.0" layoutY="36.0" prefHeight="320.0" prefWidth="546.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <JFXTextField fx:id="idRecherche" layoutX="14.0" layoutY="45.0" onKeyReleased="#rechercher" prefHeight="31.0" prefWidth="136.0" />
+                                    <JFXButton fx:id="supprimerFeedback" layoutX="12.0" layoutY="99.0" onAction="#supprimerFeedback" prefHeight="25.0" prefWidth="136.0" text="Supprimer" />
+                                    <JFXButton layoutX="12.0" layoutY="159.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="137.0" text="Retour" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TableView fx:id="affichageTable" onMousePressed="#recupererId" prefHeight="318.0" prefWidth="379.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="gestionEvtTab" text="Evenements">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.37316176470588236" prefHeight="320.0" prefWidth="546.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="193.0">
+                                 <children>
+                                    <JFXTextField fx:id="libelleEvtTF" layoutX="9.0" layoutY="52.0" prefHeight="25.0" prefWidth="177.0" />
+                                    <JFXDatePicker fx:id="dateEvtPick" layoutX="9.0" layoutY="193.0" prefHeight="28.0" prefWidth="160.0" />
+                                    <JFXTextArea fx:id="descriptionEvtTA" layoutX="9.0" layoutY="113.0" prefHeight="49.0" prefWidth="182.0" />
+                                    <Label layoutX="14.0" layoutY="35.0" prefHeight="17.0" prefWidth="83.0" text="Libelle" />
+                                    <Label layoutX="14.0" layoutY="87.0" prefHeight="17.0" prefWidth="75.0" text="Description" />
+                                    <Label layoutX="9.0" layoutY="176.0" text="Date de l'évènement" />
+                                    <HBox layoutX="-2.0" layoutY="292.0" prefHeight="23.0" prefWidth="208.0">
+                                       <children>
+                                          <JFXButton onAction="#gotoAccueil" prefHeight="23.0" prefWidth="75.0" text="Retour" />
+                                          <JFXButton fx:id="buttonAjouterEvt" onAction="#AjouterEvt" prefHeight="23.0" prefWidth="68.0" text="Ajouter" />
+                                          <JFXButton fx:id="buttonModifEvt" onAction="#enregistrerModifEvt" prefHeight="23.0" prefWidth="76.0" text="Modifier" />
+                                       </children>
+                                    </HBox>
+                                    <Label layoutX="14.0" layoutY="231.0" text="Lieu" />
+                                    <JFXTextField fx:id="lieuEvtTF" layoutX="11.0" layoutY="248.0" onMousePressed="#gotoMap" prefHeight="31.0" prefWidth="185.0" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="350.0">
+                                 <children>
+                                    <TableView fx:id="afficherEvtTV" layoutX="14.0" layoutY="52.0" onMousePressed="#recupererIdEvt" prefHeight="209.0" prefWidth="309.0" />
+                                    <ButtonBar layoutX="59.0" layoutY="279.0">
+                                       <buttons>
+                                          <JFXButton onAction="#supprimerEvt" text="Supprimer" />
+                                          <JFXButton onAction="#modifierEvt" text="Editer" />
+                                          <JFXButton onAction="#NouvelEvt" prefWidth="54.0" text="Nouveau" />
+                                       </buttons>
+                                    </ButtonBar>
+                                    <JFXTextField fx:id="searchEvtTF" layoutX="14.0" layoutY="12.0" onKeyReleased="#rechercherEvt" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="TabLieu" text="lieu    ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="562.0">
+                     <children>
+                        <BorderPane fx:id="map_container" layoutX="14.0" layoutY="14.0" prefHeight="273.0" prefWidth="519.0" />
+                        <JFXButton layoutX="14.0" layoutY="317.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="108.0" text="Retour" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="TabCadeau" text="Cadeau">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.33455882352941174" layoutX="214.0" layoutY="1.0" prefHeight="320.0" prefWidth="546.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="195.0">
+                                 <children>
+                                    <JFXTextField fx:id="libelleCadeauTF" layoutX="63.0" layoutY="72.0" prefHeight="31.0" prefWidth="110.0" />
+                                    <JFXButton layoutX="64.0" layoutY="130.0" onAction="#browsePhoto" prefHeight="25.0" prefWidth="108.0" text="browse" />
+                                    <Label layoutX="3.0" layoutY="23.0" prefHeight="17.0" prefWidth="67.0" text="Membre" />
+                                    <Label layoutX="5.0" layoutY="71.0" prefHeight="35.0" prefWidth="54.0" text="Libelle" />
+                                    <Label layoutX="5.0" layoutY="126.0" prefHeight="30.0" prefWidth="45.0" text="Photo" />
+                                    <JFXTextField fx:id="photoTF" layoutX="6.0" layoutY="164.0" prefHeight="31.0" prefWidth="169.0" />
+                                    <JFXButton layoutX="-17.0" layoutY="202.0" onAction="#AffecterCadeau" prefHeight="25.0" prefWidth="202.0" text="AffecterCadeau" />
+                                    <JFXButton layoutX="-17.0" layoutY="241.0" onAction="#ConsulterCadeaux" prefHeight="25.0" prefWidth="225.0" text="Consulter historique cadeaux" />
+                                    <JFXComboBox fx:id="CBmembreCadeau" layoutX="73.0" layoutY="19.0" prefHeight="25.0" prefWidth="100.0" />
+                                    <JFXButton layoutX="-6.0" layoutY="279.0" onAction="#EnvoyerMailCadeau" prefHeight="25.0" prefWidth="196.0" text="Envoyer mail au membre" />
+                                    <JFXButton layoutX="-5.0" layoutY="314.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="191.0" text="Retour" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="324.0">
+                                 <children>
+                                    <ImageView fx:id="displayCadeauIV" fitHeight="150.0" fitWidth="279.0" layoutX="38.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabHistoriqueCadeau" text="historiqueC ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.29797979797979796" layoutX="142.0" layoutY="12.0" prefHeight="320.0" prefWidth="546.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="258.0" prefWidth="168.0">
+                                 <children>
+                                    <TableView fx:id="affichageCadeauxTV" layoutX="-7.0" layoutY="32.0" onMousePressed="#AfficherDetailCadeau" prefHeight="252.0" prefWidth="164.0" AnchorPane.bottomAnchor="88.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <JFXButton layoutX="96.0" layoutY="269.0" onAction="#ModifierCadeau" prefHeight="25.0" prefWidth="68.0" text="Editer" />
+                                    <JFXButton layoutY="270.0" onAction="#supprimerCadeau" text="Supprimer" />
+                                    <JFXButton layoutY="303.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="164.0" text="Retour" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <ImageView fx:id="imageviewDetailsCadeau" fitHeight="125.0" fitWidth="151.0" layoutX="27.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Label layoutX="29.0" layoutY="20.0" text="Détails.." />
+                                    <Label layoutX="29.0" layoutY="254.0" text="Membre bénéficiaire" />
+                                    <Label layoutX="29.0" layoutY="206.0" text="Libelle Cadeau" />
+                                    <JFXTextField fx:id="libelleDetTF" layoutX="27.0" layoutY="223.0" />
+                                    <JFXTextField fx:id="membreDetTF" layoutX="27.0" layoutY="271.0" prefHeight="31.0" prefWidth="225.0" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabModifCad" text="CadeauEdit">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="232.0">
+                           <children>
+                              <JFXTextField fx:id="libelleCadeauModifTF" layoutX="68.0" layoutY="101.0" prefHeight="31.0" prefWidth="157.0" />
+                              <JFXButton layoutX="69.0" layoutY="159.0" onAction="#browsePhoto2" prefHeight="25.0" prefWidth="152.0" text="browse" textFill="#171515e7" />
+                              <Label layoutX="3.0" layoutY="52.0" prefHeight="17.0" prefWidth="67.0" text="Membre" />
+                              <Label layoutX="-1.0" layoutY="108.0" prefHeight="17.0" prefWidth="54.0" text="Libelle" />
+                              <Label layoutX="1.0" layoutY="163.0" prefHeight="17.0" prefWidth="49.0" text="Photo" />
+                              <JFXTextField fx:id="photoModifTF" layoutY="193.0" prefHeight="31.0" prefWidth="229.0" />
+                              <JFXButton layoutX="-4.0" layoutY="241.0" onAction="#enregistrerModifCadeau" prefHeight="25.0" prefWidth="236.0" text="Modifier" />
+                              <JFXButton layoutX="4.0" layoutY="280.0" onAction="#ConsulterCadeaux" prefHeight="25.0" prefWidth="225.0" text="Consulter historique cadeaux" />
+                              <JFXComboBox fx:id="CBmembreEdit" layoutX="70.0" layoutY="48.0" prefHeight="25.0" prefWidth="152.0" />
+                           </children>
+                        </AnchorPane>
+                        <ImageView fx:id="displayCadeauIV1" fitHeight="150.0" fitWidth="279.0" layoutX="232.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" />
+                        <JFXButton layoutX="1.0" layoutY="315.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="229.0" text="Retour" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabMail" text="Mail Cadeau">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutX="17.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="273.0" prefWidth="546.0">
+                           <children>
+                              <JFXTextArea fx:id="mailTA" layoutX="8.0" layoutY="98.0" prefHeight="175.0" prefWidth="538.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="98.0" />
+                              <JFXTextField fx:id="DestinataireTF" layoutX="8.0" layoutY="63.0" text="to : " />
+                           </children>
+                        </AnchorPane>
+                        <JFXButton layoutX="471.0" layoutY="291.0" onAction="#EnvoyerMail" prefHeight="23.0" prefWidth="88.0" text="Envoyer" />
+                        <JFXButton layoutY="291.0" onAction="#gotoAccueil" prefHeight="23.0" prefWidth="108.0" text="Retour" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabStat" text="statistique">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <PieChart fx:id="statFeed" layoutX="14.0" layoutY="-40.0" prefHeight="325.0" prefWidth="562.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+   <stylesheets>
+      <URL value="@../assets/login.css" />
+   </stylesheets>
+</AnchorPane>

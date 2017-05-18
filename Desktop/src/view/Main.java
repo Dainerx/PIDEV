@@ -41,9 +41,13 @@ public class Main extends Application {
 //        stage.setScene(new Scene(root, 600, 450));
 //        stage.setResizable(false);
 //        stage.show();
-
         //Ameni Main
-        Parent root = FXMLLoader.load(getClass().getResource("/view/Acceuil.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("/view/Acceuil.fxml"));
+//        Scene scene = new Scene(root);
+//        stage.setScene(scene);
+//        stage.show();
+        //Khaoula main
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLBack.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
