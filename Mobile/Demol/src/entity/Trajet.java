@@ -12,6 +12,7 @@ import java.util.Date;
  * @author dainer
  */
 public class Trajet {
+
     private int id;
     private String destination;
     private String depart;
@@ -24,109 +25,137 @@ public class Trajet {
     private Vehicule vehciule;
     private User user;
 
-        public Trajet(String destination, String depart, String dateDepart, String datepub, float cout, String description, 
-        int nombrePlaceDispo, boolean suivie) {
+    public Trajet(int id) {
+        this.id = id;
+    }
+
+    public Trajet(String destination, String depart,/* LocalDate dateDepart,*/ float cout, String description,
+            int nombrePlaceDispo, boolean suivie, Vehicule vehicule, Membre membre) {
         this.destination = destination;
         this.depart = depart;
-        this.datedepart = dateDepart;
-        this.datepub=datepub;
+        //this.dateDepart = dateDepart;
         this.cout = cout;
         this.description = description;
         this.nbrplacedispo = nombrePlaceDispo;
         this.suivie = suivie;
-    }    
-
-    public Trajet()
-    {
-        
+        this.vehciule = vehicule;
     }
-    public int getId()
-    {
+
+    public Trajet(String destination, String depart,/* LocalDate dateDepart,*/ float cout, String description,
+            int nombrePlaceDispo, boolean suivie, Vehicule vehicule) {
+        this.destination = destination;
+        this.depart = depart;
+        //this.dateDepart = dateDepart;
+        this.cout = cout;
+        this.description = description;
+        this.nbrplacedispo = nombrePlaceDispo;
+        this.suivie = suivie;
+        this.vehciule = vehicule;
+    }
+
+    public Trajet(String destination, String depart, int id) {
+        this.destination = destination;
+        this.depart = depart;
+        this.id = id;
+
+    }
+
+    public Trajet(String destination, String depart,/* LocalDate dateDepart,*/ float cout, String description,
+            int nombrePlaceDispo, boolean suivie) {
+        this.destination = destination;
+        this.depart = depart;
+        //this.dateDepart = dateDepart;
+        this.cout = cout;
+        this.description = description;
+        this.nbrplacedispo = nombrePlaceDispo;
+        this.suivie = suivie;
+    }
+
+    public Trajet(String destination, String depart, String dateDepart, String datepub, float cout, String description,
+            int nombrePlaceDispo, boolean suivie) {
+        this.destination = destination;
+        this.depart = depart;
+        this.datedepart = dateDepart;
+        this.datepub = datepub;
+        this.cout = cout;
+        this.description = description;
+        this.nbrplacedispo = nombrePlaceDispo;
+        this.suivie = suivie;
+    }
+
+    public Trajet() {
+
+    }
+
+    public int getId() {
         return this.id;
     }
 
-    public void setId(int id)
-    {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getDestination()
-    {
+    public String getDestination() {
         return this.destination;
     }
 
-    public void setDestination(String destination)
-    {
+    public void setDestination(String destination) {
         this.destination = destination;
     }
 
-    public String getDepart()
-    {
+    public String getDepart() {
         return this.depart;
     }
 
-    public void setDepart(String depart)
-    {
+    public void setDepart(String depart) {
         this.depart = depart;
     }
 
-    public String getDatedepart()
-    {
+    public String getDatedepart() {
         return this.datedepart;
     }
 
-    public void setDatedepart(String datedepart)
-    {
+    public void setDatedepart(String datedepart) {
         this.datedepart = datedepart;
     }
 
-    public float getCout()
-    {
+    public float getCout() {
         return this.cout;
     }
 
-    public void setCout(float cout)
-    {
+    public void setCout(float cout) {
         this.cout = cout;
     }
 
-    public String getDescription()
-    {
+    public String getDescription() {
         return this.description;
     }
 
-    public void setDescription(String description)
-    {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public int getNbrplacedispo()
-    {
+    public int getNbrplacedispo() {
         return this.nbrplacedispo;
     }
 
-    public void setNbrplacedispo(int nbrplacedispo)
-    {
+    public void setNbrplacedispo(int nbrplacedispo) {
         this.nbrplacedispo = nbrplacedispo;
     }
 
-    public boolean isSuivi()
-    {
+    public boolean isSuivi() {
         return this.suivie;
     }
 
-    public void setSuivi(boolean suivi)
-    {
+    public void setSuivi(boolean suivi) {
         this.suivie = suivi;
     }
 
-    public String getDatepub()
-    {
+    public String getDatepub() {
         return this.datepub;
     }
 
-    public void setDatepub(String datepub)
-    {
+    public void setDatepub(String datepub) {
         this.datepub = datepub;
     }
 
@@ -145,13 +174,10 @@ public class Trajet {
     public void setUser(User user) {
         this.user = user;
     }
-    
-    
 
     @Override
     public String toString() {
         return "Trajet{" + "id=" + id + ", destination=" + destination + ", depart=" + depart + ", datedepart=" + datedepart + ", datepub=" + datepub + ", cout=" + cout + ", description=" + description + ", nbrplacedispo=" + nbrplacedispo + ", suivie=" + suivie + '}';
     }
-    
 
 }
