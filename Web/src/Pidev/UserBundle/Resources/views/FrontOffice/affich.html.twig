@@ -1,0 +1,148 @@
+{% extends ("@FOSUser/layout.html.twig") %}
+{% block title %}Index{% endblock %}
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
+
+{% block content %}
+    {% block topbody %}
+        {{ parent() }}
+    {% endblock %}
+
+
+
+{#
+
+    <h2> libelle :  <br></h2>
+    description: {{ e.description }}<br>
+    point de depart: {{ e.lieu }}<br>
+    date : {{ e.date|date("Y-m-d") }}<br>
+#}
+
+
+{% for count in counter %}
+    {% if ( count['result']!=0) %}
+        {{ path('mailevent') }}
+    {% endif %}
+{% endfor %}
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h3 class="headline margin-bottom-25 margin-top-60">Your events</h3>
+                <h4><a href="#">See All!</a></h4>
+            </div>
+
+            <!-- Carousel -->
+            <div class="col-md-12">
+                <div class="carousel">
+                    {% for e in event %}
+                        <!-- Listing Item -->
+                        <div class="carousel-item">
+                            <div class="listing-item">
+
+                                <a href="#" class="listing-img-container">
+
+                                    <div class="listing-badges">
+                                        <span class="featured">Featured</span>
+                                    </div>
+
+                                    <div class="listing-img-content">
+
+{#
+                                        <span class="listing-price"><i>{{ trajet[0].cout }} Dt/ seat</i></span>
+                                        <span class="like-icon tooltip"></span>
+#}
+                                    </div>
+{#
+                                    //badel tssawer lena
+#}
+                                    <div class="listing-carousel">
+                                        <div><img src="{{ asset('bundles/views/images/agent-01.jpg') }}" alt=""></div>
+                                        <div><img src="{{ asset('bundles/views/images/agent-02.jpg') }}" alt=""></div>
+                                        <div><img src="{{ asset('bundles/views/images/agent-03.jpg') }}" alt=""></div>
+                                    </div>
+
+                                </a>
+
+                                <div class="listing-content">
+
+                                    <div class="listing-title">
+                                        <h4>{{ e.libelle }}
+                                        </h4>
+                                        <p>{{ e.description }}</p>
+                                        <h5><a href="https://www.google.com/maps/{{ e.lieu }}" class="listing-address popup-gmaps">
+                                        <i class="fa fa-map-marker"></i>
+                                                {{ e.lieu }}
+                                        </a>
+                                        </h5>
+                                    </div>
+
+                                    <ul class="listing-features">
+
+                                    </ul>
+
+                                    <div class="listing-footer">
+                                        <span><i class="fa fa-calendar-o"></i> {{ e.date|date("Y-m-d") }}
+                                        </span>
+                                        <span><a href="{{ path('homeuserdel',{'id':e.id}) }}" >Supprimer<i class="fa fa-trash-o"></i>   </a></span>
+                                        <span><a href="{{ path('homeuserupd',{'id':e.id}) }}" >Modifier<i class="icon-edit"></i>   </a></span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <!-- Listing Item / End -->
+                </div>
+            </div>
+            <!-- Carousel / End -->
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% block footer %}
+    {{ parent() }}
+    <!-- Scripts
+================================================== -->
+    <script src="{{ asset('bundles/views/scripts/jquery-2.2.0.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/chosen.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/rangeSlider.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/sticky-kit.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/slick.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/masonry.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/jquery.jpanelmenu.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/tooltips.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/custom.js') }}"></script>
+
+
+    <!-- Style Switcher
+    ================================================== -->
+    <script src="{{ asset('bundles/views/scripts/switcher.js') }}"></script>
+
+{% endblock %}
+
+{% endblock %}
+
+

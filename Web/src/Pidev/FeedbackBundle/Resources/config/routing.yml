@@ -1,0 +1,75 @@
+pidev_feedback_homepage:
+    path:     /def
+    defaults: { _controller: PidevFeedbackBundle:Default:index }
+hey:
+    path:     /yes/{id}
+    defaults: { _controller: PidevFeedbackBundle:Feedback:Ajout}
+aff:
+    path:     /no
+    defaults: { _controller: PidevFeedbackBundle:Feedback:affiche}
+liste:
+    path:     /liste
+    defaults: { _controller: PidevFeedbackBundle:Feedback:liste}
+Delete:
+    path:     /delete/{id}
+    defaults: { _controller: PidevFeedbackBundle:Feedback:delete}
+Edit:
+    path:     /edit/{id}
+    defaults: { _controller: PidevFeedbackBundle:Feedback:edit}
+Evenement:
+    path:     /event
+    defaults: { _controller: PidevFeedbackBundle:Evenement:affiche}
+SearchEvenement:
+    path:     /eventsearch
+    defaults: { _controller: PidevFeedbackBundle:Evenement:rechercher}
+Cadeau:
+    path:     /cadeau
+    defaults: { _controller: PidevFeedbackBundle:Cadeau:affiche}
+stat:
+    path:     /stat
+    defaults: { _controller: PidevFeedbackBundle:Feedback:chartLine}
+homeBack:
+    path:     /homeback
+    defaults: { _controller: PidevFeedbackBundle:Backoffice:index}
+EventBack:
+    path:     /eventback
+    defaults: { _controller: PidevFeedbackBundle:Backoffice:eventaff}
+deleteEv:
+    path:     /evdelete/{id}
+    defaults: { _controller: PidevFeedbackBundle:Backoffice:delete}
+
+AddEvent:
+    path:     /addev
+    defaults: { _controller: PidevFeedbackBundle:Backoffice:addev}
+    options:
+        expose: true
+editEv:
+    path:     /editEv
+    defaults: { _controller: PidevFeedbackBundle:Backoffice:editEv}
+    options:
+        expose: true
+cadeauBack:
+    path:     /cadeauBack
+    defaults: { _controller: PidevFeedbackBundle:Backoffice:cadeauBack}
+addCad:
+    path:     /addCad
+    defaults: { _controller: PidevFeedbackBundle:Backoffice:addcad}
+    options:
+        expose: true
+deleteCad:
+    path:     /deleteCad/{id}
+    defaults: { _controller: PidevFeedbackBundle:Backoffice:deleteCad}
+FeedbackBack:
+    path:     /feedbackBack
+    defaults: { _controller: PidevFeedbackBundle:Backoffice:feedBack}
+deleteFeed:
+    path:     /deleteFeed/{id}
+    defaults: { _controller: PidevFeedbackBundle:Backoffice:deleteFeed}
+statBack:
+    path:     /statBack
+    defaults: { _controller: PidevFeedbackBundle:Backoffice:chartPie}
+mail:
+    path: /mail
+    defaults: { _controller: PidevFeedbackBundle:Backoffice:Mail }
+
+

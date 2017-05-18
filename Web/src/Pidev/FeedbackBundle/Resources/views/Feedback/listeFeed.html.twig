@@ -1,0 +1,63 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+<div class="col-md-8">
+    <table class="manage-table bookmarks-table responsive-table">
+
+        <tr>
+            <th><i class="fa fa-file-text"></i> Feedbacks </th>
+            <th></th>
+        </tr>
+
+        <!-- Item #1 -->
+    {% for m in feed %}
+
+
+        <tr>
+            <td class="title-container">
+
+                <div class="title">
+                    <h4><a href="#">Membre : {{ m.nom }}</a></h4>
+                    <span>Trajet Destination : {{ m.destination }}</span>
+                    <span class="table-property-price">Cout : {{ m.cout }}</span>
+                    <h4><a href="#">Sujet : {{ m.sujet }}</a></h4>
+                    <span>Rating : {{ m.rating|rating(5, "fa-2x") }}</span>
+                    <span>Commentaire : {{ m.commentaire }}</span>
+
+                </div>
+            </td>
+            <td class="action">
+                <span><i class="fa fa-calendar-o"></i> date  :{{ m.date|date('d-m-Y') }}</span>
+
+
+                <a href="{{ path('Delete' ,{'id': m.idFeedback  }) }}"  onclick="return confirm('are u sure?')"  class="delete"><i class="fa fa-remove"></i> Remove</a>
+                {% for flashMessage in app.session.flashbag.get('error') %}
+
+                    {{ flashMessage[0] }}
+
+                {% endfor %}
+
+                <a href="{{ path('Edit' ,{'id': m.idFeedback }) }}" class="edit-profile-photo">Edit</a>
+                {% for flashMessage in app.session.flashbag.get('error') %}
+
+                    {{ flashMessage[0] }}
+
+                {% endfor %}
+
+
+            </td>
+        </tr>
+
+    {% endfor %}
+
+
+    </table>
+</div>
+
+
+
+{% endblock fos_user_content %}

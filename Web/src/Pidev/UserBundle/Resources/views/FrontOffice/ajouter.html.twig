@@ -1,0 +1,44 @@
+{% extends ("@FOSUser/layout.html.twig") %}
+{% block title %}Ajouter Evenement{% endblock %}
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
+
+{% block content %}
+    {% block topbody %}
+        {{ parent() }}
+    {% endblock %}
+
+        <div class="container">
+                <div class="row">
+                    {{ form_start(form )}} {{ form_end(form) }}
+                </div>
+        </div>
+
+
+    {% block footer %}
+        {{ parent() }}
+            <!-- Scripts
+        ================================================== -->
+            <script src="{{ asset('bundles/views/scripts/jquery-2.2.0.min.js') }}"></script>
+            <script src="{{ asset('bundles/views/scripts/chosen.min.js') }}"></script>
+            <script src="{{ asset('bundles/views/scripts/magnific-popup.min.js') }}"></script>
+            <script src="{{ asset('bundles/views/scripts/owl.carousel.min.js') }}"></script>
+            <script src="{{ asset('bundles/views/scripts/rangeSlider.js') }}"></script>
+            <script src="{{ asset('bundles/views/scripts/sticky-kit.min.js') }}"></script>
+            <script src="{{ asset('bundles/views/scripts/slick.min.js') }}"></script>
+            <script src="{{ asset('bundles/views/scripts/masonry.min.js') }}"></script>
+            <script src="{{ asset('bundles/views/scripts/jquery.jpanelmenu.js') }}"></script>
+            <script src="{{ asset('bundles/views/scripts/tooltips.min.js') }}"></script>
+            <script src="{{ asset('bundles/views/scripts/custom.js') }}"></script>
+
+
+            <!-- Style Switcher
+            ================================================== -->
+            <script src="{{ asset('bundles/views/scripts/switcher.js') }}"></script>
+
+    {% endblock %}
+
+{% endblock %}
+
+

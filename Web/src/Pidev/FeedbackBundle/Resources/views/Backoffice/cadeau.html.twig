@@ -1,0 +1,203 @@
+{% extends "@FOSUser/layoutbackoffice.html.twig" %}
+{% block sidebar %}
+    <div class="prtm-sidebar">
+        <div class="prtm-sidebar-back"> </div>
+        <div class="prtm-sidebar-nav-wrapper">
+            <div class="prtm-sidebar-menu">
+                <nav class="sidebar-nav collapse">
+                    <ul class="list-unstyled sidebar-menu">
+                        <li class="sidenav-heading text-uppercase">Dashboards</li>
+                        <li class="has-children active opened"><a href="{{ path('homeBack') }}"><i class="fa fa-tachometer" aria-hidden="true"></i><span>Services après réservation</span></a>
+                            <ul class="list-unstyled sub-menu">
+                                <li><a href="{{ path('EventBack') }}" ><span>Evenement</span></a></li>
+                                <li><a href="{{ path('EventBack') }}"><span>Feedback</span></a></li>
+                                <li><a href="{{ path('EventBack') }}"><span>Cadeau</span></a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+{% endblock sidebar %}
+
+{% block lou %}
+
+
+
+    <!-- Latest compiled and minified JavaScript -->
+
+
+
+    <div class="prtm-content">
+        <div class="ecommerce-page-style">
+            <div class="prtm-block pos-relative">
+                <div class="prtm-block-title mrgn-b-lg">
+                    <div class="caption">
+                        <h3 class="text-capitalize base-dark">product catalogue</h3> </div>
+                    <div class="contextual-link">
+                        <div class="dropdown"> <a href="javascript:;" class="gray" data-toggle="dropdown" data-hover="dropdown" data-close-others="true" aria-expanded="true"><i class="fa fa-cog fa-lg"></i></a>
+                            <ul class="dropdown-menu dropdown-arrow pull-right">
+                                <li>
+                                    <a href="javascript:;"> <i class="fa fa-eye"></i> <span class="mrgn-l-sm">View</span> </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;"> <i class="fa fa-pencil"></i> <span class="mrgn-l-sm">Edit </span> </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;"> <i class="fa fa-trash-o"></i> <span class="mrgn-l-sm">Delete</span> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#responsive"  data-toggle="modal" class="btn btn-inverse btn-rounded"><i class="fa fa-plus"></i> Add</a>
+
+                </div>
+    {% for key, entity in entities %}
+                <div class="prtm-block-content">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 mrgn-b-lg">
+                            <div class="prtm-block">
+                                <div class="overlay-wrap text-center mrgn-b-md">
+                                    <div class=""> <img alt="Embedded Image" src="data:image/png;base64,{{ images[key] }}" class="img-responsive" width="300" height="300"></div>
+                                    <div class="hover-overlay pos-center primary-tp-layer">
+                                        <div class="center-holder"> <a href="" class="btn btn-white btn-block">Edit</a> <a href="{{ path('deleteCad', {'id':entity.idCadeau}) }}" class="btn btn-white btn-block">Remove</a> </div>
+                                    </div>
+                                </div>
+                                <div class="wrapper-content">
+                                    <div class="row">
+                                        <div class="col-xs-7 col-sm-7 col-md-7">
+                                            <h5 class="text-capitalize">{{ entity.libelle }}</h5> <span class="mrgn-b-xs show">{{ entity.idCadeau }}</span> <span class="show"></span> </div>
+                                        <div class="col-xs-5 col-sm-5 col-md-5 text-right">
+                                            <h5>{{ entity.nom }}</h5> </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        {% endfor %}
+
+
+    </div>
+
+
+                    <!-- ModalADD================================================== -->
+
+
+                    <div id="responsive" class="modal fade" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Affecter cadeau  </h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="modal-form" action="" method="post">
+                                        <div class="col-md-6">
+                                            <h4>Entrer</h4>
+
+
+                                            <div class="form-group">
+                                                Libelle <input id="libelle" type="text" class="form-control" >
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                Les membres fidèles <select id="membre" class="form-control">
+                                                    {% for m in membre %}
+
+
+                                                        <option value="{{ m.id }}"> {{ m.nom }}</option>
+                                                    {% endfor %}
+                                                </select>
+
+                                            </div>
+
+
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                Photo <span class="btn btn-success fileinput-button">
+                                        <i class="glyphicon glyphicon-plus"></i>
+                                        <span>Add files...
+                                        </span>
+                                                    <input type="file" id="upload" onchange="previewFile()"><br>
+
+                                    </span>
+
+                                                <table role="presentation" class="table table-striped"><tbody class="files">
+                                                    <img id="photo" src="" height="200" alt="">
+
+                                                    </tbody></table>
+
+                                            </div>
+
+                                        </div>
+
+
+
+
+                                        </div>
+
+                                    </form>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" data-dismiss="modal" class="btn btn-outline-inverse">Close</button>
+                                    <button type="submit" class="btn btn-success" onclick="add2()" >Save changes</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+
+    <script>
+        function previewFile() {
+            var preview = document.querySelector('#photo');
+            var file    = document.querySelector('input[type=file]').files[0];
+            var reader  = new FileReader();
+
+            console.log( $("#upload").val());
+            reader.addEventListener("load", function () {
+                preview.src = reader.result;
+            }, false);
+
+            if (file){
+                reader.readAsDataURL(file);
+
+            }
+        }
+        </script>
+    <script>
+
+        function add2() {
+
+
+
+                var photo= $("#upload").val();
+                var lengthpic =photo.length;
+
+                var photo2= photo.substring(12,lengthpic);
+                console.log(photo);
+            jQuery.ajax({
+
+                url: "{{ path('addCad') }}",
+                data: "photo="+ photo2 +'&libelle='+  $("#libelle").val()+'&membre='+  $("#membre").val(),
+                type: 'POST',
+                success: function (data) {
+                    alert('Added');
+                },
+                error:function (data) {
+                    alert('No way');
+                }
+            });
+
+        }
+    </script>
+
+{% endblock lou %}

@@ -1,0 +1,45 @@
+pidev_user_homepage:
+    path:     /
+    defaults: { _controller: PidevUserBundle:Default:index }
+
+homeadmin:
+    path:    /homeadmin
+    defaults: { _controller: PidevUserBundle:User:Admin }
+
+homeuser:
+    path:     /home
+    defaults: { _controller: PidevUserBundle:User:index }
+
+homeuseradd:
+    path:     /add
+    defaults: { _controller: PidevUserBundle:Event:add }
+
+homeuseraff:
+    path:     /aff
+    defaults: { _controller: PidevUserBundle:Event:aff }
+
+homeuserdel:
+    path:     /del
+    defaults: { _controller: PidevUserBundle:Event:del }
+
+homeuserupd:
+    path:     /upd
+    defaults: { _controller: PidevUserBundle:Event:upd }
+homeuser_recherche:
+    path:     /rech
+    defaults: { _controller: PidevUserBundle:Event:rechercher }
+affichtemp:
+    path:     /hometemp
+    defaults: { _controller: PidevUserBundle:Event:temp }
+
+mailevent:
+    path:     /mailTo
+    defaults: { _controller: PidevUserBundle:Event:Mail}
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+adesigns_calendar:
+  resource: "@ADesignsCalendarBundle/Resources/config/routing.xml"
+calendarevent:
+    path:     /toCalendar
+    defaults: { _controller: PidevUserBundle:Event:Calendar}

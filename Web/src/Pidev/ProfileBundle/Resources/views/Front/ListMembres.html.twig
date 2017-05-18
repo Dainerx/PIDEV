@@ -1,0 +1,78 @@
+{% extends '@PidevUser/layout.html.twig' %}
+{% block title %}
+    Membres
+{% endblock %}
+{%block Page_title  %}Membres {% endblock %}
+{% block Content %}
+
+<div class="row">
+
+    <div class="col-md-12">
+        <!-- Main Search Input -->
+        <div class="main-search-input margin-bottom-40">
+            <form action="{{ path('RechercheProfile') }}" method="post">
+            <input type="text" name="tosearch" class="ico-01" placeholder="Type a member's name" value="">
+            <button class="button">Search</button>
+            </form>
+        </div>
+    </div>
+
+    {% for profile in profiles %}
+    <div class="col-lg-push-12">
+        <div class="row">
+
+            <!-- Agents Container -->
+            <div class="agents-grid-container">
+
+                <!-- Agent -->
+                <div class="grid-item col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="agent">
+
+                        <div class="agent-avatar">
+                            <a href="{{ path('Profile',{'id':profile.idMembre.id}) }}">
+        {% if  profile.photo starts with 'http' %}
+            <img src="{{ profile.photo }}" >
+        {% else %}
+                                <img src="{{asset(vich_uploader_asset(profile,'imageFile'))}}" alt="">
+            {% endif %}
+                                <span class="view-profile-btn">View Profile</span>
+                            </a>
+                        </div>
+
+                        <div class="agent-content">
+                            <div class="agent-name">
+                                <h4><a href="{{ path('Profile',{'id':profile.idMembre.id}) }}">{{ profile.pseudo}}</a></h4>
+                                <span>{{profile.description }}</span>
+                            </div>
+
+                            <ul class="agent-contact-details">
+                                <li><i class="sl sl-icon-call-in"></i>{{ profile.phonenumber }}</li>
+                                <li><i class="fa fa-envelope-o "></i><a href="#"><span class="__cf_email__" data-cfemail="1763787a57726f767a677b723974787a">[email&#160;protected]</span><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></a></li>
+                            </ul>
+
+                            <ul class="social-icons">
+                                <li><a class="facebook" href="{{ profile.facebook }}"><i class="icon-facebook"></i></a></li>
+                                <li><a class="twitter" href="{{ profile.twitter }}"><i class="icon-twitter"></i></a></li>
+                                <li><a class="gplus" href="{{ profile.google }}"><i class="icon-gplus"></i></a></li>
+                                <li><a class="linkedin" href="{{ profile.linkedin }}"><i class="icon-linkedin"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Agent / End -->
+{% endfor %}
+
+
+
+
+
+            </div>
+            <!-- Agents Container / End -->
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

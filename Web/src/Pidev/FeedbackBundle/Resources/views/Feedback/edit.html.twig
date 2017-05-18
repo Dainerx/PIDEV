@@ -1,0 +1,23 @@
+
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+
+    {{ form_start(form, {'method': 'post', 'action': path('Edit' ,{'id': id  })}) }}
+    <table>
+        <tr>
+            <td>Sujet:</td>
+            <td>{{ form_widget(form.sujet) }}</td>
+        </tr>
+        <tr>
+            <td>Rating:</td>
+            <td>{{ form_widget(form.rating) }}</td>
+        </tr>
+        <tr>
+            <td>Commentaire:</td>
+            <td>{{ form_widget(form.commentaire) }}</td>
+        </tr>
+
+    </table>
+    {{ form_end(form) }}
+{% endblock fos_user_content %}

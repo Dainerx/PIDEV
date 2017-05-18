@@ -1,0 +1,23 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+
+
+{% block fos_user_content %}
+
+
+    <script src="{{asset('js/jquery.min.js')}}" type="text/javascript"></script>
+
+    <script src="{{asset('js/highcharts.js')}}"></script>
+
+    <script src="{{asset('js/exporting.js')}}"></script>
+
+    <script type="text/javascript">
+
+        {{ chart(chart) }}
+
+    </script>
+
+    <div id="linechart" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+
+{% endblock fos_user_content %}

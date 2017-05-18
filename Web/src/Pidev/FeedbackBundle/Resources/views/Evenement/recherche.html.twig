@@ -1,0 +1,97 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+
+
+<!-- Main Search -->
+<form class="main-search-form" method="POST">
+
+
+
+    <!-- Box -->
+    <div class="main-search-box">
+
+        <!-- Main Search Input -->
+        <div class="main-search-input larger-input">
+            <input type="text" class="ico-01" placeholder="Entrer adresse,etat ou ville" name="lieu">
+            <button class="button">Search</button>
+        </div>
+
+        <!-- Row -->
+        <div class="row with-forms">
+
+            <!-- Property Type -->
+
+
+            <!-- Min Price -->
+            <div class="col-md-4">
+
+                <!-- Select Input -->
+                <div class="select-input">
+                    <input type="text" placeholder="Libelle" name="libelle" data-unit="USD">
+                </div>
+                <!-- Select Input / End -->
+
+            </div>
+
+
+            <!-- Max Price -->
+            <div class="col-md-4">
+
+                <!-- Select Input -->
+                <div class="select-input">
+                    <input type="text" placeholder="Description" name="description" data-unit="USD">
+                </div>
+                <!-- Select Input / End -->
+
+            </div>
+
+        </div>
+        <!-- Row / End -->
+
+
+
+    </div>
+    <!-- Box / End -->
+
+</form>
+<!-- Main Search -->
+
+    <div class="listings-container list-layout">
+
+
+
+        {% for m in event %}
+            <!-- Listing Item -->
+            <div class="listing-item">
+
+                <div class="listing-content">
+
+                    <div class="listing-title">
+                        <h4><a href="single-property-page-1.htm"> Evenement</a></h4>
+                        <a href="https://maps.google.com/maps?q=221B+Baker+Street,+London,+United+Kingdom&hl=en&t=v&hnear=221B+Baker+St,+London+NW1+6XE,+United+Kingdom" class="listing-address popup-gmaps">
+                            <i class="fa fa-map-marker"></i>
+                            Lieu :{{ m.lieu }}
+                        </a>
+
+                    </div>
+
+                    <ul class="listing-details">
+                        <li>Description :{{ m.description }}</li>
+                        <li>libelle :{{ m.libelle }}</li>
+
+                    </ul>
+
+                    <div class="listing-footer">
+                        <span><i class="fa fa-calendar-o"></i> date :{{ m.date|date('d-m-Y') }}</span>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Listing Item / End -->
+        {% endfor %}
+
+    </div>
+
+{% endblock fos_user_content %}

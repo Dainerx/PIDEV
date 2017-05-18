@@ -1,0 +1,409 @@
+{% extends "@FOSUser/layoutbackoffice.html.twig" %}
+{% block sidebar %}
+    <div class="prtm-sidebar">
+        <div class="prtm-sidebar-back"> </div>
+        <div class="prtm-sidebar-nav-wrapper">
+            <div class="prtm-sidebar-menu">
+                <nav class="sidebar-nav collapse">
+                    <ul class="list-unstyled sidebar-menu">
+                        <li class="sidenav-heading text-uppercase">Dashboards</li>
+                        <li class="has-children active opened"><a href="{{ path('homeBack') }}"><i class="fa fa-tachometer" aria-hidden="true"></i><span>Services après réservation</span></a>
+                            <ul class="list-unstyled sub-menu">
+                                <li><a href="{{ path('EventBack') }}" ><span>Evenement</span></a></li>
+                                <li><a href="{{ path('FeedbackBack') }}"><span>Feedback</span></a></li>
+                                <li><a href="{{ path('cadeauBack') }}"><span>Cadeau</span></a></li>
+                                <li><a href="{{ path('statBack') }}"><span>Statistiques</span></a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </div>
+{% endblock sidebar %}
+
+{% block lou %}
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyCcR6Gtu4pkm0DUKJvCxVXZ9ADCKmAJQ18"></script>
+    <!--------- MAP SCRIPT HNE ZINA MEL FOUK
+-->
+
+
+    <script>
+        var map;
+        var geocoder;
+        var mapOptions = { center: new google.maps.LatLng(0.0, 0.0), zoom: 2, mapTypeId: google.maps.MapTypeId.ROADMAP };
+
+        function initialize() {
+            var myOptions = {
+                center: new google.maps.LatLng(36.835769, 10.247693 ),
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            geocoder = new google.maps.Geocoder();
+            var map = new google.maps.Map(document.getElementById("map_canvas"),
+                myOptions);
+            google.maps.event.addListener(map, 'click', function(event) {
+                placeMarker(event.latLng);
+
+                marker.addListener('click', displayToggleBounce);
+            });
+
+            function displayToggleBounce() {
+                if (marker.getAnimation() !== null) {
+                    marker.setAnimation(null);
+                } else {
+                    marker.setAnimation(google.maps.Animation.BOUNCE);
+                }
+            }
+
+            var marker;
+            function placeMarker(location) {
+                if(marker){
+                    marker.setPosition(location);
+                }else{
+                    marker = new google.maps.Marker({
+                        position: location,
+                        map: map
+                    });
+                }
+                document.getElementById('lat').value=location.lat();
+                document.getElementById('lng').value=location.lng();
+                getAddress(location);
+            }
+
+            function getAddress(latLng) {
+                geocoder.geocode( {'latLng': latLng},
+
+                    function(results, status) {
+                        if(status == google.maps.GeocoderStatus.OK) {
+                            if(results[0]) {
+                                document.getElementById("address").value = results[0].formatted_address;
+                            }
+                            else {
+                                document.getElementById("address").value = "No results";
+                            }
+                        }
+                        else {
+                            document.getElementById("address").value = status;
+                        }
+                    });
+            }
+            $('#responsive').on('shown.bs.modal', function () {
+                google.maps.event.trigger(map, "resize");
+                initialize();
+            });
+
+        }
+
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+
+    <div class="prtm-content">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/views/css/pratham.min.css') }}">
+
+        <div class="data-table-style">
+            <div class="prtm-block pos-relative">
+                <div class="prtm-block-title mrgn-b-lg">
+                    <div class="caption">
+                        <h3 class="text-capitalize">Evenements</h3> </div>
+                    <a href="#responsive"   data-toggle="modal" class="btn btn-inverse btn-rounded"><i class="fa fa-plus"></i> Add</a>
+<script>
+
+</script>
+                </div>
+                <div class="prtm-block-content">
+                    <div class="table-responsive">
+                        <div class="dataTables_wrapper">
+                            <table class="table table-hover display dataTable" data-table="table-row-reorder" data-rowreorder="true" data-paging="true">
+                                <thead>
+                                <tr class="bg-primary">
+                                    <th>Seq.</th>
+                                    <th>libelle</th>
+                                    <th>Position</th>
+                                    <th>Description</th>
+                                    <th>date</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for m in event %}
+                                <tr>
+                                    <td>{{ m.id }}</td>
+                                    <td>{{ m.libelle }}</td>
+                                    <td>{{ m.lieu }}</td>
+                                    <td>{{ m.description }}</td>
+                                    <td>{{ m.date|date('d-m-Y') }}</td>
+                                    <td>
+                                        <button type="button"  data-id="{{ m.id }}" data-libelle="{{ m.libelle }}" data-lieu="{{ m.lieu }}" data-date="{{ m.date|date('d-m-Y') }}"  data-desc="{{ m.description }}" data-target="#edit" data-toggle="modal" class="btn btn-outline-inverse btn-xs" > <span><i class="fa fa-pencil" aria-hidden="true"></i></span> Edit </button>
+                                        <a  href="" class="btn btn-outline-danger btn-xs" type="button"   data-toggle="modal" data-target="#{{ m.id }}" > <span><i class="fa fa-times" aria-hidden="true"></i></span> </a>
+                                        <div class="modal fade" id="{{ m.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="myModalLabel" class="ktiba">Annulation</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Vous etes sure d'annuler cette réservation ?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+
+                                                        <a href="{{ path('deleteEv',{'id': m.id }) }}" type="button" class="btn btn-danger">Valider</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                   <!-- <div class="modal fade" id="slim" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Supprimer</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Vous etes sure de vouloir supprimer ?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+
+                                                    <a href="{{  path('deleteEv' ,{'id': m.id  }) }}" type="button" class="btn btn-danger" data-dismiss="modal">Valider</a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>-->
+
+                                {% endfor %}
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    <div class="modal fade bs-modal-lg" id="responsive" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Ajouter Evenement  </h4>
+                </div>
+                <div class="modal-body">
+                        <form class="modal-form" action="" method="post">
+                            <div class="col-md-6">
+                                <h4>Entrer</h4>
+
+
+                                <div class="form-group">
+                                    Libelle <input id="libelle" type="text" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    Description <textarea id ="description" class="form-control" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                   Lieu <input type="text" id="address" class="form-control" readonly>
+                                </div>
+                                <div class="form-group">
+                                   Date
+                                        <div class="prtm-block-title mrgn-b-md">
+                                        </div>
+                                        <div class="form-input">
+                                            <div class="form-group has-feedback date">
+                                                <input id="date" type="date" min={{ 'now'|date('d - m -Y') }} class="datepicker-disable-date" form-control mrgn-b-xs value=" " required>
+                                                <span class="glyphicon glyphicon-calendar form-control-feedback fa-lg base-dark" aria-hidden="true"></span>
+
+
+
+                                            </div>
+                                        </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" id="lat" size="10" hidden>
+                                <input type="text" id="lng" size="10" hidden>
+                            <div id="map_canvas" style="width: 420px; height: 400px"></div>
+                            </div>
+
+                        </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-outline-inverse">Close</button>
+                    <a href="" type="submit" class="btn btn-success" onclick="add()" >Save changes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+
+        function add() {
+
+
+            jQuery.ajax({
+
+                url: "{{ path('AddEvent') }}",
+                data: 'libelle=' +  $("#libelle").val() +'&description='+  $("#description").val() +'&lieu='+  $("#address").val()+'&date='+  $("#date").val(),
+                type: 'POST',
+                success: function (data) {
+                    alert('Added');
+                },
+                error:function (data) {
+                    alert('date dépassée');
+                }
+            });
+
+        }
+    </script>
+
+
+    <div id="edit" class="modal fade" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"> Edit </h4>
+                </div>
+                <div class="modal-body" id="emp">
+                    <form class="modal-form" action="" method="post">
+                        <div class="col-md-6">
+                            <h4>Entrer</h4>
+
+
+                            <div class="form-group">
+                                 <input id="id2"  type="text" hidden>
+
+                                Libelle <input id="libelle2"  type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                Description <textarea id ="description2"  class="form-control" ></textarea>
+                            </div>
+                            <div class="form-group">
+                                Lieu <input type="text" id="lieu2"  class="form-control">
+                            </div>
+                            <div class="form-group">
+                                Date
+                                <div class="prtm-block-title mrgn-b-md">
+                                </div>
+                                <div class="form-input">
+                                    <div class="form-group has-feedback date">
+                                        <input id="date2"  type="date" class="datepicker-disable-date form-control mrgn-b-xs" >
+                                        <span class="glyphicon glyphicon-calendar form-control-feedback fa-lg base-dark" aria-hidden="true"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-outline-inverse">Close</button>
+                    <a href="" type="submit" class="btn btn-success" onclick="edit()">Save changes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+            $("#modalDateExpirer").modal('hide');
+
+            $('.btn-xs').click(function(){
+                console.log($(".btn-xs").attr("data-id"));
+
+                var id = $(this).attr("data-id");
+                var desc = $(this).attr("data-desc");
+                var lib = $(this).attr("data-libelle");
+                var date = $(this).attr("data-date");
+                var lieu = $(this).attr("data-lieu");
+
+                console.log(id);
+                console.log(lib);
+                console.log(id);
+
+
+
+
+            $('#edit').on('show.bs.modal', function (event) {
+                    var button = $(event.relatedTarget); // Button that triggered the modal
+
+                    // Extract info from data-* attributes
+                    console.log(id);
+                    console.log(date);
+                    console.log(lib);
+                    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+                    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+                    var modal = $(this);
+                    var day = ("0" + date).slice(-2);
+                    var month = ("0" + (date + 1)).slice(-2);
+
+                    var today =(day)+"/"+"02"+"/"+"2017" ;
+
+
+
+                    $('#datePicker').val(today);
+                    modal.find(".modal-title").text("The ID is: " + id);
+                    $(".modal-body #libelle2").val( lib );
+                    $(".modal-body #lieu2").val( lieu );
+                    $(".modal-body #date2").val( today );
+                    $(".modal-body #description2").val( desc );
+                    $(".modal-body #id2").val( id );
+
+
+                })
+            });
+
+        });
+    </script>
+
+   <script>
+
+
+    function edit() {
+
+        var result = confirm("Are you sure you wanna edit this event?");
+    if (result == false)
+    return;
+    else edit2();
+    }
+    function edit2() {
+
+
+        jQuery.ajax({
+
+        url: "{{ path('editEv') }}",
+        data: 'id=' +  $("#id2").val() + '&libelle=' +  $("#libelle2").val() +'&description='+  $("#description2").val() +'&lieu='+  $("#lieu2").val()+'&date='+  $("#date2").val(),
+        type: 'POST',
+        success:function(data){
+            alert('ok');
+
+        }  ,
+        error:function (data) {
+            alert('No way');
+        }
+    });
+
+    }
+    </script>
+
+
+
+
+
+{% endblock lou %}

@@ -1,0 +1,56 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+  {% block liste_feed %}
+      <a href="{{ path('liste') }}">Liste des Evenements</a>
+
+  {% endblock liste_feed %}
+
+
+{% block fos_user_content %}
+
+
+    <div class="listings-container list-layout">
+
+
+
+            <!-- Listing Item -->
+            <div class="listing-item">
+
+                <div class="listing-content">
+
+                    <div class="listing-title">
+                        <h4><a href="single-property-page-1.htm"> Cadeau</a></h4>
+
+
+                    </div>{% for key, entity in entities %}
+
+                    <ul class="listing-details">
+                        <li>Id :{{ entity.idCadeau }}</li>
+                        <li>libelle :{{ entity.libelle }}</li>
+                        <li> <img alt="Embedded Image" src="data:image/png;base64,{{ images[key] }}" /></li>
+                        <li>
+
+                                {# ... #}
+
+                                {# ... #}
+
+                        </li>
+
+
+                    </ul>
+
+                    <div class="listing-footer">
+                        <a href="#"><i class="fa fa-user"></i> membre :{{ entity.nom }} </a>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <!-- Listing Item / End -->
+
+    </div>
+    <!-- Listings Container / End -->
+
+
+
+{% endblock fos_user_content %}

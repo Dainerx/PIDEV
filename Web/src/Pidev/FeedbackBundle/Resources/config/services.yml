@@ -1,0 +1,4 @@
+services:
+#    pidev_feedback.example:
+#        class: Pidev\FeedbackBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

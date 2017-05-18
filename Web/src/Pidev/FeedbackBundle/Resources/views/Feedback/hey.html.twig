@@ -1,0 +1,7 @@
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+{{ form_start(form, {'method': 'post', 'action': path('hey' ,{'id': id  })}) }}
+    {{ form_widget(form) }}
+
+{{ form_end(form) }}

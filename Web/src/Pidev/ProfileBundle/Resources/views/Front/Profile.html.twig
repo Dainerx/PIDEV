@@ -1,0 +1,199 @@
+{% extends '@PidevUser/layout.html.twig' %}
+{% block title %}
+    {% if my==true %}
+        My Profile
+    {% else %}
+        {{ Profile.pseudo~"Profile" }}
+    {% endif %}
+{% endblock %}
+{%block Page_title  %}Profile {{ Profile.pseudo }} {% endblock %}
+{% block where %}
+
+    {% if my==true %}
+        My Profile
+        {% else %}
+            {{ Profile.pseudo~"Profile" }}
+            {% endif %}
+
+    {% endblock %}
+                                {% if not is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
+                                    {% block MyprofileLink %} <li><a href="{{ path('Profile',{'id':current.id}) }}">My Profile</a>  {% endblock %}
+                                    {% block MyprofileLink1  %}{{ path('Profile',{'id':current.id}) }} {% endblock %}
+                                    {% block BrowseMembersLink %} {{ path('ListProfiles') }} {% endblock %}
+                                     {% endif %}
+{% block Content %}
+
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="agent agent-page">
+
+                <div class="agent-avatar">
+                    {% if  Profile.photo starts with 'http' %}
+                    <img src="{{ Profile.photo }}" >
+                    {% else %}
+                    <img src="{{asset(vich_uploader_asset(Profile,'imageFile'))}}" alt="">
+                    {% endif %}
+                </div>
+
+                <div class="agent-content">
+                    <div class="agent-name">
+                        <h4>{{ Profile.pseudo }}</h4>
+
+                    </div>
+
+                    <p>{{ Profile.description }}</p>
+
+                    <ul id="details" class="agent-contact-details">
+
+                        <li><i class="sl sl-icon-call-in"></i>({{ Profile.phonenumber }}</li>
+                        <li><i class="fa fa-envelope-o "></i><a href="#">{{ Profile.idMembre.email }}</a></li>
+                    </ul>
+
+                    <ul id="social" class="social-icons">
+                        <li><a class="facebook" href="{{ Profile.facebook }}"><i class="icon-facebook"></i></a></li>
+                        <li><a class="twitter" href="{{ Profile.twitter }}"><i class="icon-twitter"></i></a></li>
+                        <li><a class="gplus" href="{{ Profile.google }}"><i class="icon-gplus"></i></a></li>
+                        <li><a class="linkedin" href="{{ Profile.linkedin }}"><i class="icon-linkedin"></i></a></li>
+                    </ul>
+
+
+                    <div class="clearfix"></div>
+
+                </div>
+                <a id="follow" href="{{ path('Follow', {'id': Profile.idMembre.id} ) }}"><button id="followbtn" class="button"  >Follow</button></a>
+                <a id="unfollow" href="{{ path('unFollow', {'id': Profile.idMembre.id} ) }}"><button id="followbtn" class="button"  >Unfollow</button></a>
+            </div>
+        </div>
+        <h2 id="Pubh2" class="agent-name"> Publications</h2>
+        {% if my==true  %}
+        <div class="agent agent-name agent-content">
+
+
+            {{ form_start(formPub) }}
+            {{ form_widget(formPub.contenu) }}
+
+            <div class="photoUpload">
+                <span><i class="fa fa-upload"></i> Upload Photo</span>
+
+
+                {{ form_widget(formPub.imageFile) }}
+
+            </div>
+
+
+           {{ form_widget(formPub.Publish) }}
+        </div>
+        {{ form_end(formPub) }}
+    </div>
+
+
+
+{% endif %}
+    <div id="pubs" class="col-md-12">
+<diV id="pubs" class="listings-container listing-">
+
+    {% for Pub in Pubs %}
+        <div class="listing-item centered" id="{{ Pub.id }}">
+
+            <div class="listing-title">
+
+                <h2 class="agent-title">{{ Profile.pseudo}}</h2>
+            </div>
+
+
+            <h5 class="listing-address popup-gmaps">{{ Pub.date |date('Y-M-d') }}</h5>
+            <h4>{{ Pub.contenu }}</h4>
+            <diV class="clearfix"></diV>
+            {% if Pub.picpath is not null %}
+                {% if Pub.picpath starts with 'http' %}
+                    <img src="{{ Pub.picpath }}"  class="list-layout center-block">
+                {% else %}
+                    <img src="{{asset(vich_uploader_asset(Pub,'imageFile'))}}" class="list-layout center-block"  />
+                {% endif %}
+            {% endif %}
+
+
+
+ <div class="listing-footer">
+     <h4 class="headline margin-bottom-35">Comments </h4>
+     <table border="0" class="basic-table" >
+     {% for com in Coms %}
+         {% if com.idPublication==Pub %}
+<tr>
+    <td style="width:20%"><a href="{{ path('Profile', {'id':  com.idMembre.id}) }}">{{ com.idMembre.username }}</a></td>
+             <td >{{ com.contenu }}</td>
+
+</tr>
+            {% endif %}
+         {% endfor %}
+     </table>
+     <div>
+         <form method="post" action="{{ path('AjoutComment') }}">
+             <input hidden="hidden" name="Pubid"  value="{{ Pub.id }}">
+                <input type="textarea" name="comment" >
+                <input type="submit" value="comment"  >
+         </form>
+     </div>
+</div>
+        </div>
+
+
+        {% endfor %}
+
+
+</diV>
+</div>
+<script> console.log({{ my }}) ;</script>
+
+    {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <script>
+            document.getElementById('unfollow').remove();
+            document.getElementById('follow').remove();
+            document.getElementById('details').remove();
+            document.getElementById('social').remove();
+           // document.getElementById('pubs').remove();
+            document.getElementById('Pubh2').remove();
+
+        </script>
+
+
+    {% endif %}
+
+{% if follow is null  %}
+        <script>
+            {% if my!=true %}
+            document.getElementById('details').remove();
+            document.getElementById('social').remove();
+            document.getElementById('pubs').remove();
+            document.getElementById('Pubh2').remove();
+            {% else %}
+            document.getElementById('follow').remove();
+
+
+            {% endif %}
+
+            document.getElementById('unfollow').remove();
+
+
+        </script>
+{% endif %}
+
+{% if follow is not null %}
+        <script>
+            {% if my==true %}
+            document.getElementById('unfollow').remove();
+            {% endif %}
+            document.getElementById('follow').remove();
+
+        </script>
+
+{% endif %}
+
+
+
+
+
+
+    {% endblock %}
