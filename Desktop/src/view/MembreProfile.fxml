@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.textfield.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="538.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MembreProfileController">
+   <children>
+      <BorderPane layoutX="101.0" layoutY="62.0" prefHeight="538.0" prefWidth="543.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox prefHeight="54.0" prefWidth="543.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="searchBox">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="60.0" right="60.0" top="20.0" />
+                     </padding>
+                  </TextField>
+                 
+                  <Button fx:id="SearchButton" mnemonicParsing="false" text="Search">
+                     <HBox.margin>
+                        <Insets left="5.0" top="15.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <VBox prefHeight="425.0" prefWidth="543.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox fx:id="panelbox" prefHeight="150.0" prefWidth="188.0">
+                     <children>
+                        <ImageView fx:id="photoProfile" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label id="Username" fx:id="username" text="UserName">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="250.0" right="20.0" top="-60.0" />
+                           </VBox.margin>
+                           <HBox.margin>
+                              <Insets left="30.0" top="80.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </opaqueInsets>
+                  </HBox>
+                  <ScrollPane prefViewportHeight="333.0" prefViewportWidth="543.0">
+                     <content>
+                        <AnchorPane prefHeight="333.0" prefWidth="543.0">
+                           <children>
+                              <VBox fx:id="PubContainer" prefHeight="143.0" prefWidth="543.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <children>
+                                    <Label graphicTextGap="5.0" text="Introduction" textFill="#0a18dd" underline="true" wrapText="true">
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="Intro" text="Intro">
+                                       <padding>
+                                          <Insets left="40.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label text="Description" textFill="#0b0fee" underline="true">
+                                       <opaqueInsets>
+                                          <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets left="20.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label fx:id="Description" text="Description">
+                                       <padding>
+                                          <Insets left="40.0" />
+                                       </padding>
+                                    </Label>
+                                    <Separator prefHeight="0.0" prefWidth="523.0">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </Separator>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </opaqueInsets>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

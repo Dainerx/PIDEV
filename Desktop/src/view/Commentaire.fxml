@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="517.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CommentaireController">
+   <children>
+      <BorderPane layoutY="-8.0" prefHeight="517.0" prefWidth="394.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-8.0">
+         <bottom>
+            <VBox alignment="BOTTOM_RIGHT" prefHeight="129.0" prefWidth="394.0" BorderPane.alignment="BOTTOM_RIGHT">
+               <children>
+                  <JFXTextArea fx:id="TapedComment" minWidth="511.0" prefHeight="115.0" promptText="Tapez votre commentaire" />
+                  <JFXButton fx:id="btnAddComment" alignment="CENTER_RIGHT" buttonType="RAISED" contentDisplay="RIGHT" layoutX="60.0" text="Ajouter Commentaire" VBox.vgrow="NEVER">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </bottom>
+         <center>
+            <VBox fx:id="Comments" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="30.0" right="30.0" top="15.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
