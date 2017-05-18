@@ -1,0 +1,357 @@
+{% extends ("@FOSUser/layout.html.twig") %}
+    {% block stylesheets %}
+		{{ parent() }}
+    {% endblock %}
+
+    {% block content %}
+        {% block topbody %}
+            {{ parent() }}
+        {% endblock %}
+
+
+        <!-- Content
+        ================================================== -->
+        <div class="container">
+            <form method="POST">
+            <div class="row">
+
+                <!-- Submit Page -->
+                <div class="col-md-12">
+                    <div class="submit-page">
+
+
+                        <!-- Section -->
+                        <h3>Ride</h3>
+                        <div class="submit-section">
+
+
+                            <!-- Row -->
+                            <div class="row with-forms">
+
+                                <!-- Status -->
+                                <div class="col-md-6">
+                                    <h5>State (Departure)</h5>
+                                    <select onchange="updateCitiesFrom()" id="from" name="from" class="chosen-select-no-single" required>
+                                        <option label="blank">
+                                        {% for state in states %}
+                                        <option value="{{ state.id }}">{{ state.state }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                <!-- Type -->
+                                <div class="col-md-6">
+                                    <h5>State (Destination)</h5>
+                                    <select onchange="updateCitiesTo()" id="to" name="to" class="chosen-select-no-single" required>
+                                        <option label="blank">
+                                            {% for state in states %}
+                                        <option value="{{ state.id }}">{{ state.state }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                            </div>
+                            <!-- Row / End -->
+                            <div class="row with-forms">
+
+                                <!-- Status -->
+                                <div class="col-md-6">
+                                    <h5>City (Departure)</h5>
+                                    <select class="chosen-select-no-single" name="fromC" id="fromC" required>
+                                        <option label="blank"></option>
+                                    </select>
+                                </div>
+
+                                <!-- Type -->
+                                <div class="col-md-6">
+                                    <h5>City (Destination)</h5>
+                                    <select class="chosen-select-no-single" name="toC" id="toC" required>
+                                        <option label="blank"></option>
+                                        
+                                        <option value="aze">aze</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <!-- Row -->
+                            <div class="row with-forms">
+
+                                <!-- Rooms -->
+                                <div class="col-md-4">
+
+
+                                </div>
+
+                            </div>
+                            <!-- Row / End -->
+
+                        </div>
+                        <!-- Section / End -->
+
+
+                        <!-- Section -->
+                        <h3>Map</h3>
+                            <div id="map-container" class="homepage-map margin-bottom-0">
+
+                                <div id="map">
+                                    <!-- map goes here -->
+                                </div>
+                                <script>
+                                    function initMap() {
+                                        var directionsDisplay = new google.maps.DirectionsRenderer;
+                                        var directionsService = new google.maps.DirectionsService;
+                                        var map = new google.maps.Map(document.getElementById('map'), {
+                                            zoom: 10,
+                                            center: {lat: 36.8188, lng: 10.166}
+                                        });
+                                        directionsDisplay.setMap(map);
+
+                                        var control = document.getElementById('toC');
+
+                                        var onChangeHandler = function() {
+                                            calculateAndDisplayRoute(directionsService, directionsDisplay);
+                                        };
+                                        //document.getElementById('fromC').addEventListener('change', onChangeHandler);
+                                        document.getElementById('toC').addEventListener('change', onChangeHandler);
+                                    }
+
+                                    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+                                        var start = document.getElementById('fromC').value;
+                                        var end = document.getElementById('toC').value;
+                                        directionsService.route({
+                                            origin: start,
+                                            destination: end,
+                                            travelMode: 'DRIVING'
+                                        }, function(response, status) {
+                                            if (status === 'OK') {
+                                                directionsDisplay.setDirections(response);
+                                            } else {
+                                                window.alert('Directions request failed due to ' + status);
+                                            }
+                                        });
+                                    }
+                                </script>
+                                <script async defer
+                                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXNneTVr8yaKCVD_sCEFj9CNCtcU85V8&callback=initMap">
+                                </script>
+                                <!-- Map Navigation -->
+                                <a href="#" id="scrollEnabling" title="Enable or disable scrolling on map">Enable Scrolling</a>
+                                <ul id="mapnav-buttons">
+                                    <li><a href="#" id="prevpoint" title="Previous point on map">Prev</a></li>
+                                    <li><a href="#" id="nextpoint" title="Next point on mp">Next</a></li>
+                                </ul>
+                            </div>
+                        <!-- Section / End -->
+
+
+                        <!-- Section -->
+                        <h3>Vehicule</h3>
+                        <div class="submit-section">
+
+                            <!-- Row -->
+                            <div class="row with-forms">
+                                <h5>Vehicules you previosuly used</h5>
+                                    <select id="vehicule" onchange="fillVehicule()">
+                                        <option value="">Select a Vehicule</option>
+                                        {% for vehicule in vehicules %}
+                                            <option value="{{ vehicule.id }}">{{ vehicule.modele ~ ' | ' ~ vehicule.matricule }}</option>
+                                        {% endfor %}
+                                    </select>
+
+                                <!-- Address -->
+                                <div class="col-md-6">
+                                    <h5>Company</h5>
+                                    <input type="text" name="company" id="company" required>
+                                </div>
+
+                                <!-- City -->
+                                <div class="col-md-6">
+                                    <h5>Serial</h5>
+                                    <input type="text" name="serial" id="serial" required>
+                                </div>
+
+                                <!-- City -->
+                                <div class="col-md-6">
+                                    <h5>Brand</h5>
+                                    <input type="text" name="brand" id="brand" required>
+                                </div>
+
+                                <!-- Zip-Code -->
+                                <div class="col-md-6">
+                                    <h5>Type</h5>
+                                    <select name="gamme" id="gamme">
+                                        <option>Economical</option>
+                                        <option>Medium</option>
+                                        <option>Luxurious</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <!-- Row / End -->
+
+                        </div>
+                        <!-- Section / End -->
+
+
+                        <!-- Section -->
+                        <h3>Detailed Information</h3>
+                        <div class="submit-section">
+
+                            <!-- Description -->
+                            <div class="form">
+                                <h5>Description</h5>
+                                <textarea class="WYSIWYG" name="details" cols="40" rows="3" id="summary" spellcheck="true"></textarea>
+                            </div>
+
+                            <!-- Row -->
+                            <div class="row with-forms">
+
+                                <div class="col-md-4">
+                                    <h5>Date of departure</h5>
+                                    <input type="date"  name="date_departure" required />
+                                </div>
+
+                                <div class="col-md-4">
+                                    <h5>Seats</h5>
+                                    <input type="number" name="seats" required />
+                                </div>
+
+                                <!-- Beds -->
+                                <div class="col-md-4">
+                                    <h5>Cost</h5>
+                                    <input type="number" name="price" data-unit="Person" required/>
+                                <!-- cost go here -->
+                                </div>
+
+                            </div>
+                            <!-- Row / End -->
+
+
+                            <!-- Checkboxes -->
+                            <h5 class="margin-top-30">Other Features <span>(optional)</span></h5>
+                            <div class="checkboxes in-row margin-bottom-20">
+
+                                <input id="check-2" type="checkbox" name="security">
+                                <label for="check-2">Security enhancement</label>
+                            </div>
+                            <!-- Checkboxes / End -->
+                        </div>
+                        <!-- Section / End -->
+
+                        <div class="divider"></div>
+                        <button type="submit" class="button preview margin-top-5">Share this ride <i class="fa fa-car"></i></button>
+{#
+                        <a href="#" class="button preview margin-top-5">Share ride! <i class="fa fa-arrow-circle-right"></i></a>
+#}
+
+                    </div>
+                </div>
+
+            </div>
+            </form>
+        </div>
+
+
+	{% block footer %}
+	{{ parent() }}
+    <!-- Scripts
+================================================== -->
+	<script src="{{ asset('bundles/views/scripts/jquery-2.2.0.min.js') }}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+        <script>
+            $(document).ready(function() {
+                    $("#fromC").prop('disabled',true);
+                    $("#toC").prop('disabled',true);
+            });
+            function updateCitiesFrom() {
+                jQuery.ajax({
+                    url: Routing.generate('updateCities'),
+                    data: 'state=' + $("#from").val(),
+                    type: 'POST',
+                    success: function (data) {
+                        $("#fromC").prop('disabled',false);
+                        var select = document.getElementById('fromC');
+                        var length = select.options.length;
+                        var j;
+
+                        for (j = 0; j < length; j++) {
+                            select.remove(select.j);
+                        }
+
+                        var _len = data.length;
+                        var i, post;
+                        for (i = 0; i < _len; i++) {
+                            console.log(data[i]);
+                            post = data[i];
+                            var option = document.createElement('option');
+                            option.text = option.value = post.city;
+                            select.appendChild(option);
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            }
+
+            function updateCitiesTo() {
+                jQuery.ajax({
+                    url: Routing.generate('updateCities'),
+                    data: 'state=' + $("#to").val(),
+                    type: 'POST',
+                    success: function (data) {
+                        $("#toC").prop('disabled',false);
+                        var select = document.getElementById('toC');
+                        var length = select.options.length;
+                        var j;
+
+                        for (j = 0; j < length; j++) {
+                            select.remove(select.j);
+                        }
+
+                        var _len = data.length;
+                        var i, post;
+                        for (i = 0; i < _len; i++) {
+                            post = data[i];
+                            var option = document.createElement('option');
+                            option.text = option.value = post.city;
+                            select.appendChild(option);
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            }
+            
+            function fillVehicule() {
+                jQuery.ajax({
+                    url: Routing.generate('fillCar'),
+                    data: 'vehicule=' + $("#vehicule").val(),
+                    type: 'POST',
+                    success: function (data) {
+                        _leng = data.length;
+                        for (var i=0; i<_leng; i++)
+                        {
+                            $("#company").val(data[i].marque);
+                            $("#brand").val(data[i].modele);
+                            $("#serial").val(data[i].matricule);
+                            if (data[i].gamme=="Economical")
+                                document.getElementById("gamme").selectedIndex=0
+                            else if (data[i].gamme="Medium")
+                                document.getElementById("gamme").selectedIndex=1
+                            else
+                                document.getElementById("gamme").selectedIndex=2
+                        }
+                    },
+                    error: function (data) {
+                        alert('error');
+                    }
+                });
+            }
+
+        </script>
+
+    {% endblock %}
+
+{% endblock %}

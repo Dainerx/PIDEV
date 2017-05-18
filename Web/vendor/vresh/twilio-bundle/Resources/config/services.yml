@@ -1,0 +1,12 @@
+parameters:
+    twilio.class: Vresh\TwilioBundle\Service\TwilioWrapper
+    twilio.capability.class: Vresh\TwilioBundle\Service\TwilioCapabilityWrapper
+    twilio.lookups.class: Vresh\TwilioBundle\Service\TwilioLookupsWrapper
+
+services:
+    oussama.api:
+        class: '%twilio.class%'
+    twilio.capability:
+        class: '%twilio.capability.class%'
+    twilio.lookups:
+        class: '%twilio.lookups.class%'

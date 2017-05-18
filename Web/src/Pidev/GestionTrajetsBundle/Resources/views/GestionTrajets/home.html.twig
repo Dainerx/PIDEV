@@ -1,0 +1,469 @@
+{% extends ("@FOSUser/layout.html.twig") %}
+{% block title %}Share my Ride{% endblock %}
+    {% block stylesheets %}
+    {{ parent() }}
+    {% endblock %}
+
+{% block content %}
+    {% block topbody %}
+        {{ parent() }}
+        {% endblock %}
+    <!-- Map
+    ================================================== -->
+    <div id="map-container" class="homepage-map margin-bottom-0">
+
+        <div id="map">
+            <!-- map goes here -->
+        </div>
+
+        <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 12,
+                    center: {lat: 36.8188, lng: 10.166},
+                    mapTypeControl: true,
+                    mapTypeControlOptions: {
+                        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                        position: google.maps.ControlPosition.TOP_CENTER
+                    },
+                    zoomControl: true,
+                    zoomControlOptions: {
+                        position: google.maps.ControlPosition.LEFT_CENTER
+                    },
+                    scaleControl: true,
+                    streetViewControl: true,
+                    streetViewControlOptions: {
+                        position: google.maps.ControlPosition.LEFT_TOP
+                    },
+                    fullscreenControl: true
+                });
+            }
+
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKXNneTVr8yaKCVD_sCEFj9CNCtcU85V8&callback=initMap">
+        </script>
+
+
+
+        <!-- Map Navigation -->
+        <a href="#" id="scrollEnabling" title="Enable or disable scrolling on map">Enable Scrolling</a>
+        <ul id="mapnav-buttons">
+            <li><a href="#" id="prevpoint" title="Previous point on map">Prev</a></li>
+            <li><a href="#" id="nextpoint" title="Next point on mp">Next</a></li>
+        </ul>
+
+
+        <!-- Main Search Container -->
+        <div class="main-search-container">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <!-- Trigger Button -->
+                        <a href="#" class="adv-search-btn button">Advanced Search <i class="fa fa-caret-up"></i></a>
+
+                        <!-- Main Search -->
+
+                            <!-- Type -->
+                            <div class="search-type" style="display: none;">
+                                <label class="active"><input class="first-tab" name="tab" checked="checked" type="radio">Any Status</label>
+                                <label><input name="tab" type="radio">For Sale</label>
+                                <label><input name="tab" type="radio">For Rent</label>
+                                <div class="search-type-arrow"></div>
+                            </div>
+
+                            <form method="POST" action={{ path('trajetsSearch') }}>
+                            <!-- Box -->
+                            <div class="main-search-box">
+
+                                <!-- Row With Forms -->
+                                <div class="row with-forms">
+
+                                    <!-- Status -->
+                                    <div class="col-md-3 col-sm-6">
+                                        <div class="select-input">
+                                            <input type="text" name="depart" placeholder="Departure" data-unit="" required>
+                                            <select >
+                                                {% for c in cities %}
+                                                    <option value="{{ c.city }}">{{ c.city }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Property Type -->
+                                    <div class="col-md-3 col -sm-6">
+                                        <div class="select-input">
+                                            <input type="text" name="destination" placeholder="Destination" data-unit="" value="" required>
+                                            <select>
+                                                {% for c in cities %}
+                                                    <option value="{{ c.city }}">{{ c.city }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- Main Search Input -->
+                                    <div class="col-md-6">
+                                        <div class="main-search-input">
+                                            <input type="text" placeholder="Enter address e.g. street, city or state" value="" disabled>
+                                            <button class="button">Search</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Row With Forms / End -->
+
+
+                                <!-- Row With Forms -->
+                                <div class="row with-forms">
+
+                                    <!-- Min Price -->
+                                    <div class="col-md-3 col-sm-6">
+
+                                        <!-- Select Input -->
+                                        <div class="select-input">
+                                            <input type="text" name="nbrplace" placeholder="Seats" data-unit="Person">
+
+                                            <select>
+                                                <option>1
+                                                <option>2
+                                                <option>3
+                                                <option>4
+                                            </select>
+                                        </div>
+                                        <!-- Select Input / End -->
+
+                                    </div>
+
+                                    <!-- Max Price -->
+                                    <div class="col-md-3 col-sm-6">
+
+                                        <!-- Select Input -->
+                                        <div class="select-input">
+                                            <input type="text" name="gamme" placeholder="Vehicule Type" data-unit="Sq Ft">
+
+                                            <select>
+                                                <option>Economical
+                                                <option>Medium
+                                                <option>Luxurious
+                                            </select>
+
+                                        </div>
+                                        <!-- Select Input / End -->
+
+                                    </div>
+
+
+                                    <!-- Min Price -->
+                                    <div class="col-md-3 col-sm-6">
+
+                                        <!-- Select Input -->
+                                        <div class="select-input disabled-first-option">
+                                            <input type="text" placeholder="Min Price Per Person" data-unit="Dt" name="low">
+                                            <select>
+                                                <option>Min Price
+                                                <option>5
+                                                <option>10
+                                                <option>20
+                                                <option>30
+                                                <option>40
+                                                <option>50
+                                                <option>60
+                                                <option>70
+                                                <option>80
+                                                <option>90
+                                                <option>100
+                                            </select>
+                                        </div>
+                                        <!-- Select Input / End -->
+
+                                    </div>
+
+
+                                    <!-- Max Price -->
+                                    <div class="col-md-3 col-sm-6">
+
+                                        <!-- Select Input -->
+                                        <div class="select-input disabled-first-option">
+                                            <input type="text" placeholder="Max Price Per Person" data-unit="Dt" name="high">
+                                            <select>
+                                                <option>Max Price
+                                                <option>10
+                                                <option>20
+                                                <option>30
+                                                <option>40
+                                                <option>50
+                                                <option>60
+                                                <option>70
+                                                <option>80
+                                                <option>90
+                                                <option>100
+                                                <option>200
+                                            </select>
+                                        </div>
+                                        <!-- Select Input / End -->
+
+                                    </div>
+
+                                </div>
+                                <!-- Row With Forms / End -->
+
+                            </div>
+                            <!-- Box / End -->
+
+                        </form>
+                        <!-- Main Search -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Search Container / End -->
+
+    </div>
+
+
+    <!-- Content
+    ================================================== -->
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h3 class="headline margin-bottom-25 margin-top-60">Latest rides shared</h3>
+                <h4><a href="{{ path('trajets') }}">See All!</h4>
+            </div>
+
+            <!-- Carousel -->
+            <div class="col-md-12">
+                <div class="carousel">
+                {% for trajet in trajets %}
+                    <!-- Listing Item -->
+                    <div class="carousel-item">
+                        <div class="listing-item">
+
+                            <a href="trajets#{{ trajet[0].id }}" class="listing-img-container">
+
+                                <div class="listing-badges">
+                                    <span class="featured">Featured</span>
+                                </div>
+
+                                <div class="listing-img-content">
+                                    <span class="listing-price"><i>{{ trajet[0].cout }} Dt/ seat</i></span>
+                                    <span class="like-icon tooltip"></span>
+                                </div>
+
+                                <div class="listing-carousel">
+                                    <div><img src="{{ asset('bundles/views/images/car-pooling.jpg') }}" alt=""></div>
+                                    <div><img src="{{ asset('bundles/views/images/car-pooling.jpg') }}" alt=""></div>
+                                    <div><img src="{{ asset('bundles/views/images/car-pooling.jpg') }}" alt=""></div>
+                                </div>
+
+                            </a>
+
+                            <div class="listing-content">
+
+                                <div class="listing-title">
+                                    <h4><a href="https://www.google.com/maps/dir/{{ trajet[0].depart }}/{{ trajet[0].destination }}" class="listing-address popup-gmaps">
+                                        <i class="fa fa-map-pin"></i>
+                                        {{ trajet[0].depart }}
+                                    </a>
+                                        <br>
+                                        <a href="https://www.google.com/maps/dir/{{ trajet[0].depart }}/{{ trajet[0].destination }}" class="listing-address popup-gmaps">
+                                            <i class="fa fa-map-marker"></i>
+                                            {{ trajet[0].destination }}
+                                        </a>
+                                    </h4>
+                                    <p>{{ trajet[0].description }}</p>
+                                    <h5><i class="fa fa-calendar"> {{ trajet[0].datedepart|date('d-m-Y') }}</i></h5>
+                                </div>
+
+                                <ul class="listing-features">
+                                    <li>Cost <span>{{ trajet[0].cout ~ ' Dt' }}</span></li>
+                                    <li>Seats <span>{{ trajet[0].nbrplacedispo }}</span></li>
+                                    <li>Car <span>{{ trajet['modele'] ~ ' | ' ~ trajet['gamme'] }}</span></li>
+                                </ul>
+
+                                <div class="listing-footer">
+                                    <a href="#"><i class="fa fa-user"></i> {{ trajet['nom'] }}</a>
+                                    {% set difference = date().diff(date(trajet[0].datepub)) %}
+                                    {% set leftDays = difference.days %}
+                                    {% if leftDays == 1 %}
+                                        <span><i class="fa fa-calendar-o"></i> 1 day ago</span>
+                                    {% else %}
+                                    <span><i class="fa fa-calendar-o"></i>{{ leftDays }} days ago</span>
+                                    {% endif %}
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- Listing Item / End -->
+                </div>
+            </div>
+            <!-- Carousel / End -->
+
+        </div>
+    </div>
+
+
+
+    <section class="fullwidth border-top margin-top-55 margin-bottom-0 padding-top-60 padding-bottom-65" data-background-color="#ffffff">
+        <!-- Logo Carousel -->
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <h3 class="headline centered margin-bottom-40 margin-top-10">Join my ride's Partners <span>We all work together to make your Tunisian carpooling experience better!</span></h3>
+                </div>
+
+                <!-- Carousel -->
+                <div class="col-md-12">
+                    <div class="logo-carousel dot-navigation">
+
+                        <div class="item">
+                            <img src="{{ asset('bundles/views/images/logo-01.png') }}" alt="">
+                        </div>
+
+                        <div class="item">
+                            <img src="{{ asset('bundles/views/images/logo-02.png') }}" alt="">
+                        </div>
+
+                        <div class="item">
+                            <img src="{{ asset('bundles/views/images/logo-03.png') }}" alt="">
+                        </div>
+
+                        <div class="item">
+                            <img src="{{ asset('bundles/views/images/logo-04.png') }}" alt="">
+                        </div>
+
+                        <div class="item">
+                            <img src="{{ asset('bundles/views/images/logo-05.png') }}" alt="">
+                        </div>
+
+                        <div class="item">
+                            <img src="{{ asset('bundles/views/images/logo-06.png') }}" alt="">
+                        </div>
+
+                        <div class="item">
+                            <img src="{{ asset('bundles/views/images/logo-07.png') }}" alt="">
+                        </div>
+
+
+                    </div>
+                </div>
+                <!-- Carousel / End -->
+
+            </div>
+        </div>
+        <!-- Logo Carousel / End -->
+    </section>
+
+{% block footer %}
+{{ parent() }}
+    <!-- Scripts
+================================================== -->
+    <script src="{{ asset('bundles/views/scripts/jquery-2.2.0.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/chosen.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/rangeSlider.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/sticky-kit.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/slick.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/masonry.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/jquery.jpanelmenu.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/tooltips.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/custom.js') }}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script>
+        $( document ).ready(function() {
+            function getCookie(cname) {
+                var name = cname + "=";
+                        var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                for(var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            var cookieValue=getCookie('ride{{ currentuser }}');
+            var n = cookieValue.indexOf('|');
+            var start = cookieValue.substr(0, n);
+            var endx = cookieValue.substr(n+1, cookieValue.length);
+            var end = endx.substr(1,endx.length);
+            //now control cookie with backend
+            console.log(start);
+            console.log(end);
+            function cookieRedirect() {
+                $.ajax({
+                    url: Routing.generate('cookieRedirect'),
+                    data: 'start=' + start +'&end='+end,
+                    type: 'POST',
+                    success: function (data) {
+                        console.log(data[0].results);
+                        if (Number(data[0].results)!=0)
+                        {
+                            $("#cookieInvoke").click();
+                            $("#modal-body").append("<p>We have detected that one of the members of our community have shared a ride that can take you back from your current location.<br>" +
+                                "Are you interested? <a href={{ path('trajets') }}>YES!</a></p>");
+                        }
+
+                    },
+                    error:function (data) {
+                        alert('Something went wrong! COOKIE WISE');
+                    }
+                });
+            }
+            cookieRedirect();
+        });
+    </script>
+
+    <a href="#" id="cookieInvoke" data-toggle="modal" data-target="#myModal" hidden></a>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Map of this ride</h4>
+                </div>
+                <div id="modal-body" class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Style Switcher
+    ================================================== -->
+    <script src="{{ asset('bundles/views/scripts/switcher.js') }}"></script>
+
+{% endblock %}
+
+{% endblock %}
+
+

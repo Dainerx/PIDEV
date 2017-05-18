@@ -1,0 +1,366 @@
+{% extends ("@FOSUser/layout.html.twig") %}
+{% block title %}Share my Ride{% endblock %}
+    {% block stylesheets %}
+        {{ parent() }}
+    {% endblock %}
+
+{% block content %}
+    {% block topbody %}
+        {{ parent() }}
+    {% endblock %}
+
+<!-- Search
+================================================== -->
+<section class="search margin-bottom-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+                <!-- Title -->
+                <h3 class="search-title">Search</h3>
+                <!-- Box -->
+                <form method="POST" action={{ path('trajetsSearch') }}>
+                <div class="main-search-box">
+
+                    <!-- Row With Forms -->
+                    <div class="row with-forms">
+
+                        <!-- Status -->
+                        <div class="col-md-3 col-sm-6">
+                            <div class="select-input">
+                                <input type="text" name="depart" placeholder="Departure" data-unit="" required>
+                                <select >
+                                    {% for c in cities %}
+                                        <option value="{{ c.city }}">{{ c.city }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Property Type -->
+                        <div class="col-md-3 col-sm-6">
+                            <div class="select-input">
+                                <input type="text" name="destination" placeholder="Destination" data-unit="" value="" required>
+                                <select>
+                                    {% for c in cities %}
+                                        <option value="{{ c.city }}">{{ c.city }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Main Search Input -->
+                        <div class="col-md-6">
+                            <div class="main-search-input">
+                                <input type="text" placeholder="Enter address e.g. street, city or state" value="" disabled>
+                                <button class="button" type="submit">Search</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Row With Forms / End -->
+
+
+                    <!-- Row With Forms -->
+                    <div class="row with-forms">
+
+                        <!-- Min Price -->
+                        <div class="col-md-3 col-sm-6">
+
+                            <!-- Select Input -->
+                            <div class="select-input">
+                                <input type="text" name="nbrplace" placeholder="Seats" data-unit="Person" >
+
+                                <select>
+                                    <option>1
+                                    <option>2
+                                    <option>3
+                                    <option>4
+                                </select>
+                            </div>
+                            <!-- Select Input / End -->
+
+                        </div>
+
+                        <!-- Max Price -->
+                        <div class="col-md-3 col-sm-6">
+
+                            <!-- Select Input -->
+                            <div class="select-input">
+                                <input type="text" name="gamme" placeholder="Vehicule Type" data-unit="" >
+
+                                <select>
+                                    <option>Economical
+                                    <option>Medium
+                                    <option>Luxurious
+                                </select>
+
+                            </div>
+                            <!-- Select Input / End -->
+
+                        </div>
+
+
+                        <!-- Min Price -->
+                        <div class="col-md-3 col-sm-6">
+
+                            <!-- Select Input -->
+                            <div class="select-input disabled-first-option">
+                                <input type="text" placeholder="Min Price Per Person" name="low" data-unit="Dt">
+                                <select>
+                                    <option>Min Price
+                                    <option>5
+                                    <option>10
+                                    <option>20
+                                    <option>30
+                                    <option>40
+                                    <option>50
+                                    <option>60
+                                    <option>70
+                                    <option>80
+                                    <option>90
+                                    <option>100
+                                </select>
+                            </div>
+                            <!-- Select Input / End -->
+
+                        </div>
+
+
+                        <!-- Max Price -->
+                        <div class="col-md-3 col-sm-6">
+
+                            <!-- Select Input -->
+                            <div class="select-input disabled-first-option">
+                                <input type="text" placeholder="Max Price Per Person" name="high" data-unit="Dt">
+                                <select>
+                                    <option>Max Price
+                                    <option>10
+                                    <option>20
+                                    <option>30
+                                    <option>40
+                                    <option>50
+                                    <option>60
+                                    <option>70
+                                    <option>80
+                                    <option>90
+                                    <option>100
+                                    <option>200
+                                </select>
+                            </div>
+                            <!-- Select Input / End -->
+
+                        </div>
+
+                    </div>
+                    <!-- Row With Forms / End -->
+
+                </div>
+                    </form>
+                <!-- Box / End -->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Content
+================================================== -->
+<div class="container">
+    <div class="row fullwidth-layout">
+
+        <div class="col-md-12">
+
+            <!-- Sorting / Layout Switcher -->
+            <div class="row margin-bottom-15">
+
+                <div class="col-md-6">
+                    <!-- Sort by -->
+                    <div class="sort-by">
+                        <label>Sort by:</label>
+
+                        <div class="sort-by-select">
+                            <select data-placeholder="Default order" class="chosen-select-no-single">
+                                <option>Default Order
+                                <option>Price Low to High
+                                <option>Price High to Low
+                                <option>Newest Properties
+                                <option>Oldest Properties
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <!-- Layout Switcher -->
+                    <div class="layout-switcher">
+                        <a href="#" class="list"><i class="fa fa-th-list"></i></a>
+                        <a href="#" class="grid"><i class="fa fa-th-large"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Listings -->
+            <div class="listings-container list-layout">
+
+                <!-- Listing Item -->
+                {% set counter=0 %}
+                {% for trajet in trajets %}
+                <div class="listing-item" id="{{ trajet[0].id }}">
+                    <a href="https://www.google.com/maps/dir/{{ trajet[0].depart }}/{{ trajet[0].destination }}" target="_blank" class="listing-img-container">
+
+                        <div class="listing-badges">
+                            <span class="featured">Featured</span>
+                        </div>
+
+                        <div class="listing-img-content">
+                            <span class="listing-price"><i>{{ trajet[0].cout }} Dt/ seat</i></span>
+                            <span class="like-icon tooltip"></span>
+                        </div>
+
+                        <div class="listing-carousel">
+                            <div><img src="{{ asset('bundles/views/images/car-pooling.jpg') }}" alt=""></div>
+                            <div><img src="{{ asset('bundles/views/images/car-pooling.jpg') }}" alt=""></div>
+                            <div><img src="{{ asset('bundles/views/images/car-pooling.jpg') }}" alt=""></div>
+                        </div>
+                    </a>
+
+                    <div class="listing-content">
+
+                        <div class="listing-title">
+                            <h4><i class="fa fa-map-pin"></i><a href="https://www.google.com/maps/dir/{{ trajet[0].depart }}/{{ trajet[0].destination }}" id="start{{ counter }}" target="_blank" {#class="listing-address popup-gmaps"#}> {{ trajet[0].depart }}</a>
+                                <br>
+                                <i class="fa fa-map-marker"></i><a href="https://www.google.com/maps/dir/{{ trajet[0].depart }}/{{ trajet[0].destination }}" id="end{{ counter }}" target="_blank" {#class="listing-address popup-gmaps"#}> {{ trajet[0].destination }}</a>
+                            </h4>
+                            <p>{{ trajet[0].description }}</p>
+                            <h5><i class="fa fa-calendar"> {{ trajet[0].datedepart|date('d-m-Y') }}</i></h5>
+                            <div id="booking{{ counter }}">
+                            {%  if currentuser == trajet[0].idMembre.username %}
+                            <a href="#" id="booked" class="details button border">Booked <i class="fa fa-check"></i></a>
+                            {% else %}
+                            <a href="#" id="book{{ counter }}" onclick="book({{ trajet[0].id }},{{ trajet[0].idMembre.id }},{{ trajet[0].nbrplacedispo }},{{ counter }}); return false" class="details button border">Book</a>
+                            {% endif %}
+                            </div>
+                        </div>
+
+
+                    <ul class="listing-features">
+                        <li>Cost <span>{{ trajet[0].cout ~ ' Dt' }}</span></li>
+                        <li>Seats <span>{{ trajet[0].nbrplacedispo }}</span></li>
+                        <li>Car <span>{{ trajet['modele'] ~ ' | ' ~ trajet['gamme'] }}</span></li>
+                        </ul>
+
+                        <div class="listing-footer">
+                            <a href="#"><i class="fa fa-user"></i> {{ trajet['nom'] }}</a>
+                            {% set difference = date().diff(date(trajet[0].datepub)) %}
+                            {% set leftDays = difference.days %}
+                            {% if leftDays == 1 %}
+                                <span><i class="fa fa-calendar-o"></i> 1 day ago</span>
+                            {% else %}
+                                <span><i class="fa fa-calendar-o"></i>{{ leftDays }} days ago</span>
+                            {% endif %}
+                            {{ facebookButton() }}
+                        </div>
+
+                    </div>
+                </div>
+                <script>
+                function book(idTrajet,idMembre,places,counter){
+                    var result = confirm("Are you sure you wanna book a seat in this ride?");
+                    if (result == false)
+                        return;
+                    else if (places==0)
+                    {
+                        alert ('This ride is full you cannot book a seat on it.');
+                        return;
+                    }
+                    else
+                        bookAction(idTrajet,idMembre,counter);
+                }
+
+                function bookAction(idTrajet,idMembre,counter) {
+                    $.ajax({
+                        url: Routing.generate('bookSeat'),
+                        data: 'idTrajet=' + idTrajet +'&idMembre='+idMembre,
+                        type: 'POST',
+                        success: function (data) {
+                            alert('You have successfully booked a seat in this ride.');
+                            $("#book"+counter).remove();
+                            $("#booking"+counter).append("<a href='#' id='booked' class='details button border'>Booked <i class='fa fa-check'></i></a>");
+                            setCookie('ride{{ currentuser }}',$("#start"+counter).text()+'|'+$("#end"+counter).text(),7);
+                        },
+                        error:function (data) {
+                            alert('Something went wrong!');
+                        }
+                    });
+                }
+
+                function setCookie(cname, cvalue, exdays) {
+                    var d = new Date();
+                    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                    var expires = "expires="+ d.toUTCString();
+                    document.cookie = cname + "=" + cvalue + ";" + expires;
+                }
+                </script>
+                {% set counter=counter+1 %}
+                {% endfor %}
+                <!-- Listing Item / End -->
+            </div>
+            <!-- Listings Container / End -->
+
+            <div class="clearfix"></div>
+            <!-- Pagination -->
+            <div class="pagination-container margin-top-20">
+                <nav class="pagination">
+                    <ul>
+                        <li><a href="#" class="current-page">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li class="blank">...</li>
+                        <li><a href="#">22</a></li>
+                    </ul>
+                </nav>
+
+                <nav class="pagination-next-prev">
+                    <ul>
+                        <li><a href="#" class="prev">Previous</a></li>
+                        <li><a href="#" class="next">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Pagination / End -->
+
+        </div>
+
+    </div>
+</div>
+
+    {% block footer %}
+    {{ parent() }}
+    <!-- Scripts
+================================================== -->
+    <script src="{{ asset('bundles/views/scripts/jquery-2.2.0.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/chosen.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/rangeSlider.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/sticky-kit.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/slick.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/masonry.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/jquery.jpanelmenu.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/tooltips.min.js') }}"></script>
+    <script src="{{ asset('bundles/views/scripts/custom.js') }}"></script>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- Style Switcher
+    ================================================== -->
+    <script src="{{ asset('bundles/views/scripts/switcher.js') }}"></script>
+
+{% endblock %}
+{% endblock %}

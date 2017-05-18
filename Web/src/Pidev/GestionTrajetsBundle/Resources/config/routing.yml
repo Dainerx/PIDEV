@@ -1,0 +1,67 @@
+homeadmin:
+    path:    /homeadmin
+    defaults: { _controller: PidevGestionTrajetsBundle:User:Admin }
+
+
+homeuser:
+    path:     /home
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:index }
+
+
+trajets:
+    path:     /trajets
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:ListTrajets }
+
+trajetsMobile:
+    path:     /trajetsMobile
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:ListTrajetsMobile }
+
+trajetsSearch:
+    path:     /trajetsRecherche
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:RechercheListTrajets }
+
+rideoffer:
+    path:     /offerride
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:ShareRide }
+
+updateCities:
+    path:     /updateCity
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:updateCities }
+    options:
+        expose: true
+
+bookSeat:
+    path:     /bookseat
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionReservation:book }
+    options:
+        expose: true
+
+SmsSend:
+    path:     /sms
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionReservation:Sms }
+
+carlin:
+    path:     /test
+    defaults: { _controller: PidevGestionTrajetsBundle:User:test }
+
+backofficeList:
+    path:     /backoffice
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:backofficeTrajets }
+
+deleteTrajet:
+    path:     /deleteTrajet
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:delete }
+    options:
+        expose: true
+
+fillCar:
+    path:     /fillcar
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:getVehicule }
+    options:
+        expose: true
+
+cookieRedirect:
+    path:     /cookieredirect
+    defaults: { _controller: PidevGestionTrajetsBundle:GestionTrajet:cookieRedirect }
+    options:
+        expose: true

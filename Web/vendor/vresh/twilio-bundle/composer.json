@@ -1,0 +1,31 @@
+{
+  "name": "vresh/twilio-bundle",
+  "type": "symfony-bundle",
+  "description": "A simple Symfony 2, 3 bundle for the official sdk provided by Twilio.",
+  "keywords": [
+    "Twilio"
+  ],
+  "homepage": "https://github.com/fridolin-koch/VreshTwilioBundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fridolin Koch",
+      "email": "info@fridokoch.de"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.3.2",
+    "symfony/framework-bundle": "~2.1|~3.0",
+    "twilio/sdk": ">=4.0.2 <5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.1",
+    "satooshi/php-coveralls": "~1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vresh\\TwilioBundle\\": ""
+    }
+  }
+}

@@ -1,0 +1,13 @@
+pidev_gestion_trajets:
+    resource: "@PidevGestionTrajetsBundle/Resources/config/routing.yml"
+    prefix:   /gestion
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
