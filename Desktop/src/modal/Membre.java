@@ -58,6 +58,12 @@ public class Membre {
 
     }
 
+    public Membre(int id) {
+        this.id = id;
+    }
+
+    
+
     public int getId() {
         return id;
     }

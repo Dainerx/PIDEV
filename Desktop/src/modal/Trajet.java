@@ -12,7 +12,8 @@ import java.time.LocalDate;
  * @author dainer
  */
 public class Trajet {
-    private int id; 
+
+    private int id;
     private String destination;
     private String depart;
     private LocalDate dateDepart;
@@ -22,14 +23,17 @@ public class Trajet {
     private boolean suivie;
     private Vehicule vehicule;
     private Membre membre;
-    
-    
+
     //attributs for table view passagers:
     private String nommembre;
     private String telmembre;
     private String mailmembre;
-    
-    public Trajet(String destination, String depart, LocalDate dateDepart, float cout, String description, 
+
+    public Trajet(int id) {
+        this.id = id;
+    }
+
+    public Trajet(String destination, String depart, LocalDate dateDepart, float cout, String description,
             int nombrePlaceDispo, boolean suivie, Vehicule vehicule, Membre membre) {
         this.destination = destination;
         this.depart = depart;
@@ -40,10 +44,9 @@ public class Trajet {
         this.suivie = suivie;
         this.vehicule = vehicule;
     }
-    
-    
-    public Trajet(String destination, String depart, LocalDate dateDepart, float cout, String description, 
-        int nombrePlaceDispo, boolean suivie, Vehicule vehicule) {
+
+    public Trajet(String destination, String depart, LocalDate dateDepart, float cout, String description,
+            int nombrePlaceDispo, boolean suivie, Vehicule vehicule) {
         this.destination = destination;
         this.depart = depart;
         this.dateDepart = dateDepart;
@@ -54,8 +57,8 @@ public class Trajet {
         this.vehicule = vehicule;
     }
 
-    public Trajet(String destination, String depart, LocalDate dateDepart, float cout, String description, 
-        int nombrePlaceDispo, boolean suivie) {
+    public Trajet(String destination, String depart, LocalDate dateDepart, float cout, String description,
+            int nombrePlaceDispo, boolean suivie) {
         this.destination = destination;
         this.depart = depart;
         this.dateDepart = dateDepart;
@@ -63,13 +66,12 @@ public class Trajet {
         this.description = description;
         this.nombrePlaceDispo = nombrePlaceDispo;
         this.suivie = suivie;
-    }    
-
-    public Trajet()
-    {
-        
     }
-    
+
+    public Trajet() {
+
+    }
+
     public int getId() {
         return id;
     }
@@ -77,6 +79,7 @@ public class Trajet {
     public void setId(int id) {
         this.id = id;
     }
+
     public String getDestination() {
         return destination;
     }
@@ -132,7 +135,7 @@ public class Trajet {
     public void setSuivie(boolean suivie) {
         this.suivie = suivie;
     }
-    
+
     public Vehicule getVehicule() {
         return vehicule;
     }
@@ -140,8 +143,7 @@ public class Trajet {
     public void setVehicule(Vehicule vehicule) {
         this.vehicule = vehicule;
     }
-    
-    
+
     public Membre getMembre() {
         return membre;
     }
@@ -149,30 +151,25 @@ public class Trajet {
     public void setMembre(Membre membre) {
         this.membre = membre;
     }
-    
-    public String getNommembre()
-    {
+
+    public String getNommembre() {
         this.nommembre = this.membre.getNom();
         return this.nommembre;
     }
-    
-    public String getTelmembre()
-    {
+
+    public String getTelmembre() {
         this.telmembre = this.membre.getNumerotel();
-        return this.telmembre;   
+        return this.telmembre;
     }
-    
-    public String getMailmembre()
-    {
+
+    public String getMailmembre() {
         this.mailmembre = this.membre.getMail();
         return this.mailmembre;
     }
-
 
     @Override
     public String toString() {
         return "Trajet{" + "id=" + id + ", destination=" + destination + ", depart=" + depart + ", dateDepart=" + dateDepart + ", cout=" + cout + ", description=" + description + ", nombrePlaceDispo=" + nombrePlaceDispo + ", suivie=" + suivie + ", vehicule=" + vehicule + '}';
     }
-   
-    
+
 }
