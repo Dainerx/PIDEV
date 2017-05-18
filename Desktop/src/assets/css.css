@@ -1,0 +1,125 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    
+  
+    
+ 
+
+    
+#AnchorPane {
+/*    -fx-background-color: #D6EAF8;*/
+    -fx-background-repeat: repeat;
+    -fx-background-color:
+        linear-gradient(#D6EAF8 0%, #AED6F1 20%, #85C1E9 100%),
+        linear-gradient(#D6EAF8, #85C1E9),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+
+}
+
+
+
+.label {
+       -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: #2E4053 ;
+    -fx-opacity: 0.6;
+}
+
+
+
+.button .text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0, 0, 0, 0.8), 0, 0.0 , 0 , -1 );
+}
+
+.button {
+/*    -fx-background-color:
+        rgba(255, 255, 255, 0.08),
+        rgba(0, 0, 0, 0.8),
+        #090a0c,
+        linear-gradient(#4a5661 0%, #1f2429 20%, #1f242a 100%),
+        linear-gradient(#242a2e, #23282e),
+        radial-gradient(center 50% 0%, radius 100%, rgba(135,142,148,0.9),
+        rgba(255,255,255,0));*/
+    -fx-background-radius: 7, 6, 5, 4, 3, 5;
+    -fx-background-insets: -3 -3 -4 -3, -3, 0, 1, 2, 0;
+    -fx-font-family: "Arial";
+    -fx-text-fill: black;
+    -fx-font-size: 12;
+    -fx-text-fill:#2E4053;
+/*    -fx-padding: 10 20 10 20;*/
+}
+
+.button:focused, .button:hover {
+    -fx-background-color: #BDC3C7 ;
+       
+}
+
+.text-field, .text-area {
+    -fx-font-size: 12;
+    -fx-background-color:
+        rgba(255, 255, 255, 0.3),
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) 50%),
+        rgb(218, 226, 224);
+    -fx-background-insets: 0 0 -1 0, 0, 1.5;
+    -fx-background-radius: 6, 5, 4;
+/*    -fx-padding: 6 10 4 10;*/
+    -fx-effect: innershadow( gaussian, rgba(0, 0, 0, 0.8), 5, 0, 0, 2 );
+    -fx-font-family: "Arial";
+}
+
+.text-area {
+    -fx-padding: 6 5 6 5;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-prompt-text-fill:
+        rgb(128,128,128);
+    -fx-background-color:
+        rgba(235, 235, 235, 0.5),
+        rgba(0, 0, 0, 0.4),
+        rgb(255, 255, 255);
+}
+.table-view {
+    -fx-base: #1d1d1d;
+    -fx-control-inner-background: #1d1d1d;
+    -fx-background-color: #1d1d1d;
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 10;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color: 
+        transparent
+        transparent
+        derive(-fx-base, 80%) 
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+
+
+
+
+}
