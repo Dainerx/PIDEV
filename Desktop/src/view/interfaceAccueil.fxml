@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" stylesheets="@css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.InterfaceAccueilController">
+   <children>
+      <TextField fx:id="LoginTF" layoutX="210.0" layoutY="108.0" promptText="Login" style="-fx-background-radius: 7;" />
+      <PasswordField fx:id="PasswordTF" layoutX="210.0" layoutY="168.0" promptText="Password" style="-fx-background-radius: 7;" />
+      <Button layoutX="449.0" layoutY="46.0" mnemonicParsing="false" onAction="#goInscription" prefHeight="25.0" prefWidth="111.0" style="-fx-background-radius: 7;" text="S'inscrire" />
+      <Button layoutX="449.0" layoutY="80.0" mnemonicParsing="false" onAction="#goConnexionAdmin" prefHeight="25.0" prefWidth="111.0" style="-fx-background-radius: 7;" text="Connexion Admin" />
+      <Button layoutX="242.0" layoutY="256.0" mnemonicParsing="false" onAction="#goInterfaceCompte" style="-fx-background-radius: 7;" text="Se connecter" />
+      <Button layoutX="207.0" layoutY="321.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-radius: 7;" text="Visiter le site !" />
+     <ImageView fitHeight="155.0" fitWidth="143.0" layoutX="30.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/backgroundImage.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

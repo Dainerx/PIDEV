@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" stylesheets="@css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.InterfaceAdminController">
+   <children>
+      <TableView fx:id="membreTable" layoutX="5.0" layoutY="62.0" prefHeight="302.0" prefWidth="451.0">
+        <columns>
+          <TableColumn fx:id="loginColumn" prefWidth="135.0" text="login_membre" />
+          <TableColumn fx:id="nomColumn" prefWidth="118.0" text="Nom" />
+            <TableColumn fx:id="prenomColumn" prefWidth="104.0" text="Prenom" />
+            <TableColumn fx:id="mailColumn" prefWidth="93.0" text="E-mail" />
+        </columns>
+      </TableView>
+      <Label layoutX="22.0" layoutY="14.0" prefHeight="28.0" prefWidth="177.0" text="Liste des Membres">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button layoutX="502.0" layoutY="177.0" mnemonicParsing="false" onAction="#SupprimerMembre" text="Supprimer" />
+      <Button layoutX="502.0" layoutY="213.0" mnemonicParsing="false" onAction="#AvertirMembre" prefHeight="23.0" prefWidth="72.0" text="Avertir" />
+      <Button layoutX="501.0" layoutY="250.0" mnemonicParsing="false" onAction="#SuspendreMembre" text="Suspendre" />
+      <ImageView fitHeight="129.0" fitWidth="122.0" layoutX="475.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/backgroundImage.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="484.0" layoutY="352.0" mnemonicParsing="false" onAction="#seDeconnecter" prefHeight="23.0" prefWidth="110.0" text="Se déconnecter" />
+      <Button layoutX="474.0" layoutY="141.0" mnemonicParsing="false" onAction="#AfficherMembre" stylesheets="@css.css" text="Afficher les membre" />
+   </children>
+</AnchorPane>
