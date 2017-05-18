@@ -3,32 +3,42 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entity;
+
+package FeedbackEntity;
 
 import java.util.Date;
 
 /**
  *
- * @author k4
+ * @author slim
  */
 public class Evenement {
-    int id;
-    String libelle;
-    String description;
-    String date;
-    String lieu;
 
-    public String getLieu() {
-        return lieu;
-    }
+  private int id;
+  private String libelle;
+  private String description;
+  private String lieu;
+  private String date;
 
-    public void setLieu(String lieu) {
+    public Evenement(int id, String libelle, String description, String lieu, String date) {
+        this.id = id;
+        this.libelle = libelle;
+        this.description = description;
         this.lieu = lieu;
+        this.date = date;
     }
 
+    public Evenement(String libelle, String description, String lieu, String date) {
+        this.libelle = libelle;
+        this.description = description;
+        this.lieu = lieu;
+        this.date = date;
+    }
 
     public Evenement() {
     }
+    
+  
 
     public int getId() {
         return id;
@@ -54,24 +64,12 @@ public class Evenement {
         this.description = description;
     }
 
-//    public Date getDate() {
-//        return date;
-//    }
-//
-//    public void setDate(Date date) {
-//        this.date = date;
-//    }
-
-    @Override
-    public String toString() {
-        return "" + " libelle: " + libelle + ", description:" + description + ", date:" + date + '}';
+    public String getLieu() {
+        return lieu;
     }
 
-    public Evenement(String libelle, String description,String lieu, String date) {
-        this.libelle = libelle;
-        this.description = description;
-        this.date = date;
-       this.lieu=lieu;
+    public void setLieu(String lieu) {
+        this.lieu = lieu;
     }
 
     public String getDate() {
@@ -81,6 +79,13 @@ public class Evenement {
     public void setDate(String date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return "Evenement{" + "id=" + id + ", libelle=" + libelle + ", description=" + description + ", lieu=" + lieu + ", date=" + date + '}';
+    }
+  
+  
     
     
 }
