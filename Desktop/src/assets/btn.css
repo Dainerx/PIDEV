@@ -1,0 +1,172 @@
+#img {
+    -fx-background-image: url("internet.png");
+    -fx-background-size: 170px 170px;
+    -fx-background-color: #ffffff;
+     -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+}
+
+#goToCS {
+    -fx-background-image: url("internet.png");
+    -fx-background-size: 230px 230px;
+    -fx-background-color: #ffffff;
+     -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+}
+
+#goToCF {
+    -fx-background-image: url("fund.png");
+    -fx-background-size: 230px 230px;
+    -fx-background-color: #ffffff;
+     -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+}
+#close {
+    -fx-background-image: url("delete.png");
+    -fx-background-size: 33px 27px;
+    -fx-background-color: #ffffff;
+     
+    
+}
+
+#closeC {
+    -fx-background-image: url("delete.png");
+    -fx-background-size: 33px 30px;
+    -fx-background-color: #ffffff;
+     
+    
+}
+
+#closeI {
+    -fx-background-image: url("delete.png");
+    -fx-background-size: 36px 30px;
+    -fx-background-color: #ffffff;
+     
+    
+}
+
+#closePP {
+    -fx-background-image: url("delete.png");
+    -fx-background-size: 36px 30px;
+    -fx-background-color: #ffffff;
+     
+    
+}
+
+#closeF {
+    -fx-background-image: url("delete.png");
+    -fx-background-size: 36px 30px;
+    -fx-background-color: #ffffff;
+     
+    
+}
+
+#closeB {
+    -fx-background-image: url("delete.png");
+    -fx-background-size: 33px 30px;
+    -fx-background-color: #ffffff;
+     
+    
+}
+
+#closeCS {
+    -fx-background-image: url("delete.png");
+    -fx-background-size: 36px 30px;
+    -fx-background-color: #ffffff;
+     
+    
+}
+
+#back {
+    -fx-background-image: url("left.png");
+    -fx-background-size: 33px 30px;
+    -fx-background-color: #ffffff;
+     
+    
+}
+
+#backAI {
+    -fx-background-image: url("left.png");
+    -fx-background-size: 33px 30px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ffffff;
+     
+    
+}
+
+#problem {
+    -fx-background-image: url("probelme.png");
+    -fx-background-size: 230px 230px;
+    -fx-background-color: #ffffff;
+     -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+    
+}
+
+#project {
+    -fx-background-image: url("pro.png");
+    -fx-background-size: 230px 230px;
+    -fx-background-color: #ffffff;
+     -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+    
+}
+
+#username {
+  -fx-webkit-box-sizing: content-box;
+  -fx-moz-box-sizing: content-box;
+  -fx-box-sizing: content-box;
+  -fx-border: none;
+  -fx-font: italic normal normal 76px/1 "amaranth", Helvetica, sans-serif;
+  -fx-color: #0096ff;
+  -fx-text-align: center;
+  -fx-text-indent: 5px;
+  -fx-o-text-overflow: ellipsis;
+  -fx-text-overflow: ellipsis;
+  -fx-letter-spacing: -6px;
+}
+
+
+#button:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+#button:pressed, .button:default:hover:pressed {
+  -fx-background-color: white;
+  -fx-text-fill: #1d1d1d;
+}
+
+#button:focused {
+    -fx-border-color: white, white;
+    -fx-border-width: 1, 1;
+    -fx-border-style: solid, segments(1, 1);
+    -fx-border-radius: 0, 0;
+    -fx-border-insets: 1 1 1 1, 0;
+}
+
+#button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #1d1d1d;
+    -fx-text-fill: white;
+}
+
+#button:default {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: #ffffff;
+}
+
+#button:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}
+
+#button {
+    -fx-padding: 5 22 5 22;   
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #09d1c0;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 22pt;
+    -fx-text-fill: #d8d8d8;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}

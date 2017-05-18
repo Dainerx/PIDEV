@@ -1,0 +1,10 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlBody {
+-fx-background-color: #f5f5f5;
+}
+.notify{
+    -fx-background-color: #56cc5b;
+}

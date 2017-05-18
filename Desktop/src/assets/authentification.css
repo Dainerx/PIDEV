@@ -1,0 +1,93 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+
+*/
+.barBackground
+{
+    
+    -fx-background-image: url(../images/titleBarreAuth.png);
+}
+.background
+{
+    -fx-background-color: #144d5e;
+    -fx-background-image: url(../TFTressources/images/degrade.png);
+    -fx-background-position: 50% 0;
+    -fx-background-repeat: no-repeat;
+}
+.logoContainer
+{
+    -fx-background-image: url(../TFTressources/images/logo.png);
+    -fx-background-position: 5% 0;
+     -fx-background-repeat: no-repeat;
+     -fx-background-size: 20%;
+}
+.loginContainer
+{
+    -fx-background-color: #144554;
+    -fx-border-insets: 0 1 0 0 ;
+         -fx-border-width: 1;
+         -fx-border-style: solid;
+         -fx-border-color: #144d5e;
+}
+.inputNormal 
+{
+    -fx-border-color : rgba(255,255,255,0.3) ;
+     -fx-text-fill: white;
+    -fx-focus-color: -fx-control-inner-background ;
+    -fx-background-color: #0f4454 ;
+    
+}
+.inputNormal:focused
+{
+   
+    -fx-border-color :  #229abf;
+}
+
+.imageContainerButton
+{
+    -fx-font-size : 15;
+    -fx-background-color: #0f4454;
+    -fx-text-fill : #FFF;
+    -fx-border-insets: 0;
+         -fx-border-width: 1;
+         -fx-border-style: solid;
+         -fx-border-color : rgba(255,255,255,0.3) ;
+}
+.imageContainerButton:hover
+{
+    -fx-background-color: #4eacc8;
+    -fx-text-fill : #FFF;
+    -fx-border-insets: 0;
+         -fx-border-width: 1;
+         -fx-border-style: solid;
+         -fx-border-color : rgba(255,255,255,0.3) ;
+}
+.backgroundChoix
+{
+     -fx-background-position: 50%;
+    -fx-background-size: 90%;
+    -fx-background-repeat: no-repeat;
+    
+}
+.medecin
+{
+    -fx-background-image: url(../TFTressources/images/Medecin.png);
+   
+}
+.arbitre
+{
+    -fx-background-image: url(../TFTressources/images/arbitre.png);
+  
+}
+.admin
+{
+    -fx-background-image: url(../TFTressources/images/admin0.png);
+}
+.responsable
+{
+    -fx-background-image: url(../TFTressources/images/Responsable0.png);
+}

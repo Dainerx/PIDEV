@@ -1,53 +1,14 @@
 /*
 To change this license header, choose License Headers in Project Properties.
-
-To change this template file, 
-choose Tools | Templates
+To change this template file, choose Tools | Templates
 and open the template in the editor.
-
 */
 /* 
     
     Author     : ameni
 
-
-.
-root{
-    
-     
-   -fx-background-color: #1d1d1d;
-    
-}
-
-.
-tableview{
-    -fx-background-color: black;
-}
 */
 
-/*
-.label {
-    -fx-font-size: 11pt;
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-text-fill: white;
-    -fx-opacity: 0.6;
-}
-
-*/
-.root{   -fx-background-color: #FFFFFF;}
-
-
-.list-view {
-    -fx-base:  #020308;
-    -fx-control-inner-background:  #020308;
-    -fx-background-color: #1d1d1d;
- 
-   -fx-list-cell-border-color: transparent;
-
-    -fx-list-header-border-color: transparent;
-    
--fx-padding: 5;
-}
 
 
 
@@ -55,45 +16,37 @@ tableview{
     -fx-base:  #020308;
     -fx-control-inner-background:  #020308;
     -fx-background-color: #1d1d1d;
- 
-   -fx-table-cell-border-color: transparent;
-
+    -fx-table-cell-border-color: transparent;
     -fx-table-header-border-color: transparent;
-    
--fx-padding: 5;
+    -fx-padding: 5;
 }
-
 
 .table-view .column-header-background {
     -fx-background-color: transparent;
 }
 
-
 .table-view .column-header, .table-view .filler {
     -fx-size: 35;
     -fx-border-width: 0 0 1 0;
     -fx-background-color: transparent;
-   
- -fx-border-color: 
+    -fx-border-color: 
         transparent
         transparent
         derive(-fx-base, 80%) 
         transparent;
-  
-  -fx-border-insets: 0 10 1 0;
+    -fx-border-insets: 0 10 1 0;
 }
+
 .table-view .column-header .label {
     -fx-font-size: 20pt;
     -fx-font-family: "Segoe UI Light";
- 
-   -fx-text-fill: white;
+    -fx-text-fill: white;
     -fx-alignment: center-left;
     -fx-opacity: 1;
 }
 
 .table-view:focused .table-row-cell:filled:focused:selected {
-   
- -fx-background-color: -fx-focus-color;
+    -fx-background-color: -fx-focus-color;
 }
 
 #intitule{
@@ -102,13 +55,11 @@ tableview{
     -fx-opacity: 1;
 }
 
-
 #labeldescription , #labelsdate ,#labelcategory
 ,#labelnbsolvers
 ,#labelcomp ,labeldate{
      -fx-font-size: 12pt;
-  
-  -fx-font-family: "Segoe UI Light";
+    -fx-font-family: "Segoe UI Light";
     -fx-opacity: 1;
 }
 
@@ -116,13 +67,11 @@ tableview{
 
 .button {
     -fx-padding: 5 16 5 16;   
-   
- -fx-border-color: #e2e2e2;
+    -fx-border-color: #e2e2e2;
     -fx-border-width: 2;
     -fx-background-radius: 0;
     -fx-background-color:  #000000;
-   
- -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
     -fx-font-size: 10pt;
     -fx-text-fill: #d8d8d8;
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
