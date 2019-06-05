@@ -4,7 +4,7 @@ Implementation of car pooling idea in Tunisia.
 
 ## About the project 
 
-This project was developed uner the supervision of engineers and professors at Esprit in 2017. It was developped by all the contributors who are students that attend ESPRIT universty.
+This project was developed uner the supervision of engineers and professors at Esprit in 2017. It was developped by all the contributors who are students attending ESPRIT universty.
 
 ### Prerequisites
 * [php>=PHP 5.5.9](https://secure.php.net/)
